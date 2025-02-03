@@ -1,0 +1,409 @@
+cod_incidencia,id_traslado,cod_tipo_incidencia,descripcion,fecha_ocurrencia,hora_ocurrencia,cod_estado_incidencia
+1,1,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-04-24,05:53:21,S
+2,2,B,Hay paquetes que no están sellados correctamente,2024-05-03,09:53:21,P
+3,3,C,El transportista no se le dio la documentación correspondiente,2024-05-05,04:53:21,S
+4,4,D,El vehículo asignado no enciende,2024-04-28,04:43:21,P
+5,5,E,La direccion no coincide con el pedido del cliente,2024-05-08,04:53:21,S
+6,6,C,La documentación presenta datos erróneos,2024-05-10,05:53:25,S
+7,7,D,El vehiculo sufrió derrame de aceite ,2024-04-30,08:50:31,S
+8,8,E,La direccion asignada presenta demasiado tráfico,2024-05-12,07:23:25,P
+9,9,B,El sello del paquete está dañado,2024-04-30,06:50:11,P
+10,10,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-05-02,04:40:01,S
+11,11,B,Hay paquetes que no están sellados correctamente,2024-06-15,10:25:17,S
+12,12,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-07-20,15:30:45,P
+13,13,E,La direccion no coincide con el pedido del cliente,2024-08-03,11:45:32,P
+14,14,C,La documentación presenta datos erróneos,2024-09-18,09:10:27,P
+15,15,D,El vehiculo sufrió derrame de aceite,2024-10-05,14:20:14,P
+16,16,C,El transportista no se le dio la documentación correspondiente,2024-11-12,16:55:39,S
+17,17,B,El sello del paquete está dañado,2024-12-25,18:35:48,S
+18,18,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2025-01-03,07:05:56,P
+19,19,D,El vehículo asignado no enciende,2025-02-14,13:40:10,P
+20,20,E,La direccion asignada presenta demasiado tráfico,2025-03-21,19:15:29,S
+21,21,A,La fecha de entrega no coincide con la fecha establecida de llegada,2025-04-09,09:50:37,S
+22,22,B,Hay paquetes que no están sellados correctamente,2025-05-16,21:55:48,P
+23,23,C,La documentación presenta datos erróneos,2025-06-30,14:30:58,S
+24,24,D,El vehiculo sufrió derrame de aceite,2025-07-12,08:45:17,P
+25,25,E,La direccion no coincide con el pedido del cliente,2025-08-24,12:20:23,P
+26,26,C,El transportista no se le dio la documentación correspondiente,2025-09-03,17:35:42,S
+27,27,B,El sello del paquete está dañado,2025-10-11,23:10:56,S
+28,28,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2025-11-29,10:25:04,P
+29,29,D,El vehículo asignado no enciende,2025-12-18,05:40:12,P
+30,30,E,La direccion asignada presenta demasiado tráfico,2026-01-05,15:55:30,S
+31,31,A,La fecha de entrega no coincide con la fecha establecida de llegada,2026-02-14,18:30:40,S
+32,32,B,Hay paquetes que no están sellados correctamente,2026-03-26,20:45:59,P
+33,33,C,La documentación presenta datos erróneos,2026-04-30,11:55:02,S
+34,34,D,El vehiculo sufrió derrame de aceite,2026-05-07,14:20:15,P
+35,35,E,La direccion no coincide con el pedido del cliente,2026-06-15,09:35:20,S
+36,36,C,El transportista no se le dio la documentación correspondiente,2026-07-22,08:10:45,P
+37,37,B,El sello del paquete está dañado,2026-08-30,13:55:59,S
+38,38,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2026-09-14,16:40:12,P
+39,39,D,El vehículo asignado no enciende,2026-10-25,17:30:28,P
+40,40,E,La direccion asignada presenta demasiado tráfico,2026-11-08,19:20:34,S
+41,41,A,La fecha de entrega no coincide con la fecha establecida de llegada,2026-12-18,22:15:48,S
+42,42,B,Hay paquetes que no están sellados correctamente,2027-01-30,10:45:50,P
+43,43,C,La documentación presenta datos erróneos,2027-02-12,11:50:12,S
+44,44,D,El vehiculo sufrió derrame de aceite,2027-03-24,12:25:37,P
+45,45,E,La direccion no coincide con el pedido del cliente,2027-04-07,13:30:40,P
+46,46,C,El transportista no se le dio la documentación correspondiente,2027-05-16,15:20:55,S
+47,47,B,El sello del paquete está dañado,2027-06-28,16:40:59,S
+48,48,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2027-07-10,18:55:03,P
+49,49,D,El vehículo asignado no enciende,2027-08-21,20:00:12,P
+50,50,E,La direccion asignada presenta demasiado tráfico,2027-09-02,22:15:18,S
+51,51,A,La fecha de entrega no coincide con la fecha establecida de llegada,2027-10-14,08:45:25,S
+52,52,B,Hay paquetes que no están sellados correctamente,2027-11-26,10:55:32,P
+53,53,C,La documentación presenta datos erróneos,2027-12-07,12:30:45,S
+54,54,D,El vehiculo sufrió derrame de aceite,2028-01-18,14:20:50,P
+55,55,E,La direccion no coincide con el pedido del cliente,2028-02-29,16:35:59,P
+56,56,C,El transportista no se le dio la documentación correspondiente,2028-03-12,18:45:02,S
+57,57,B,El sello del paquete está dañado,2028-04-24,20:55:10,S
+58,58,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2028-05-06,21:50:25,P
+59,59,D,El vehículo asignado no enciende,2028-06-18,08:25:30,P
+60,60,E,La direccion asignada presenta demasiado tráfico,2028-07-30,10:30:48,S
+61,61,A,La fecha de entrega no coincide con la fecha establecida de llegada,2028-08-11,12:45:55,S
+62,62,B,Hay paquetes que no están sellados correctamente,2028-09-23,14:55:58,P
+63,63,C,La documentación presenta datos erróneos,2028-10-04,16:30:05,S
+64,64,D,El vehiculo sufrió derrame de aceite,2028-11-16,18:20:10,P
+65,65,E,La direccion no coincide con el pedido del cliente,2028-12-28,20:35:19,P
+66,66,C,El transportista no se le dio la documentación correspondiente,2029-01-09,22:45:22,S
+67,67,B,El sello del paquete está dañado,2029-02-21,09:55:30,S
+68,68,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2029-03-05,11:50:48,P
+69,69,D,El vehículo asignado no enciende,2029-04-17,13:35:55,P
+70,70,E,La direccion asignada presenta demasiado tráfico,2029-05-29,15:45:59,S
+71,71,A,La fecha de entrega no coincide con la fecha establecida de llegada,2029-06-10,17:50:02,S
+72,72,B,Hay paquetes que no están sellados correctamente,2029-07-22,19:35:10,P
+73,73,C,La documentación presenta datos erróneos,2029-08-03,21:45:15,S
+74,74,D,El vehiculo sufrió derrame de aceite,2029-09-14,23:55:20,P
+75,75,E,La direccion no coincide con el pedido del cliente,2029-10-26,08:05:30,P
+76,76,C,El transportista no se le dio la documentación correspondiente,2029-12-07,10:15:35,S
+77,77,B,El sello del paquete está dañado,2030-01-18,12:25:40,S
+78,78,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2030-02-28,14:35:45,P
+79,79,D,El vehículo asignado no enciende,2030-04-11,16:45:50,P
+80,80,E,La direccion asignada presenta demasiado tráfico,2030-05-23,18:55:55,S
+81,81,A,La fecha de entrega no coincide con la fecha establecida de llegada,2030-07-04,20:05:00,S
+82,82,B,Hay paquetes que no están sellados correctamente,2030-08-15,22:15:05,P
+83,83,C,La documentación presenta datos erróneos,2030-09-26,09:25:10,S
+84,84,D,El vehiculo sufrió derrame de aceite,2030-11-07,11:35:15,P
+85,85,E,La direccion no coincide con el pedido del cliente,2030-12-19,13:45:20,P
+86,86,C,El transportista no se le dio la documentación correspondiente,2031-01-30,15:55:25,S
+87,87,B,El sello del paquete está dañado,2031-03-13,17:05:30,S
+88,88,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2031-04-24,19:15:35,P
+89,89,D,El vehículo asignado no enciende,2031-06-05,21:25:40,P
+90,90,E,La direccion asignada presenta demasiado tráfico,2031-07-17,23:35:45,S
+91,91,A,La fecha de entrega no coincide con la fecha establecida de llegada,2031-08-28,08:45:50,S
+92,92,B,Hay paquetes que no están sellados correctamente,2031-10-09,10:55:55,P
+93,93,C,La documentación presenta datos erróneos,2031-11-20,13:05:00,S
+94,94,D,El vehiculo sufrió derrame de aceite,2031-12-31,15:15:05,P
+95,95,E,La direccion no coincide con el pedido del cliente,2032-02-11,17:25:10,P
+96,96,C,El transportista no se le dio la documentación correspondiente,2032-03-23,19:35:15,S
+97,97,B,El sello del paquete está dañado,2032-05-04,21:45:20,S
+98,98,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2032-06-15,23:55:25,P
+99,99,D,El vehículo asignado no enciende,2032-07-26,09:05:30,P
+100,100,E,La direccion asignada presenta demasiado tráfico,2032-09-06,11:15:35,S
+101,101,A,La fecha de entrega no coincide con la fecha establecida de llegada,2032-10-17,13:25:40,S
+102,102,B,Hay paquetes que no están sellados correctamente,2032-11-28,15:35:45,P
+103,103,C,La documentación presenta datos erróneos,2033-01-08,17:45:50,S
+104,104,D,El vehiculo sufrió derrame de aceite,2033-02-19,19:55:55,P
+105,105,E,La direccion no coincide con el pedido del cliente,2033-04-02,22:05:00,P
+106,106,C,El transportista no se le dio la documentación correspondiente,2033-05-14,08:15:05,S
+107,107,B,El sello del paquete está dañado,2033-06-25,10:25:10,S
+108,108,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2033-08-06,12:35:15,P
+109,109,D,El vehículo asignado no enciende,2033-09-17,14:45:20,P
+110,110,E,La direccion asignada presenta demasiado tráfico,2033-10-28,16:55:25,S
+111,111,A,La fecha de entrega no coincide con la fecha establecida de llegada,2033-12-09,19:05:30,S
+112,112,B,Hay paquetes que no están sellados correctamente,2034-01-20,21:15:35,P
+113,113,C,La documentación presenta datos erróneos,2034-03-03,23:25:40,S
+114,114,D,El vehiculo sufrió derrame de aceite,2034-04-14,08:35:45,P
+115,115,E,La direccion no coincide con el pedido del cliente,2034-05-26,10:45:50,P
+116,116,C,El transportista no se le dio la documentación correspondiente,2034-07-07,12:55:55,S
+117,117,B,El sello del paquete está dañado,2034-08-18,15:05:00,S
+118,118,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2034-09-29,17:15:05,P
+119,119,D,El vehículo asignado no enciende,2034-11-10,19:25:10,P
+120,120,E,La direccion asignada presenta demasiado tráfico,2034-12-21,21:35:15,S
+121,121,A,La fecha de entrega no coincide con la fecha establecida de llegada,2035-02-01,23:45:20,S
+122,122,B,Hay paquetes que no están sellados correctamente,2035-03-14,09:55:25,P
+123,123,C,La documentación presenta datos erróneos,2035-04-25,12:05:30,S
+124,124,D,El vehiculo sufrió derrame de aceite,2035-06-06,14:15:35,P
+125,125,E,La direccion no coincide con el pedido del cliente,2035-07-17,16:25:40,P
+126,126,C,El transportista no se le dio la documentación correspondiente,2035-08-28,18:35:45,S
+127,127,A,La fecha de entrega no coincide con la fecha establecida de llegada,2035-02-01,23:45:20,S
+128,128,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2035-11-20,20:45:50,P
+129,129,D,El vehículo asignado no enciende,2036-01-01,22:55:55,P
+130,130,E,La direccion asignada presenta demasiado tráfico,2036-02-12,01:05:00,S
+131,131,A,La fecha de entrega no coincide con la fecha establecida de llegada,2036-03-25,03:15:05,S
+132,132,B,Hay paquetes que no están sellados correctamente,2036-05-05,05:25:10,P
+133,133,C,La documentación presenta datos erróneos,2036-06-16,07:35:15,S
+134,134,D,El vehiculo sufrió derrame de aceite,2036-07-27,09:45:20,P
+135,135,E,La direccion no coincide con el pedido del cliente,2036-09-07,11:55:25,P
+136,136,C,El transportista no se le dio la documentación correspondiente,2036-10-18,14:05:30,S
+137,137,B,El sello del paquete está dañado,2036-11-29,16:15:35,S
+138,138,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2037-01-10,18:25:40,P
+139,139,D,El vehículo asignado no enciende,2037-02-21,20:35:45,P
+140,140,E,La direccion asignada presenta demasiado tráfico,2037-04-03,22:45:50,S
+141,141,A,La fecha de entrega no coincide con la fecha establecida de llegada,2037-05-15,01:55:55,S
+142,142,B,Hay paquetes que no están sellados correctamente,2037-06-26,04:05:00,P
+143,143,C,La documentación presenta datos erróneos,2037-08-07,06:15:05,S
+144,144,D,El vehiculo sufrió derrame de aceite,2037-09-18,08:25:10,P
+145,145,E,La direccion no coincide con el pedido del cliente,2037-10-29,10:35:15,P
+146,146,C,El transportista no se le dio la documentación correspondiente,2037-12-10,12:45:20,S
+147,147,B,El sello del paquete está dañado,2038-01-21,14:55:25,S
+148,148,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2038-03-04,17:05:30,P
+149,149,D,El vehículo asignado no enciende,2038-04-15,19:15:35,P
+150,150,E,La direccion asignada presenta demasiado tráfico,2038-05-26,21:25:40,S
+151,151,A,La fecha de entrega no coincide con la fecha establecida de llegada,2038-07-07,23:35:45,S
+152,152,B,Hay paquetes que no están sellados correctamente,2038-08-18,01:45:50,P
+153,153,C,La documentación presenta datos erróneos,2038-09-29,03:55:55,S
+154,154,D,El vehiculo sufrió derrame de aceite,2038-11-10,06:05:00,P
+155,155,E,La direccion no coincide con el pedido del cliente,2038-12-21,08:15:05,P
+156,156,C,El transportista no se le dio la documentación correspondiente,2039-02-01,10:25:10,S
+157,157,B,El sello del paquete está dañado,2039-03-14,12:35:15,S
+158,158,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2039-04-25,14:45:20,P
+159,159,D,El vehículo asignado no enciende,2039-06-06,16:55:25,P
+160,160,E,La direccion asignada presenta demasiado tráfico,2039-07-17,19:05:30,S
+161,161,A,La fecha de entrega no coincide con la fecha establecida de llegada,2039-08-28,21:15:35,S
+162,162,B,Hay paquetes que no están sellados correctamente,2039-10-09,23:25:40,P
+163,163,C,La documentación presenta datos erróneos,2039-11-20,01:35:45,S
+164,164,D,El vehiculo sufrió derrame de aceite,2040-01-01,03:45:50,P
+165,165,E,La direccion no coincide con el pedido del cliente,2040-02-12,05:55:55,P
+166,166,C,El transportista no se le dio la documentación correspondiente,2024-03-24,07:05:00,S
+167,167,B,El sello del paquete está dañado,2024-04-05,09:15:05,S
+168,168,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-05-16,11:25:10,P
+169,169,D,El vehículo asignado no enciende,2024-06-27,13:35:15,P
+170,170,E,La direccion asignada presenta demasiado tráfico,2024-08-07,15:45:20,S
+171,171,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-09-17,17:55:25,S
+172,172,B,Hay paquetes que no están sellados correctamente,2024-10-28,20:05:30,P
+173,173,C,La documentación presenta datos erróneos,2024-12-08,22:15:35,S
+174,174,D,El vehiculo sufrió derrame de aceite,2024-01-18,00:25:40,P
+175,175,E,La direccion no coincide con el pedido del cliente,2024-02-29,02:35:45,P
+176,176,C,El transportista no se le dio la documentación correspondiente,2024-04-10,04:45:50,S
+177,177,B,El sello del paquete está dañado,2024-05-21,06:55:55,S
+178,178,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-07-01,09:05:00,P
+179,179,D,El vehículo asignado no enciende,2024-08-12,11:15:05,P
+180,180,E,La direccion asignada presenta demasiado tráfico,2024-09-22,13:25:10,S
+181,181,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-11-02,15:35:15,S
+182,182,B,Hay paquetes que no están sellados correctamente,2024-12-13,17:45:20,P
+183,183,C,La documentación presenta datos erróneos,2024-01-24,19:55:25,S
+184,184,D,El vehiculo sufrió derrame de aceite,2024-03-05,22:05:30,P
+185,185,E,La direccion no coincide con el pedido del cliente,2024-04-15,00:15:35,P
+186,186,C,El transportista no se le dio la documentación correspondiente,2024-05-26,02:25:40,S
+187,187,B,El sello del paquete está dañado,2024-07-06,04:35:45,S
+188,188,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-08-17,06:45:50,P
+189,189,D,El vehículo asignado no enciende,2024-09-27,08:55:55,P
+190,190,E,La direccion asignada presenta demasiado tráfico,2024-11-07,11:05:00,S
+191,191,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-12-18,13:15:05,S
+192,192,B,Hay paquetes que no están sellados correctamente,2024-01-29,15:25:10,P
+193,193,C,La documentación presenta datos erróneos,2024-03-10,17:35:15,S
+194,194,D,El vehiculo sufrió derrame de aceite,2024-04-20,19:45:20,P
+195,195,E,La direccion no coincide con el pedido del cliente,2024-06-01,21:55:25,P
+196,196,C,El transportista no se le dio la documentación correspondiente,2024-07-12,00:05:30,S
+197,197,B,El sello del paquete está dañado,2024-08-22,02:15:35,S
+198,198,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-10-02,04:25:40,P
+199,199,D,El vehículo asignado no enciende,2024-11-12,06:35:45,P
+200,200,E,La direccion asignada presenta demasiado tráfico,2024-12-23,08:45:50,S
+201,201,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-02-02,10:55:55,P
+202,202,B,Hay paquetes que no están sellados correctamente,2024-03-14,13:05:00,S
+203,203,C,La documentación presenta datos erróneos,2024-04-24,15:15:05,P
+204,204,D,El vehiculo sufrió derrame de aceite,2024-06-04,17:25:10,S
+205,205,E,La direccion no coincide con el pedido del cliente,2024-07-15,19:35:15,P
+206,206,C,El transportista no se le dio la documentación correspondiente,2024-08-26,21:45:20,S
+207,207,B,El sello del paquete está dañado,2024-10-06,23:55:25,P
+208,208,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-11-17,02:05:30,S
+209,209,D,El vehículo asignado no enciende,2024-12-28,04:15:35,P
+210,210,E,La direccion asignada presenta demasiado tráfico,2024-02-08,06:25:40,S
+211,211,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-03-20,08:35:45,P
+212,212,B,Hay paquetes que no están sellados correctamente,2024-04-30,10:45:50,S
+213,213,C,La documentación presenta datos erróneos,2024-06-10,12:55:55,P
+214,214,D,El vehiculo sufrió derrame de aceite,2024-07-21,15:05:00,S
+215,215,E,La direccion no coincide con el pedido del cliente,2024-09-01,17:15:05,P
+216,216,C,El transportista no se le dio la documentación correspondiente,2024-10-12,19:25:10,S
+217,217,B,El sello del paquete está dañado,2024-11-23,21:35:15,P
+218,218,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-01-03,23:45:20,S
+219,219,D,El vehículo asignado no enciende,2024-02-14,01:55:25,P
+220,220,E,La direccion asignada presenta demasiado tráfico,2024-03-26,04:05:30,S
+221,221,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-05-06,06:15:35,P
+222,222,B,Hay paquetes que no están sellados correctamente,2024-06-17,08:25:40,S
+223,223,C,La documentación presenta datos erróneos,2024-07-28,10:35:45,P
+224,224,D,El vehiculo sufrió derrame de aceite,2024-09-08,12:45:50,S
+225,225,E,La direccion no coincide con el pedido del cliente,2024-10-19,14:55:55,P
+226,226,C,El transportista no se le dio la documentación correspondiente,2024-11-29,17:05:00,S
+227,227,B,El sello del paquete está dañado,2024-01-09,19:15:05,P
+228,228,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-02-20,21:25:10,S
+229,229,D,El vehículo asignado no enciende,2024-04-01,23:35:15,P
+230,230,E,La direccion asignada presenta demasiado tráfico,2024-05-12,01:45:20,S
+231,231,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-06-23,03:55:25,P
+232,232,B,Hay paquetes que no están sellados correctamente,2024-08-03,06:05:30,S
+233,233,C,La documentación presenta datos erróneos,2024-09-13,08:15:35,P
+234,234,D,El vehiculo sufrió derrame de aceite,2024-10-24,10:25:40,S
+235,235,E,La direccion no coincide con el pedido del cliente,2024-12-04,12:35:45,P
+236,236,C,El transportista no se le dio la documentación correspondiente,2024-01-15,14:45:50,S
+237,237,B,El sello del paquete está dañado,2024-02-25,16:55:55,P
+238,238,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-04-06,19:05:00,S
+239,239,D,El vehículo asignado no enciende,2024-05-17,21:15:05,P
+240,240,E,La direccion asignada presenta demasiado tráfico,2024-06-27,23:25:10,S
+241,241,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-08-07,01:35:15,P
+242,242,B,Hay paquetes que no están sellados correctamente,2024-09-17,03:45:20,S
+243,243,C,La documentación presenta datos erróneos,2024-10-28,05:55:25,P
+244,244,D,El vehiculo sufrió derrame de aceite,2024-12-08,08:05:30,S
+245,245,E,La direccion no coincide con el pedido del cliente,2024-01-19,10:15:35,P
+246,246,C,El transportista no se le dio la documentación correspondiente,2024-02-29,12:25:40,S
+247,247,C,La documentación presenta datos erróneos,2024-10-28,05:55:25,P
+248,248,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-04-10,14:35:45,P
+249,249,D,El vehículo asignado no enciende,2024-05-21,16:45:50,S
+250,250,E,La direccion asignada presenta demasiado tráfico,2024-07-01,18:55:55,P
+251,251,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-08-12,21:05:00,S
+252,252,B,Hay paquetes que no están sellados correctamente,2024-09-22,23:15:05,P
+253,253,C,La documentación presenta datos erróneos,2024-11-02,01:25:10,S
+254,254,D,El vehiculo sufrió derrame de aceite,2024-12-13,03:35:15,P
+255,255,E,La direccion no coincide con el pedido del cliente,2024-01-24,05:45:20,S
+256,256,C,El transportista no se le dio la documentación correspondiente,2024-03-05,07:55:25,P
+257,257,B,El sello del paquete está dañado,2024-04-15,10:05:30,S
+258,258,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-05-26,12:15:35,P
+259,259,D,El vehículo asignado no enciende,2024-07-06,14:25:40,S
+260,260,E,La direccion asignada presenta demasiado tráfico,2024-08-17,16:35:45,P
+261,261,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-09-27,18:45:50,S
+262,262,B,Hay paquetes que no están sellados correctamente,2024-11-07,20:55:55,P
+263,263,C,La documentación presenta datos erróneos,2024-12-18,23:05:00,S
+264,264,D,El vehiculo sufrió derrame de aceite,2024-01-29,01:15:05,P
+265,265,E,La direccion no coincide con el pedido del cliente,2024-03-10,03:25:10,S
+266,266,C,El transportista no se le dio la documentación correspondiente,2024-04-20,05:35:15,P
+267,267,B,El sello del paquete está dañado,2024-06-01,07:45:20,S
+268,268,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-07-12,09:55:25,P
+269,269,D,El vehículo asignado no enciende,2024-08-22,12:05:30,S
+270,270,E,La direccion asignada presenta demasiado tráfico,2024-10-02,14:15:35,P
+271,271,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-11-13,16:25:40,S
+272,272,B,Hay paquetes que no están sellados correctamente,2024-12-24,18:35:45,P
+273,273,C,La documentación presenta datos erróneos,2025-02-03,20:45:50,S
+274,274,D,El vehiculo sufrió derrame de aceite,2025-03-16,22:55:55,P
+275,275,E,La direccion no coincide con el pedido del cliente,2025-04-26,01:05:00,S
+276,276,C,El transportista no se le dio la documentación correspondiente,2025-06-06,03:15:05,P
+277,277,B,El sello del paquete está dañado,2025-07-17,05:25:10,S
+278,278,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2025-08-27,07:35:15,P
+279,279,D,El vehículo asignado no enciende,2025-10-07,09:45:20,S
+280,280,E,La direccion asignada presenta demasiado tráfico,2025-11-17,11:55:25,P
+281,281,A,La fecha de entrega no coincide con la fecha establecida de llegada,2025-12-28,14:05:30,S
+282,282,B,Hay paquetes que no están sellados correctamente,2026-02-07,16:15:35,P
+283,283,C,La documentación presenta datos erróneos,2026-03-21,18:25:40,S
+284,284,D,El vehiculo sufrió derrame de aceite,2026-05-01,20:35:45,P
+285,285,E,La direccion no coincide con el pedido del cliente,2026-06-12,22:45:50,S
+286,286,C,El transportista no se le dio la documentación correspondiente,2024-07-23,01:55:55,P
+287,287,B,El sello del paquete está dañado,2026-09-03,04:05:00,S
+288,288,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-07-23,01:55:55,P
+289,289,D,El vehículo asignado no enciende,2026-11-24,08:15:05,S
+290,290,E,La direccion asignada presenta demasiado tráfico,2026-01-04,10:25:10,P
+291,291,A,La fecha de entrega no coincide con la fecha establecida de llegada,2026-02-14,12:35:15,S
+292,292,B,Hay paquetes que no están sellados correctamente,2026-03-27,14:45:20,P
+293,293,C,La documentación presenta datos erróneos,2026-05-07,16:55:25,S
+294,294,D,El vehiculo sufrió derrame de aceite,2026-06-17,19:05:30,P
+295,295,E,La direccion no coincide con el pedido del cliente,2026-07-29,21:15:35,S
+296,296,C,El transportista no se le dio la documentación correspondiente,2026-09-08,23:25:40,P
+297,297,B,El sello del paquete está dañado,2026-10-19,01:35:45,S
+298,298,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2026-11-29,03:45:50,P
+299,299,D,El vehículo asignado no enciende,2027-01-09,05:55:55,S
+300,300,E,La direccion asignada presenta demasiado tráfico,2027-02-20,08:05:00,P
+301,301,A,La fecha de entrega no coincide con la fecha establecida de llegada,2027-04-02,10:15:05,S
+302,302,B,Hay paquetes que no están sellados correctamente,2027-05-14,12:25:10,P
+303,303,C,La documentación presenta datos erróneos,2027-06-25,14:35:15,S
+304,304,D,El vehiculo sufrió derrame de aceite,2027-08-06,16:45:20,P
+305,305,E,La direccion no coincide con el pedido del cliente,2027-09-17,18:55:25,S
+306,306,C,El transportista no se le dio la documentación correspondiente,2027-10-29,21:05:30,P
+307,307,B,El sello del paquete está dañado,2027-12-10,23:15:35,S
+308,308,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2028-01-21,01:25:40,P
+309,309,D,El vehículo asignado no enciende,2028-03-03,03:35:45,S
+310,310,E,La direccion asignada presenta demasiado tráfico,2028-04-13,05:45:50,P
+311,311,A,La fecha de entrega no coincide con la fecha establecida de llegada,2028-05-25,07:55:55,S
+312,312,B,Hay paquetes que no están sellados correctamente,2028-07-05,10:05:00,P
+313,313,C,La documentación presenta datos erróneos,2028-08-16,12:15:05,S
+314,314,D,El vehiculo sufrió derrame de aceite,2028-09-27,14:25:10,P
+315,315,E,La direccion no coincide con el pedido del cliente,2028-11-07,16:35:15,S
+316,316,C,El transportista no se le dio la documentación correspondiente,2028-12-18,18:45:20,P
+317,317,B,El sello del paquete está dañado,2029-01-29,20:55:25,S
+318,318,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2029-03-12,23:05:30,P
+319,319,D,El vehículo asignado no enciende,2029-04-23,01:15:35,S
+320,320,E,La direccion asignada presenta demasiado tráfico,2029-06-04,03:25:40,P
+321,321,A,La fecha de entrega no coincide con la fecha establecida de llegada,2029-07-16,05:35:45,S
+322,322,B,Hay paquetes que no están sellados correctamente,2029-08-27,07:45:50,P
+323,323,C,La documentación presenta datos erróneos,2029-10-07,09:55:55,S
+324,324,D,El vehiculo sufrió derrame de aceite,2029-11-18,12:05:00,P
+325,325,E,La direccion no coincide con el pedido del cliente,2029-12-30,14:15:05,S
+326,326,C,El transportista no se le dio la documentación correspondiente,2030-02-10,16:25:10,P
+327,327,B,El sello del paquete está dañado,2030-03-23,18:35:15,S
+328,328,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2030-05-04,20:45:20,P
+329,329,D,El vehículo asignado no enciende,2030-06-15,22:55:25,S
+330,330,E,La direccion asignada presenta demasiado tráfico,2024-04-17,05:45:50,P
+331,331,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-11-25,08:15:05,P
+332,332,D,El vehículo asignado no enciende,2024-01-05,10:25:10,S
+333,333,E,La direccion asignada presenta demasiado tráfico,2024-02-15,12:35:15,P
+334,334,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-03-28,14:45:20,S
+335,335,B,Hay paquetes que no están sellados correctamente,2024-05-08,16:55:25,P
+336,336,C,La documentación presenta datos erróneos,2024-06-19,19:05:30,S
+337,337,D,El vehiculo sufrió derrame de aceite,2024-07-30,21:15:35,P
+338,338,E,La direccion no coincide con el pedido del cliente,2024-09-10,23:25:40,S
+339,339,C,El transportista no se le dio la documentación correspondiente,2024-10-21,01:35:45,P
+340,340,B,El sello del paquete está dañado,2024-12-01,03:45:50,S
+341,341,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-01-12,05:55:55,P
+342,342,D,El vehículo asignado no enciende,2024-02-22,08:05:00,S
+343,343,E,La direccion asignada presenta demasiado tráfico,2024-04-05,10:15:05,P
+344,344,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-05-17,12:25:10,S
+345,345,B,Hay paquetes que no están sellados correctamente,2024-06-27,14:35:15,P
+346,346,C,La documentación presenta datos erróneos,2024-08-07,16:45:20,S
+347,347,D,El vehiculo sufrió derrame de aceite,2024-09-17,18:55:25,P
+348,348,E,La direccion no coincide con el pedido del cliente,2024-10-28,21:05:30,S
+349,349,C,El transportista no se le dio la documentación correspondiente,2024-12-08,23:15:35,P
+350,350,B,El sello del paquete está dañado,2024-01-19,01:25:40,S
+351,351,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-02-29,03:35:45,P
+352,352,D,El vehículo asignado no enciende,2024-04-10,05:45:50,S
+353,353,E,La direccion asignada presenta demasiado tráfico,2024-05-21,07:55:55,P
+354,354,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-07-02,10:05:00,S
+355,355,B,Hay paquetes que no están sellados correctamente,2024-08-13,12:15:05,P
+356,356,C,La documentación presenta datos erróneos,2024-09-23,14:25:10,S
+357,357,D,El vehiculo sufrió derrame de aceite,2024-10-04,16:35:15,P
+358,358,E,La direccion no coincide con el pedido del cliente,2024-11-15,18:45:20,S
+359,359,C,El transportista no se le dio la documentación correspondiente,2024-12-26,20:55:25,P
+360,360,B,El sello del paquete está dañado,2024-02-05,23:05:30,S
+361,361,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-03-17,01:15:35,P
+362,362,D,El vehículo asignado no enciende,2024-04-27,03:25:40,S
+363,363,E,La direccion asignada presenta demasiado tráfico,2024-06-07,05:35:45,P
+364,364,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-07-18,07:45:50,S
+365,365,B,Hay paquetes que no están sellados correctamente,2024-08-28,09:55:55,P
+366,366,C,La documentación presenta datos erróneos,2024-10-08,12:05:00,S
+367,367,D,El vehiculo sufrió derrame de aceite,2024-11-19,14:15:05,P
+368,368,E,La direccion no coincide con el pedido del cliente,2024-12-31,16:25:10,S
+369,369,C,El transportista no se le dio la documentación correspondiente,2024-02-10,18:35:15,P
+370,370,B,El sello del paquete está dañado,2024-03-23,20:45:20,S
+371,371,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-05-04,22:55:25,P
+372,372,D,El vehículo asignado no enciende,2024-06-15,01:05:30,S
+373,373,E,La direccion asignada presenta demasiado tráfico,2024-07-26,03:15:35,P
+374,374,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-09-06,05:25:40,S
+375,375,B,Hay paquetes que no están sellados correctamente,2024-10-17,07:35:45,P
+376,376,C,La documentación presenta datos erróneos,2024-11-28,09:45:50,S
+377,377,D,El vehiculo sufrió derrame de aceite,2024-01-08,11:55:55,P
+378,378,E,La direccion no coincide con el pedido del cliente,2024-02-19,14:05:00,S
+379,379,C,El transportista no se le dio la documentación correspondiente,2024-04-01,16:15:05,P
+380,380,B,El sello del paquete está dañado,2024-05-12,18:25:10,S
+381,381,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-06-23,20:35:15,P
+382,382,D,El vehículo asignado no enciende,2024-08-04,22:45:20,S
+383,383,E,La direccion asignada presenta demasiado tráfico,2024-09-15,01:55:25,P
+384,384,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-10-26,04:05:30,S
+385,385,B,Hay paquetes que no están sellados correctamente,2024-12-07,06:15:35,P
+386,386,C,La documentación presenta datos erróneos,2024-01-18,08:25:40,S
+387,387,D,El vehiculo sufrió derrame de aceite,2024-02-29,10:35:45,P
+388,388,E,La direccion no coincide con el pedido del cliente,2024-04-10,12:45:50,S
+389,389,C,El transportista no se le dio la documentación correspondiente,2024-05-21,14:55:55,P
+390,390,B,El sello del paquete está dañado,2024-07-02,17:05:00,S
+391,391,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-08-13,19:15:05,P
+392,392,D,El vehículo asignado no enciende,2024-09-24,21:25:10,S
+393,393,E,La direccion asignada presenta demasiado tráfico,2024-11-04,23:35:15,P
+394,394,A,La fecha de entrega no coincide con la fecha establecida de llegada,2024-12-15,01:45:20,S
+395,395,B,Hay paquetes que no están sellados correctamente,2025-01-26,03:55:25,P
+396,396,C,La documentación presenta datos erróneos,2025-03-08,06:05:30,S
+397,397,D,El vehiculo sufrió derrame de aceite,2025-04-19,08:15:35,P
+398,398,E,La direccion no coincide con el pedido del cliente,2023-05-31,10:25:40,S
+399,399,C,El transportista no se le dio la documentación correspondiente,2025-07-11,12:35:45,P
+400,400,B,El sello del paquete está dañado,2025-08-22,14:45:50,S
+401,401,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-10-03,16:55:55,P
+402,402,D,El vehículo asignado no enciende,2025-11-14,19:05:00,S
+403,403,E,La direccion asignada presenta demasiado tráfico,2025-12-25,21:15:05,P
+404,404,A,La fecha de entrega no coincide con la fecha establecida de llegada,2026-02-05,23:25:10,S
+405,405,B,Hay paquetes que no están sellados correctamente,2026-03-18,01:35:15,P
+406,406,C,La documentación presenta datos erróneos,2024-04-29,03:45:20,S
+407,407,D,El vehiculo sufrió derrame de aceite,2024-06-09,05:55:25,P
+408,408,E,La direccion no coincide con el pedido del cliente,2023-07-24,10:25:40,S

@@ -1,0 +1,195 @@
+<div class="section">
+  <h1>Vista de procesos de traslado</h1>
+</div>
+
+<div class="section">
+  <h2>Iniciar un proceso de traslado de mercancías</h2>
+  <p>Registrar una operación de picking para iniciar un nuevo proceso de traslado de mercancías.</p>
+  <button pButton type="button" label="Iniciar nuevo proceso" icon="pi pi-plus" (click)="navigateToPicking()"></button>
+</div>
+
+<div class="section">
+  <h2>Ver procesos registrados</h2>
+  <p class="p-mb-5">Ingresa el número de precinto de una mercancía o el código de guía de remisión de un traslado para
+    visualizar las mercancías asociadas y/o registrar una nueva operación.</p>
+  <div class="search-options">
+    <label>
+      <input type="radio" name="searchType" value="nroPrecinto" [(ngModel)]="searchType"
+        (change)="onSearchTypeChange()"> Número de Precinto
+    </label>
+    <label>
+      <input type="radio" name="searchType" value="codGuiaRemision" [(ngModel)]="searchType"
+        (change)="onSearchTypeChange()"> Código de Guía de Remisión
+    </label>
+  </div>
+
+  <div class="search-fields" *ngIf="searchType === 'nroPrecinto'">
+    <label for="nroPrecinto">Número de Precinto:</label>
+    <input id="nroPrecinto" [(ngModel)]="nroPrecinto" placeholder="Número de Precinto" class="p-inputtext p-mb-2"
+      (input)="mensajeError = ''" />
+  </div>
+
+  <div class="search-fields" *ngIf="searchType === 'codGuiaRemision'">
+    <label for="codGuiaRemision">Código de Guía de Remisión:</label>
+    <input id="codGuiaRemision" [(ngModel)]="codGuiaRemision" placeholder="Código de Guía de Remisión"
+      class="p-inputtext p-mb-2" (input)="mensajeError = ''" />
+  </div>
+
+  <button pButton type="button" label="Buscar" icon="pi pi-search" (click)="buscarProceso()"
+    style="margin-top: 10px;"></button>
+
+  <button pButton type="button" label="Registrar operación" icon="pi pi-arrow-right" class="next-button"
+    [disabled]="!resultadoBusqueda" (click)="navigateToNext()" style="margin-top: 10px; margin-left: 10px;"></button>
+
+  <div *ngIf="mensajeError" style="color: red;">{{ mensajeError }}</div>
+
+  <div class="scrollable-content" *ngIf="resultadoBusqueda">
+    <div class="p-mb-3">
+      <h2>Proceso</h2>
+      <p [ngClass]="{
+          'En preparación para salida': 'estado-proceso preparacion-salida',
+          'Traslado en curso': 'estado-proceso traslado',
+          'Recibido y en preparación para descarga': 'estado-proceso preparacion-descarga',
+          'Proceso finalizado': 'estado-proceso finalizado'
+          }[resultadoBusqueda.proceso.estado] || ''">
+        Estado: {{ resultadoBusqueda.proceso.estado }}</p>
+      <p-table [value]="resultadoBusqueda.proceso.operaciones">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Fecha</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Tipo Operación</th>
+            <th>DNI Ejecutor</th>
+            <th>DNI Supervisor</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-operacion>
+          <tr>
+            <td>{{ operacion.fecha }}</td>
+            <td>{{ operacion.horaInicio }}</td>
+            <td>{{ operacion.horaFin }}</td>
+            <td>{{ operacion.tipoOperacion }}</td>
+            <td>{{ operacion.dniEmpEjecutor }}</td>
+            <td>{{ operacion.dniEmpSupervisor }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="p-mb-3">
+      <h2>Mercancías</h2>
+      <div *ngFor="let mercancia of resultadoBusqueda.mercancias">
+        <p>Número de Precinto: {{ mercancia.nroPrecinto }}</p>
+        <p-table [value]="mercancia.stocks">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Tipo</th>
+              <th>Segmento</th>
+              <th>Unidad</th>
+              <th>Cantidad a Transportar</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-stock>
+            <tr>
+              <td>{{ stock.codStock }}</td>
+              <td>{{ stock.nombreStock }}</td>
+              <td>{{ stock.categoria }}</td>
+              <td>{{ stock.tipo }}</td>
+              <td>{{ stock.segmento }}</td>
+              <td>{{ stock.unidad }}</td>
+              <td>{{ stock.cantidadTransportar }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <div *ngIf="resultadoBusqueda.traslado" class="p-mb-3">
+      <h3>Traslado</h3>
+      <p [ngClass]="{
+          'En curso': 'estado-traslado en-curso',
+          'Recibido': 'estado-traslado recibido'
+          }[resultadoBusqueda.traslado.estado] || ''">
+        Estado: {{ resultadoBusqueda.traslado.estado }}</p>
+      <p>Código de Guía de Remisión: {{ resultadoBusqueda.traslado.codGuiaRemision }}</p>
+      <div>
+        <h4>Ruta</h4>
+        <p-table [value]="[resultadoBusqueda.traslado.ruta]">
+          <ng-template pTemplate="body" let-ruta>
+            <tr>
+              <td><strong>Código:</strong></td>
+              <td>{{ ruta.codRuta }}</td>
+            </tr>
+            <tr>
+              <td><strong>Tipo:</strong></td>
+              <td>{{ ruta.tipoRuta }}</td>
+            </tr>
+            <tr>
+              <td><strong>Distancia Total:</strong></td>
+              <td>{{ ruta.distanciaTotal }}</td>
+            </tr>
+            <tr>
+              <td><strong>Duración:</strong></td>
+              <td>{{ ruta.duracion }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+      <div>
+        <h4>Transportista</h4>
+        <p-table [value]="[resultadoBusqueda.traslado.transportista]">
+          <ng-template pTemplate="body" let-transportista>
+            <tr>
+              <td><strong>DNI:</strong></td>
+              <td>{{ transportista.dniTransportista }}</td>
+            </tr>
+            <tr>
+              <td><strong>Nombre Completo:</strong></td>
+              <td>{{ transportista.nombreCompleto }}</td>
+            </tr>
+            <tr>
+              <td><strong>Nacionalidad:</strong></td>
+              <td>{{ transportista.nacionalidad }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+      <div>
+        <h4>Vehículo</h4>
+        <p-table [value]="[resultadoBusqueda.traslado.vehiculo]">
+          <ng-template pTemplate="body" let-vehiculo>
+            <tr>
+              <td><strong>Placa:</strong></td>
+              <td>{{ vehiculo.placaVehiculo }}</td>
+            </tr>
+            <tr>
+              <td><strong>Modelo:</strong></td>
+              <td>{{ vehiculo.modeloVehiculo }}</td>
+            </tr>
+            <tr>
+              <td><strong>Año de Fabricación:</strong></td>
+              <td>{{ vehiculo.anioFabricacion }}</td>
+            </tr>
+            <tr>
+              <td><strong>Capacidad de Carga:</strong></td>
+              <td>{{ vehiculo.capacidadCarga }}</td>
+            </tr>
+            <tr>
+              <td><strong>Último Mantenimiento:</strong></td>
+              <td>{{ vehiculo.fechaUltimoMantenimiento }}</td>
+            </tr>
+            <tr>
+              <td><strong>Último Viaje:</strong></td>
+              <td>{{ vehiculo.fechaUltimoViaje }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,253 @@
+<p-stepper>
+  <p-stepperPanel header="Datos del Cliente">
+    <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+      <div class="flex flex-column h-12rem gap-4">
+
+        <h3 class="m-0 block">Datos del Cliente</h3>
+
+        <h4 class="m-0 block">Información del Cliente</h4>
+        <div class="p-col-12 p-md-6">
+          <label for="empresaAutoComplete">Nombre del Cliente:</label>
+          <p-autoComplete [style]="{'height': '2rem' }" [(ngModel)]="selectedEmpresa" [dropdown]="true"
+            [suggestions]="filteredEmpresas" (onSelect)="onEmpresaChange($event)"
+            (completeMethod)="filterEmpresas($event)" field="nombre" />
+        </div>
+
+        <h4 class="m-0 block">Datos del Representante</h4>
+        <div class="p-col-12 p-md-6">
+          <label for="representanteAutoComplete">Nombre del Representante:</label>
+          <p-autoComplete [style]="{'height': '2rem' }" [(ngModel)]="selectedRepresentante" [dropdown]="true"
+            [suggestions]="filteredRepresentantes" (onSelect)="onRepresentanteChange($event)"
+            (completeMethod)="filterRepresentantes($event)" field="nombreRepresentante"
+            [disabled]="mostrarRepresentantes" />
+        </div>
+
+        <div class="p-col-12 p-md-6">
+          <label for="cargo">Cargo:</label>
+          <input class="h-2rem" id="cargo" type="text" pInputText [ngModel]="selectedRepresentante?.cargoRepresentante"
+            readonly>
+        </div>
+
+        <h4 class="m-0 block">Información de Contacto</h4>
+        <div class="p-col-12 p-md-6">
+          <label for="correoEmpresarial">Correo Electrónico Empresarial:</label>
+          <input class="h-2rem" id="correoEmpresarial" type="email" pInputText
+            [ngModel]="selectedRepresentante?.correoEmpresarial" readonly>
+        </div>
+
+        <div class="p-col-12 p-md-6">
+          <label for="direccion">Dirección:</label>
+          <input class="h-2rem" id="direccion" type="text" pInputText [ngModel]="selectedRepresentante?.direccion"
+            readonly>
+        </div>
+
+      </div>
+      <div class="flex pt-4 justify-content-end">
+        <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+
+  <p-stepperPanel header="Detalle Pedido">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+      <div class="p-fluid">
+        <h2>Detalle Pedido</h2>
+
+        <h3>Identificación del Pedido</h3>
+        <div class="p-field">
+          <label for="codticket">Código Ticket</label>
+          <p-autoComplete [style]="{'height': '2rem' }" [(ngModel)]="selectedTicket" [dropdown]="true"
+            [suggestions]="filteredTickets" (onSelect)="onTicketChange($event)" (completeMethod)="filterTickets($event)"
+            field="idTicket" [disabled]="mostrarTickets" />
+        </div>
+
+        <div class="p-field">
+          <label for="nomProducto">Nombre del Producto</label>
+          <p-autoComplete [style]="{'height': '2rem' }" [(ngModel)]="selectedProducto" [dropdown]="true"
+            [suggestions]="filteredProductos" (onSelect)="onProductoChange($event)"
+            (completeMethod)="filterProductos($event)" field="nombre" [disabled]="mostrarProductos" />
+        </div>
+
+        <h3>Sobre la Adquisición Realizada</h3>
+        <div class="p-field">
+          <label for="fechaAdquisicion">Fecha de Adquisición</label>
+          <input class="h-2rem" id="fecha" type="text" pInputText [ngModel]="filteredProductoDetalle?.fecha" readonly>
+        </div>
+
+        <div class="p-field">
+          <label for="nroLote">Nro de Lote</label>
+          <input class="h-2rem" id="nroLote" type="text" pInputText [ngModel]="filteredProductoDetalle?.nroLote"
+            readonly>
+        </div>
+
+        <div class="p-field">
+          <label for="cantidadAdquirida">Cantidad Adquirida</label>
+          <input class="h-2rem" id="cantidad" type="text" pInputText [ngModel]="filteredProductoDetalle?.cantidad"
+            readonly>
+        </div>
+      </div>
+
+      <div class="flex pt-4 justify-content-between">
+        <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+        <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+
+  <p-stepperPanel header="Naturaleza del Reclamo">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+      <div class="flex flex-column gap-4 w-full">
+        <div class="flex flex-column gap-2">
+          <h2 class="block">Naturaleza del Reclamo</h2>
+
+          <h3 class="block">Sobre el Reclamo</h3>
+
+          <div class="p-field">
+            <label for="tipoReclamo">Tipo de Reclamo</label>
+            <p-dropdown id="tipoReclamo" [(ngModel)]="naturalezaReclamo.tipoReclamo" [options]="tipoReclamoOptions"
+              placeholder="Selecciona un tipo de reclamo">
+            </p-dropdown>
+          </div>
+
+          <div class="p-field flex flex-row gap-2">
+            <label class="block" for="descripcionProblema">Descripción del Problema</label>
+            <textarea id="descripcionProblema" [(ngModel)]="naturalezaReclamo.descripcionProblema" rows="5" cols="30"
+              pInputTextarea rows="5" cols="30" [autoResize]="true">
+                </textarea>
+          </div>
+
+          <div class="p-field">
+            <label for="fechaIncidencia">Fecha de Incidencia</label>
+            <p-calendar id="fechaIncidencia" [(ngModel)]="naturalezaReclamo.fechaIncidencia" dateFormat="yy-mm-dd">
+            </p-calendar>
+          </div>
+
+          <div class="p-field">
+            <label for="urgencia">Urgencia</label>
+            <p-dropdown id="urgencia" [(ngModel)]="naturalezaReclamo.urgencia" [options]="urgenciaOptions"
+              placeholder="Selecciona la urgencia">
+            </p-dropdown>
+          </div>
+        </div>
+
+        <div class="flex pt-4 justify-content-between">
+          <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+          <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+
+  <p-stepperPanel header="Documentacion y Evidencia">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+      <div class="flex flex-column gap-4">
+        <div class="flex flex-column">
+          <div class="p-fluid">
+            <h2>Documento y Evidencia</h2>
+
+            <div class="p-field">
+              <label for="nombreEvidencia">Nombre de la Evidencia</label>
+              <input id="nombreEvidencia" type="text" [(ngModel)]="evidenciaReclamo.nombreEvidencia" pInputText>
+            </div>
+
+            <div class="p-field">
+              <label for="tipoEvidencia">Tipo de Evidencia</label>
+              <p-dropdown id="tipoEvidencia" [(ngModel)]="evidenciaReclamo.tipoEvidencia"
+                [options]="tipoEvidenciaOptions" placeholder="Selecciona un tipo de evidencia">
+              </p-dropdown>
+            </div>
+
+            <div class="p-field">
+              <label for="tipoArchivo">Tipo de Archivo</label>
+              <p-dropdown id="tipoArchivo" [(ngModel)]="evidenciaReclamo.tipoArchivo" [options]="tipoArchivoOptions"
+                placeholder="Selecciona un tipo de archivo">
+              </p-dropdown>
+            </div>
+          </div>
+        </div>
+        <div class="flex pt-4 justify-content-between">
+          <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+          <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+
+  <p-stepperPanel header="Resolucion Deseado">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+      <div class="flex flex-column h-12rem">
+        <div class="flex flex-column gap-2">
+          <div class="p-fluid flex flex-column gap-2">
+            <h2>Resolución Deseada</h2>
+
+            <h3>Sobre el Tipo de Resolución</h3>
+
+            <div class="p-field">
+              <label for="areaResponsable">Área Responsable</label>
+              <!-- <p-autoComplete id="areaResponsable" [dropdown]="true" [(ngModel)]="resolucionReclamo.areaResponsable"
+                  [suggestions]="filteredAreas" (completeMethod)="filterAreaResponsable($event)" field="label"
+                  [forceSelection]="false">
+                </p-autoComplete> -->
+              <p-dropdown id="tipoArea" [(ngModel)]="resolucionReclamo.areaResponsable" [options]="filteredAreas"
+                placeholder="Área responsable">
+              </p-dropdown>
+            </div>
+
+            <div class="p-field">
+              <label for="accionSolicitada">Acción Solicitada</label>
+              <p-dropdown id="accionSolicitada" [(ngModel)]="resolucionReclamo.accionSolicitada"
+                [options]="accionesSolicitadas" placeholder="Selecciona una acción solicitada">
+              </p-dropdown>
+            </div>
+
+            <div class="p-field">
+              <label for="comentario">Comentario Adicional</label>
+              <textarea id="comentario" [(ngModel)]="resolucionReclamo.comentario" pInputTextarea rows="5" cols="30"
+                [autoResize]="true"> </textarea>
+            </div>
+          </div>
+
+        </div>
+        <div class="flex pt-4 justify-content-between">
+          <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+          <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+
+  <p-stepperPanel header="Confirmacion y seguimiento">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
+      <div class="flex flex-column gap-4">
+        <div class="flex flex-column">
+          <div class="p-fluid">
+            <h2>Confirmación y Seguimiento</h2>
+
+            <div class="p-field">
+              <label for="fechaEsperada">Fecha Esperada de Resolución</label>
+              <p-calendar id="fechaEsperada" [(ngModel)]="confirmacionSeguimiento.fechaEsperada" dateFormat="yy-mm-dd">
+              </p-calendar>
+            </div>
+
+            <div class="p-field">
+              <label for="nroCaso">Número de Caso</label>
+              <input id="nroCaso" type="text" [(ngModel)]="confirmacionSeguimiento.nroCaso" pInputText>
+            </div>
+
+            <div class="p-field">
+              <label for="estadoReclamo">Estado de Reclamo</label>
+              <p-dropdown id="estadoReclamo" [(ngModel)]="confirmacionSeguimiento.estadoReclamo"
+                [options]="estadosReclamo" placeholder="Selecciona el estado">
+              </p-dropdown>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex pt-4 justify-content-between">
+          <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+          <p-button label="Confirmar" icon="pi pi-check" (onClick)="submitReclamo()"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+</p-stepper>

@@ -1,0 +1,99 @@
+<p-table #dt1 [columns]="selectedPedido" [value]="pedidosFilter"
+  [globalFilterFields]="['idPedido','nombre', 'empleado', 'fecha', 'estado']" selectionMode="single"
+  [(selection)]="selectedPedido" dataKey="idPedido" [tableStyle]="{ 'min-width': '50rem' }" [rows]="10"
+  [paginator]="true" stateStorage="session" stateKey="statedemo-session">
+  <ng-template pTemplate="caption">
+    <p-button pRipple severity="success" (onClick)="nextPage()" label="Nuevo pedido" icon="pi pi-plus" class="mr-2" />
+    <p-iconField iconPosition="left">
+      <p-inputIcon>
+        <i class="pi pi-search"></i>
+      </p-inputIcon>
+      <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
+        placeholder="Buscar..." />
+    </p-iconField>
+    <p-tabMenu class="flex" [model]="filters" [activeItem]="filter" />
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="idPedido" style="width:15%">
+        Número de pedido <p-sortIcon field="idPedido" />
+      </th>
+      <th pSortableColumn="nombre" style="width:20%">
+        Departamento <p-sortIcon field="nombre" />
+      </th>
+      <th pSortableColumn="empleado" style="width:20%">
+        Encargado <p-sortIcon field="empleado" />
+      </th>
+      <th pSortableColumn="fecha" style="width:20%">
+        Fecha pedido <p-sortIcon field="fecha" />
+      </th>
+      <th pSortableColumn="estado" style="width:15%">
+        Estado <p-sortIcon field="estado" />
+      </th>
+      <th style="width:10%">
+        Detalles
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-selectedPedido>
+    <tr [pSelectableRow]="selectedPedido">
+      <td>
+        <span class="p-column-title">Número de pedido</span>
+        {{ selectedPedido.idPedido }}
+      </td>
+      <td>
+        <span class="p-column-title">Departamento</span>
+        <span class="ml-1 vertical-align-middle">{{ selectedPedido?.nombre }}</span>
+      </td>
+      <td>
+        <span class="p-column-title">Encargado</span>
+        <span class="ml-1 vertical-align-middle">{{ selectedPedido?.empleado }}</span>
+      </td>
+      <td>
+        <span class="p-column-title">Fecha</span>
+        <span class="ml-1 vertical-align-middle">{{ selectedPedido?.fecha }}</span>
+      </td>
+      <td>
+        <span class="p-column-title">Estado</span>
+        <p-tag [value]="selectedPedido?.estado" [severity]="getSeverity(selectedPedido?.estado)" />
+      </td>
+      <td>
+        <p-button (click)="getDetalles(selectedPedido?.idPedido)" label="Detalles" icon="pi pi-angle-right"
+          iconPos="right" styleClass="p-button-success"></p-button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-selectedPedido>
+    <tr [pSelectableRow]="selectedPedido">
+      <td>
+        <span class="p-column-title">Número de pedido</span>
+        {{ selectedPedido?.idPedido }}
+      </td>
+      <td>
+        <span class="p-column-title">Departamento</span>
+        <span class="ml-1 vertical-align-middle">{{ selectedPedido?.nombre }}</span>
+      </td>
+      <td>
+        <span class="p-column-title">Encargado</span>
+        <span class="ml-1 vertical-align-middle">{{ selectedPedido?.empleado }}</span>
+      </td>
+      <td>
+        <span class="p-column-title">Fecha</span>
+        <span class="ml-1 vertical-align-middle">{{ selectedPedido?.fecha }}</span>
+      </td>
+      <td>
+        <span class="p-column-title">Estado</span>
+        <p-tag [value]="selectedPedido?.estado" [severity]="getSeverity(selectedPedido?.estado)" />
+      </td>
+      <td>
+        <p-button (click)="getDetalles(selectedPedido?.idPedido)" label="Detalles" icon="pi pi-angle-right"
+          iconPos="right" styleClass="p-button-success"></p-button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="6">No customers found.</td>
+    </tr>
+  </ng-template>
+</p-table>

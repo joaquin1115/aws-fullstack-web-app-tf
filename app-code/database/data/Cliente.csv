@@ -1,0 +1,112 @@
+cod_cliente,cod_tipo_cliente,cod_estado_cliente,nombre,ruc,razon_social,fecha_registro
+1,I,A,Mantenimiento,97873814540,San Fernando S.A.,2016-09-03
+2,I,A,Producción,23326050228,San Fernando S.A.,2016-12-14
+3,I,A,Lavanderia,48574787639,San Fernando S.A.,2015-06-01
+4,I,A,Camara,66296993094,San Fernando S.A.,2016-04-28
+5,I,A,Recursos Humanos,55536546702,San Fernando S.A.,2017-10-14
+6,I,A,Almacen,19414105408,San Fernando S.A.,2016-06-01
+7,E,I,plazaVea y Vivanda,94658940637,plazaVea y Vivanda S.A.,2016-07-27
+8,E,I,Tottus,71673785837,Tottus S.A.,2017-08-08
+9,E,I,Wong y Metro,96597111266,Wong y Metro S.A.,2017-02-23
+10,E,I,Makro,52236357491,Makro S.A.,2017-01-22
+11,E,I,Bodega: Mass,84372860493,Bodega: Mass S.A.,2016-10-16
+12,E,A,Granja Azul,20461890524,NG Restaurants S.A.,2024-03-02
+13,E,A,El Chinito,20471890735,Arcos Dorados Perú S.A.,2023-06-20
+14,E,A,Bembos,20479815620,Burger King Perú S.A.,2024-06-11
+15,E,A,KFC,20509807618,Delosi S.A.,2023-10-05
+16,E,A,Pizza Hut,20515711872,Panadería y Pastelería San Antonio S.A.C.,2024-05-01
+17,E,A,Domino's Pizza,20478921340,NGR Holding S.A.C.,2024-04-14
+18,E,A,McDonald's,20518906125,Tip Top S.A.C.,2023-11-18
+19,E,A,Burger King,20518479231,Chifa Royal S.A.C.,2024-04-20
+20,E,A,Starbucks,20454673528,Madam Tusan S.A.C.,2024-01-31
+21,E,A,San Antonio,20509720385,La Panka S.A.C.,2024-04-18
+22,E,A,Don Belisario,20478931752,La Lucha Sanguchería S.A.C.,2024-05-17
+23,E,A,Tip Top,20425639871,Embarcadero 41 S.A.C.,2023-09-22
+24,E,A,Chifa Royal,20517510124,Segundo Muelle S.A.C.,2023-12-18
+25,E,A,Madam Tusan,20438957041,Tanta Perú S.A.C.,2024-03-01
+26,E,A,La Panka,20600346654,El Bodegón S.A.C.,2023-07-30
+27,E,A,La Lucha Sanguchería,20525709616,Astrid y Gastón S.A.C.,2024-01-05
+28,E,A,Embarcadero 41,20509807618,La Mar Cebichería S.A.C.,2023-09-13
+29,E,A,Segundo Muelle,20519786405,Central Restaurante S.A.C.,2024-05-03
+30,E,A,Tanta,20415904168,Maido S.A.C.,2023-09-07
+31,E,A,El Bodegón,20170124024,Osaka Perú S.A.C.,2024-02-18
+32,E,A,Astrid y Gastón,20507168902,Panchita S.A.C.,2023-11-20
+33,E,A,La Mar,20509236854,La Rosa Náutica S.A.C.,2024-04-15
+34,E,A,Central,20485865747,Huaca Pucllana S.A.C.,2024-03-03
+35,E,A,Maido,20487469325,Rafael S.A.C.,2024-04-08
+36,E,A,Osaka,20492727489,Malabar S.A.C.,2023-09-25
+37,E,A,Panchita,20481972540,Amaz S.A.C.,2024-05-25
+38,E,A,La Rosa Náutica,20525709616,Isolina S.A.C.,2023-08-04
+39,E,A,Huaca Pucllana,20436517825,El Mercado S.A.C.,2023-07-16
+40,E,A,Rafael,20438957041,Costanera 700 S.A.C.,2024-03-26
+41,E,A,Malabar,20518479231,Fiesta S.A.C.,2023-06-22
+42,E,A,Amaz,20481745632,El Hornero S.A.C.,2024-01-17
+43,E,A,Isolina,20492727489,Cevichería Bam Bam S.A.C.,2023-09-18
+44,E,A,El Mercado,20412587632,Canta Rana S.A.C.,2023-08-02
+45,E,A,Costanera 700,20457816423,La Red S.A.C.,2024-01-19
+46,E,A,Fiesta,20416939231,Los Bachiche S.A.C.,2024-02-04
+47,E,A,El Hornero,20501384075,Edo Sushi Bar S.A.C.,2023-07-17
+48,E,A,Panchita,20459876024,Nami Sushi Bar S.A.C.,2023-12-14
+49,E,A,Cevichería Bam Bam,20492853719,Lima 27 S.A.C.,2024-02-11
+50,E,A,Canta Rana,20438957041,Cala Restaurante S.A.C.,2024-04-22
+51,E,A,La Red,20518906125,Punto Azul S.A.C.,2023-10-07
+52,E,A,Los Bachiche,20485340731,La Trattoria di Mambrino S.A.C.,2024-06-09
+53,E,A,Edo Sushi Bar,20487469325,San More S.A.C.,2024-01-03
+54,E,A,Nami Sushi Bar,20600346654,La Carreta S.A.C.,2023-09-01
+55,E,A,Lima 27,20489271640,La Granja Villa S.A.C.,2023-06-26
+56,E,A,Cala,20501027056,Hikari S.A.C.,2024-02-23
+57,E,A,Punto Azul,20501027056,El Pan de la Chola S.A.C.,2023-08-02
+58,E,A,La Trattoria di Mambrino,20457816423,Panadería Carmelitas S.A.C.,2023-10-23
+59,E,A,San More,20509647589,Manolo S.A.C.,2024-02-11
+60,E,A,La Carreta,20501743958,Rústica S.A.C.,2023-11-29
+61,E,A,La Granja Villa,20521938754,La Caravana S.A.C.,2024-03-18
+62,E,A,Hikari,20492727489,El Piloto S.A.C.,2023-06-14
+63,E,A,Pastelería San Antonio,20479815620,El Verídico de Fidel S.A.C.,2023-11-28
+64,E,A,El Pan de la Chola,20459876024,El Kapallaq S.A.C.,2024-05-20
+65,E,A,Panadería Carmelitas,20529007160,Corporación Primax S.A.,2024-03-04
+66,E,A,Manolo,20100146318,Repsol Comercial S.A.C.,2024-05-19
+67,E,A,Rústica,20461890524,Lindcorp S.A.C.,2024-01-06
+68,E,A,La Caravana,20439710543,Pecsa Retail S.A.C.,2024-02-10
+69,E,A,El Piloto,20433713322,Minimarket Zeus S.A.C.,2024-01-13
+70,E,A,El Verídico de Fidel,20519368754,Maxiconsumo S.A.C.,2023-08-12
+71,E,A,El Kapallaq,20508530931,Orión Supermercados S.A.C.,2023-12-27
+72,E,A,El Grifo,20518709532,Supermercados Peruanitos S.A.C.,2023-10-30
+73,E,A,Repshop,20479815620,Supermercados Candy S.A.C.,2024-03-18
+74,E,A,Tambo+,20508530931,Tiendas Mass S.A.C.,2024-01-03
+75,E,A,Listo,20508530931,Agroindustrial Paramonga S.A.,2023-09-27
+76,E,A,Minimarket Zeus,20100070970,Complejo Agroindustrial Beta S.A.,2023-09-02
+77,E,A,Maxiconsumo,20530154627,Supermercados El Jardín S.A.C.,2024-02-13
+78,E,A,Vivanda Express,20519308412,Supermercados El Parque S.A.C.,2023-07-15
+79,E,A,Orión Supermercados,20525709616,Supermercados El Buen Vecino S.A.C.,2024-01-26
+80,E,A,Supermercados Peruanitos,20471039532,Supermercados El Ahorro S.A.C.,2024-01-11
+81,E,A,Supermercados Candy,20492853719,Supermercados Marzam S.A.C.,2023-11-25
+82,E,A,Mass,20529007160,Supermercados Mega S.A.C.,2023-06-18
+83,E,A,Agroindustrial Paramonga,20529007160,Supermercados La Colonial S.A.C.,2024-04-05
+84,E,A,Complejo Agroindustrial Beta,20493615447,Supermercados La Casa S.A.C.,2024-01-06
+85,E,A,Supermercados El Jardín,20501743958,Supermercados Don Pepe S.A.C.,2023-11-15
+86,E,A,Supermercados El Parque,20100016034,Supermercados Eco S.A.C.,2023-11-18
+87,E,A,Supermercados El Buen Vecino,20100016034,Supermercados Unicachi S.A.C.,2024-03-18
+88,E,A,Supermercados El Ahorro,20600346654,Supermercados Economax S.A.C.,2024-01-10
+89,E,A,Supermercados Marzam,20437819426,Supermercados Peruanos S.A.,2024-03-20
+90,E,A,Supermercados Mega,20518709532,Cencosud Retail Perú S.A.,2023-10-12
+91,E,A,Supermercados La Colonial,20507168902,Hipermercados Tottus S.A.,2023-06-19
+92,E,A,Supermercados La Casa,20451269308,Empresa Distribuidora de Drogas S.A.,2024-01-24
+93,E,A,Supermercados Don Pepe,20519368754,Química Suiza S.A.,2024-05-08
+94,E,A,Supermercados Eco,20509638412,La Leña S.A.C.,2024-05-22
+95,E,A,Supermercados Unicachi,20495628474,Corporación Peruana de Restaurantes S.A.C.,2024-03-01
+96,E,A,Supermercados Economax,20170979728,Norky's S.A.,2023-11-29
+97,E,A,Wong,20518709532,Roky's S.A.C.,2023-10-11
+98,E,A,Plaza Vea,20492853719,Granja Azul S.A.C.,2023-10-18
+99,E,A,Metro,20515239065,El Chinito S.A.C.,2023-09-06
+100,E,A,Tottus,20501384075,NG Restaurants S.A.,2023-06-24
+101,E,A,Wong,20438576105,Supermercados Peruanos S.A.,2023-09-01
+102,E,A,Plaza Vea,20415638082,Cencosud Retail Perú S.A.,2024-01-05
+103,E,A,Metro,20433713322,Hipermercados Tottus S.A.,2023-06-17
+104,E,A,Tottus,20170979728,Empresa Distribuidora de Drogas S.A.,2023-08-13
+105,E,A,Vivanda,20526869328,Química Suiza S.A.,2024-01-14
+106,E,A,Leña y Palo,20439710543,La Leña S.A.C.,2024-01-15
+107,E,A,AcoPollo,20393899880,Corporación Peruana de Restaurantes S.A.C.,2023-09-05
+108,E,A,La Leña,20433713322,Norky's S.A.,2023-10-14
+109,E,A,Pardos Chicken,20459876024,Roky's S.A.C.,2023-12-25
+110,E,A,Norky's,20451803968,Granja Azul S.A.C.,2023-09-01
+111,E,A,Roky's,20482791024,El Chinito S.A.C.,2023-09-23

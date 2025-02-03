@@ -1,0 +1,101 @@
+cod_local,cod_cliente,cod_ubicacion,cod_local_tipo,cod_local_ubigeo,calle,numero,denominacion,pais
+1,1,76,2,150102,Stone Corner,1674,Business Services,PER
+2,5,562,3,151002,Burning Wood,9076,Restaurants,PER
+3,1,943,1,150731,Sachtjen,2105,Automotive Aftermarket,PER
+4,2,49,4,150125,Eagle Crest,3625,Computer Software: Prepackaged Software,PER
+5,11,595,4,151032,Bonner,7692,Major Pharmaceuticals,PER
+6,5,16,1,150719,Sugar,9401,Oil & Gas Production,PER
+7,4,949,4,150508,Southridge,1306,Medical/Nursing Services,PER
+8,2,83,3,150725,Onsgard,6221,Industrial Machinery/Components,PER
+9,10,44,3,150607,Cordelia,9643,Acá se come rico,PER
+10,5,979,4,150725,Sachtjen,7093,EDP Services,PER
+11,8,680,2,150601,Dahle,280,Electric Utilities: Central,PER
+12,5,318,4,150129,Portage,3352,El caminito,PER
+13,9,443,2,150504,5th,120,Multi-Sector Companies,PER
+14,4,310,3,150707,Johnson,5375,Biotechnology: Biological Products (No Diagnostic Substances),PER
+15,8,666,3,151032,Parkside,4011,Atencion con cariño,PER
+16,5,777,3,150113,Quincy,3833,Computer Manufacturing,PER
+17,9,984,3,150906,Vera,8196,Biotechnology: Biological Products (No Diagnostic Substances),PER
+18,9,943,3,150132,Havey,4909,Auto Manufacturing,PER
+19,6,350,4,150718,Banding,4562,Medical Electronics,PER
+20,3,647,3,150403,Becker,1900,Electrical Products,PER
+21,11,401,4,150508,Kinsman,7235,Business Services,PER
+22,11,249,4,151022,Florence,2630,Integrated oil Companies,PER
+23,2,916,4,151004,Scofield,8404,Major Banks,PER
+24,6,235,4,150723,Bay,71,Other Consumer Services,PER
+25,10,70,2,150806,Porter,7344,Telecommunications Equipment,PER
+26,9,944,3,150609,Independence,7566,Oil & Gas Production,PER
+27,1,805,2,150726,Grim,8593,Industrial Machinery/Components,PER
+28,11,602,4,150728,Red Cloud,5047,Homebuilding,PER
+29,5,24,3,150110,Lien,581,Major Pharmaceuticals,PER
+30,6,678,1,150904,Scoville,2755,Major Pharmaceuticals,PER
+31,5,722,3,150133,Calypso,3059,Other Specialty Stores,PER
+32,11,218,4,150139,Morrow,9486,Real Estate Investment Trusts,PER
+33,10,932,3,150303,Golden Leaf,4433,Food Distributors,PER
+34,2,726,2,151027,Oak Valley,9964,Movies/Entertainment,PER
+35,4,938,1,150143,Pine View,8481,Electric Utilities: Central,PER
+36,4,799,3,150804,Mayer,3177,Packaged Foods,PER
+37,2,272,1,150515,Lindbergh,379,Business Services,PER
+38,11,767,2,150110,Loftsgordon,2582,Computer Software: Prepackaged Software,PER
+39,2,762,4,150506,4th,6349,Pollitos al vapor,PER
+40,8,10,4,150611,Kedzie,6173,Hotels/Resorts,PER
+41,5,329,3,150805,Michigan,2597,Real Estate Investment Trusts,PER
+42,8,988,2,150140,Westerfield,2504,El lugar de la mancha,PER
+43,1,160,2,150407,New Castle,7139,Major Banks,PER
+44,3,600,1,150501,Alpine,4136,Electrical Products,PER
+45,6,247,1,150729,Eastlawn,1336,Come lo que quieras,PER
+46,6,961,2,150731,Waxwing,9248,Biotechnology: Laboratory Analytical Instruments,PER
+47,11,317,2,150109,Barby,2388,Oil & Gas Production,PER
+48,8,626,1,151026,Summit,9583,Industrial Machinery/Components,PER
+49,3,149,2,150711,Oakridge,2299,Major Banks,PER
+50,7,443,3,150812,Sachs,2873,Banks,PER
+51,7,336,3,150723,Summit,2968,Major Pharmaceuticals,PER
+52,5,146,3,150125,Cordelia,8575,Commercial Banks,PER
+53,6,298,2,150802,Village Green,9529,Industrial Machinery/Components,PER
+54,2,852,3,150512,Arizona,6440,Water Supply,PER
+55,8,739,1,150123,Judy,1456,Major Banks,PER
+56,3,517,1,150512,Weeping Birch,2807,Medical/Dental Instruments,PER
+57,8,796,1,150138,Homewood,468,Savings Institutions,PER
+58,3,494,4,151015,Badeau,1321,Finance: Consumer Services,PER
+59,2,3,2,150612,Mandrake,5011,Telecommunications Equipment,PER
+60,5,999,3,150138,Bartelt,4459,Metal Fabrications,PER
+61,8,994,2,150721,Helena,7717,Major Chemicals,PER
+62,9,275,2,150130,School,6251,EDP Services,PER
+63,3,774,4,150110,Northland,5048,Other Pharmaceuticals,PER
+64,1,322,1,150133,Linden,9710,Major Banks,PER
+65,11,2,1,150609,Monument,7854,EDP Services,PER
+66,6,915,3,150303,Anthes,3911,Broadcasting,PER
+67,2,114,4,150810,Forest Dale,4983,Investment Managers,PER
+68,10,536,1,150601,Hermina,6552,Consumer Electronics/Appliances,PER
+69,7,269,4,151019,Vidon,6654,Biotechnology: Electromedical & Electrotherapeutic Apparatus,PER
+70,10,461,2,150505,Duke,581,Specialty Insurers,PER
+71,3,485,3,150603,Nancy,9372,Advertising,PER
+72,5,124,1,150607,Kensington,3190,Mining & Quarrying of Nonmetallic Minerals (No Fuels),PER
+73,11,514,4,151025,Northwestern,7812,Business Services,PER
+74,5,670,3,150505,Helena,6693,RETAIL: Building Materials,PER
+75,11,128,4,151027,Grim,207,Real Estate Investment Trusts,PER
+76,1,156,1,150731,Tennyson,1318,Semiconductors,PER
+77,3,797,1,150118,Pine View,7242,Other Consumer Services,PER
+78,3,973,4,150112,Buhler,3220,Al fondo hay sitio,PER
+79,5,109,3,150612,Elgar,378,Telecommunications Equipment,PER
+80,2,190,1,150512,Chinook,5064,Medical Specialities,PER
+81,11,860,3,150501,Kim,8263,Oilfield Services/Equipment,PER
+82,3,208,2,150113,5th,3580,Real Estate Investment Trusts,PER
+83,1,401,1,150708,Cottonwood,7284,Real Estate Investment Trusts,PER
+84,5,447,3,150905,Bunting,2394,Forest Products,PER
+85,7,743,2,151001,Pawling,9793,Semiconductors,PER
+86,6,705,1,150704,Lindbergh,655,Major Pharmaceuticals,PER
+87,9,349,2,150512,Dexter,9392,Natural Gas Distribution,PER
+88,11,165,4,150407,Oak,2689,Major Banks,PER
+89,8,947,3,150612,Bashford,1324,Real Estate Investment Trusts,PER
+90,1,265,1,150612,Helena,7500,Industrial Specialties,PER
+91,4,685,3,150612,North,7573,Savings Institutions,PER
+92,11,887,4,150805,Blackbird,2290,Diversified Financial Services,PER
+93,11,687,4,151002,Dwight,1423,Major Pharmaceuticals,PER
+94,3,250,1,150506,Eggendart,1409,Apparel,PER
+95,11,221,3,150514,Corben,5769,Real Estate Investment Trusts,PER
+96,9,381,4,150138,Stuart,1918,Oil Refining/Marketing,PER
+97,6,326,4,150121,Erie,1278,Packaged Foods,PER
+98,8,552,1,150120,Harbort,1890,Beverages (Production/Distribution),PER
+99,3,571,2,151020,Banding,3203,Medical/Dental Instruments,PER
+100,8,300,2,150127,Cordelia,191,Biotechnology: Electromedical & Electrotherapeutic Apparatus,PER

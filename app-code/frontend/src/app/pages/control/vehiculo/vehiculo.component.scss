@@ -1,0 +1,38 @@
+/* vehiculo.component.css */
+.estado-disponible {
+  color: green;
+  font-weight: bold;
+}
+
+.estado-no-disponible {
+  color: red;
+  font-weight: bold;
+}
+
+.estado-cuarentena {
+  color: yellow;
+  font-weight: bold;
+}
+
+.container {
+  margin: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.search-box {
+  width: 200px;
+}
+
+.p-datatable {
+  width: 100%;
+}
+
+.p-datatable-header {
+  font-weight: bold;
+}

@@ -1,0 +1,43 @@
+<!-- <p-dropdown [options]="generos" [(ngModel)]="genero" optionLabel="tipo" placeholder="Select a City" /> -->
+<form [formGroup]="pedidoForm" (ngSubmit)="sendDatosEnvio()">
+  <div class="flex flex-column gap-4">
+    <p-floatLabel>
+      <input class="h-2rem" pInputText id="nombres" formControlName="nombres" />
+      <label class="h-1rem" for="nombres">Nombres</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input class="h-2rem" pInputText id="primerApellido" formControlName="primerApellido" />
+      <label for="primerApellido">Primer apellido</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input class="h-2rem" pInputText id="segundoApellido" formControlName="segundoApellido" />
+      <label for="segundoApellido">Segundo apellido</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input class="h-2rem" pInputText id="dni" formControlName="dni" />
+      <label for="dni">DNI</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input class="h-2rem" pInputText id="telefono" formControlName="telefono" />
+      <label for="telefono">Teléfono</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input class="h-2rem" pInputText id="correo" formControlName="correo" />
+      <label for="correo">Correo empresarial</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input class="h-2rem" pInputText id="empresa" formControlName="empresa" />
+      <label for="empresa">Empresa</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <p-calendar id="fechaSolicitud" class="h-2rem" dateFormat="dd/mm/yy" formControlName="fechaSolicitud" />
+      <label for="fechaSolicitud">Fecha de solicitud</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <p-calendar class="h-2rem" dateFormat="dd/mm/yy" formControlName="fechaEntrega" />
+      <label for="fechaEntrega">Fecha de entrega</label>
+    </p-floatLabel>
+    <p-button type="submit" label="Siguiente" icon="pi pi-angle-right"
+      styleClass="flex justify-content-center align-items-center w-7rem mx-auto py-1 px-1" />
+  </div>
+</form>

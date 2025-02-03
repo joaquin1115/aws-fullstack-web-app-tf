@@ -1,0 +1,21 @@
+<h1>Traslados</h1>
+<h2>Programar Traslado</h2>
+<p-scrollPanel [style]=" { width: '22vw' , height: '59vh' }">
+      <div [style]="{display: 'flex', flexDirection: 'column', overflow: 'auto', gap: '0.8rem'}">
+        @for (trasladoProceso of filteredTraslados; track trasladoProceso.codGuiaRemision; let idx = $index) {
+        <p-card
+          [style]="{ color: 'white', height: '150px', backgroundColor: '#1180b5', margin: '0px' , padding: '0px' }"
+          class="custom-card cursor-pointer cardProcesoTraslado" class="custom-card cursor-pointer cardProcesoTraslado"
+          class="custom-card cursor-pointer cardProcesoTraslado"
+          (click)="obtenerTrasladoDetalle(trasladoProceso.codGuiaRemision)">
+          <div>Guía: {{ trasladoProceso.codGuiaRemision }}</div>
+          <div>Origen: {{ trasladoProceso.origen }}</div>
+          <div>Destino: {{ trasladoProceso.destino }}</div>
+        </p-card>
+        } @empty {
+        <p-skeleton [style]="{ height: '150px', width: '341px'}" styleClass=" mb-2" borderRadius="16px" />
+        <p-skeleton [style]="{ height: '150px', width: '341px'}" styleClass=" mb-2" borderRadius="16px" />
+        <p-skeleton [style]="{ height: '150px', width: '341px'}" styleClass=" mb-2" borderRadius="16px" />
+        }
+      </div>
+    </p-scrollPanel>

@@ -1,0 +1,52 @@
+<p-panel header="Visor de Reclamos">
+  <div class="container">
+    <div class="section">
+      <h3>1. Datos del Cliente Interno</h3>
+      <p>Nombre del cliente: {{reclamo.cliente.nombre}}</p>
+      <p>Nombre del representante: {{reclamo.cliente.representante}}</p>
+      <p>Cargo o posición: {{reclamo.cliente.cargo}}</p>
+      <p>Correo electrónico empresarial: {{reclamo.cliente.correoEmpresarial}}</p>
+      <p>Dirección empresarial: {{reclamo.cliente.direccion}}</p>
+    </div>
+
+    <div class="section">
+      <h3>2. Detalle del Pedido</h3>
+      <p>Código del ticket: {{reclamo.detalle.idTicket}}</p>
+      <p>Nombre del producto problemático: {{reclamo.detalle.nombre}}</p>
+      <p>Fecha de adquisición: {{reclamo.detalle.fechaEntrega}}</p>
+      <p>Nro de lote: {{reclamo.detalle.nroLote}}</p>
+      <p>Cantidad Adquirida: {{reclamo.detalle.cantidad}}</p>
+    </div>
+
+    <div class="section">
+      <h3>3. Naturaleza del Reclamo</h3>
+      <p>Tipo del reclamo: {{reclamo.naturaleza.descripcion}}</p>
+      <p>Descripción del problema: {{reclamo.naturaleza.comentario}}</p>
+      <p>Fecha de incidente: {{reclamo.naturaleza.fechaSuceso}}</p>
+      <p>Fecha del reclamo: {{reclamo.naturaleza.fechaReclamo}}</p>
+      <p>Urgencia: {{reclamo.naturaleza.descripcionNivelUrgencia}}</p>
+    </div>
+
+    <div class="section">
+      <h3>4. Documentación y Evidencia</h3>
+      <div *ngFor="let ev of reclamo.evidencias">
+        <p>Archivo: {{ev.evidencia}}</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>5. Resolución Deseada</h3>
+      <p>Área responsable: {{reclamo.resolucion.nombre}}</p>
+      <p>Acción solicitada: {{reclamo.resolucion.descripcion}}</p>
+      <p>Comentario adicional: {{reclamo.resolucion.comentario}}</p>
+    </div>
+
+    <div class="section">
+      <h3>6. Seguimiento</h3>
+      <p>Fecha esperada de resolución: {{reclamo.seguimiento.fechaResolucion}}</p>
+      <p>Nro de caso: {{reclamo.seguimiento.numeroCaso}}</p>
+      <p>Estado del reclamo: {{reclamo.seguimiento.descripcionEstadoReclamo}}</p>
+    </div>
+
+  </div>
+</p-panel>

@@ -1,0 +1,41 @@
+<div class="registro-incidencias">
+  <h2>Registrar Incidencia</h2>
+  <form (ngSubmit)="registrarIncidencia()" class="p-fluid">
+    <div class="form-field">
+      <label for="tipoIncidencia">Tipo de Incidencia:</label>
+      <p-dropdown [options]="tiposIncidencia" [(ngModel)]="incidencia.tipoIncidencia" name="tipoIncidencia" placeholder="Seleccione" id="tipoIncidencia"></p-dropdown>
+    </div>
+    <div class="form-field">
+      <label for="tipoProcedimiento">Tipo de Procedimiento:</label>
+      <p-dropdown [options]="tiposProcedimiento" [(ngModel)]="incidencia.tipoProcedimiento" name="tipoProcedimiento" placeholder="Seleccione" id="tipoProcedimiento"></p-dropdown>
+    </div>
+    <div class="form-field">
+      <label for="descripcion">Descripción:</label>
+      <textarea pInputTextarea id="descripcion" [(ngModel)]="incidencia.descripcion" name="descripcion" rows="5"></textarea>
+    </div>
+    <div class="form-field">
+      <label for="tipoNorma">Tipo de Norma:</label>
+      <p-dropdown [options]="tiposNorma" [(ngModel)]="incidencia.tipoNorma" name="tipoNorma" placeholder="Seleccione" id="tipoNorma"></p-dropdown>
+    </div>
+    <div class="form-field">
+      <label for="fecha">Fecha:</label>
+      <p-calendar [(ngModel)]="incidencia.fecha" name="fecha" dateFormat="yy-mm-dd" id="fecha"></p-calendar>
+    </div>
+    <div class="form-field">
+      <label for="hora">Hora:</label>
+      <p-calendar [(ngModel)]="incidencia.hora" name="hora" [timeOnly]="true" hourFormat="24" [showSeconds]="true" id="hora"></p-calendar>
+    </div>
+    <div class="form-field">
+      <label for="codTraslado">Código de Traslado:</label>
+      <p-inputNumber id="codTraslado" [(ngModel)]="incidencia.codTraslado" name="codTraslado" [showButtons]="false" [useGrouping]="false"></p-inputNumber>
+    </div>
+    <div class="form-field">
+      <label for="tiempoEstimadoProcedimiento">Tiempo Estimado de Procedimiento (minutos):</label>
+      <p-inputNumber id="tiempoEstimadoProcedimiento" [(ngModel)]="incidencia.tiempoEstimadoProcedimiento" name="tiempoEstimadoProcedimiento" [showButtons]="false" [min]="0" [useGrouping]="false"></p-inputNumber>
+    </div>
+    <div class="button-container">
+      <button type="submit" pButton label="Registrar" class="p-button-sm p-button-rounded"></button>
+      <button type="button" pButton label="Descartar" class="p-button-sm p-button-secondary p-button-rounded" (click)="descartarIncidencia()"></button>
+    </div>
+  </form>
+</div>

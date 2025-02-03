@@ -1,0 +1,4 @@
+export class CLIENTE_TIPOS {
+  CLIENTE_EXTERNO = "E";
+  CLIENTE_INTERNO = 'I';
+}

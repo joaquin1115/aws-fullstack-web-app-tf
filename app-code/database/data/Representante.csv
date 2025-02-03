@@ -1,0 +1,620 @@
+cod_representante,cod_cliente,cod_persona,num_telefono,correo_empresarial,cargo
+1,9,677,924639305,jose.castillo@sanfernando.com,Gerente de producción
+2,8,55,969435648,fernando.rodriguez@plazaveayvivanda.com,Gerente de producción
+3,7,22,991186808,fernando.diaz@tottus.com,Gerente de almacen
+4,4,912,970616094,julio.mamano@sanfernando.com,Gerente de recursos humanos
+5,4,311,963331960,alex.fernandez@sanfernando.com,Gerente de recursos humanos
+6,3,925,940307577,julio.rojas@makro.com,Gerente de almacen
+7,2,650,914540107,alex.fernandez@sanfernando.com,Gerente de producción
+8,7,372,994918097,fernando.perez@bodega:mass.com,Gerente de recursos humanos
+9,7,484,909317694,carlos.castillo@sanfernando.com,Gerente de almacen
+10,11,952,948728710,cristhian.castillo@bodega:mass.com,Gerente de recursos humanos
+11,1,338,949882189,leonardo.diaz@sanfernando.com,Gerente de recursos humanos
+12,9,609,927038917,fernando.fernandez@sanfernando.com,Gerente de logística
+13,10,635,966563739,leonardo.castillo@sanfernando.com,Gerente de almacen
+14,3,100,947714105,ana.rojas@bodega:mass.com,Gerente de producción
+15,8,873,926778355,juan.rojas@bodega:mass.com,Gerente de producción
+16,8,215,958169316,luis.castillo@sanfernando.com,Gerente de producción
+17,6,844,937961389,elena.martinez@sanfernando.com,Gerente de recursos humanos
+18,3,939,939635323,ana.gonzalez@tottus.com,Gerente de producción
+19,1,275,919507248,fernando.fernandez@sanfernando.com,Gerente de producción
+20,5,181,969471864,juan.castillo@wongymetro.com,Gerente de producción
+21,8,726,984537551,ana.huaman@sanfernando.com,Gerente de producción
+22,8,662,907586932,diana.gomez@sanfernando.com,Gerente de logística
+23,2,644,911893349,carlos.rodriguez@wongymetro.com,Gerente de producción
+24,8,768,920012798,luis.perez@sanfernando.com,Gerente de recursos humanos
+25,3,280,993776732,maria.gomez@wongymetro.com,Gerente de producción
+26,9,301,919749447,diego.castillo@sanfernando.com,Gerente de almacen
+27,11,437,989102024,pedro.gonzalez@sanfernando.com,Gerente de recursos humanos
+28,5,862,918681573,maria.rojas@sanfernando.com,Gerente de producción
+29,2,733,985618378,pedro.ruiz@tottus.com,Gerente de producción
+30,4,9,918396118,diego.mamano@sanfernando.com,Gerente de producción
+31,3,624,949512582,julio.martinez@wongymetro.com,Gerente de almacen
+32,9,927,979793902,leonardo.diaz@sanfernando.com,Gerente de producción
+33,4,652,988056483,carlos.perez@sanfernando.com,Gerente de recursos humanos
+34,9,902,934452455,elena.mamano@tottus.com,Gerente de producción
+35,11,659,999385330,diego.mamano@makro.com,Gerente de producción
+36,8,528,910250375,alex.cárdenas@sanfernando.com,Gerente de producción
+37,11,881,925907993,julio.vargas@sanfernando.com,Gerente de producción
+38,4,525,995766448,pedro.gonzalez@sanfernando.com,Gerente de almacen
+39,5,363,917267214,fernando.gomez@plazaveayvivanda.com,Gerente de logística
+40,11,756,912173885,elena.huaman@sanfernando.com,Gerente de logística
+41,5,319,917829372,leonardo.gomez@sanfernando.com,Gerente de recursos humanos
+42,11,266,968444872,pedro.ruiz@sanfernando.com,Gerente de producción
+43,9,379,951432685,pedro.castillo@sanfernando.com,Gerente de producción
+44,3,866,981282141,julio.gomez@makro.com,Gerente de almacen
+45,1,670,922100177,maria.huaman@sanfernando.com,Gerente de almacen
+46,7,816,984425851,diego.vargas@plazaveayvivanda.com,Gerente de logística
+47,5,825,939323391,alex.castillo@sanfernando.com,Gerente de logística
+48,8,3,977063377,leonardo.cárdenas@sanfernando.com,Gerente de producción
+49,6,958,939668651,julio.gomez@plazaveayvivanda.com,Gerente de recursos humanos
+50,3,23,943807039,ana.diaz@bodega:mass.com,Gerente de almacen
+51,7,211,977658509,pedro.martinez@sanfernando.com,Gerente de recursos humanos
+52,2,355,925255966,leonardo.rodriguez@sanfernando.com,Gerente de almacen
+53,2,680,958954005,ana.lopez@makro.com,Gerente de recursos humanos
+54,1,549,966878931,ana.castillo@bodega:mass.com,Gerente de producción
+55,11,414,979801766,fernando.huaman@bodega:mass.com,Gerente de producción
+56,7,607,983022002,ana.ruiz@sanfernando.com,Gerente de producción
+57,2,481,940457620,maria.gonzalez@wongymetro.com,Gerente de logística
+58,5,686,983932806,diego.cárdenas@tottus.com,Gerente de logística
+59,2,13,910474933,diana.cárdenas@sanfernando.com,Gerente de producción
+60,4,943,988576915,diego.rojas@sanfernando.com,Gerente de recursos humanos
+61,9,434,967917048,pedro.huaman@sanfernando.com,Gerente de almacen
+62,1,593,947313307,maria.rodriguez@wongymetro.com,Gerente de logística
+63,8,365,995451509,leonardo.vargas@sanfernando.com,Gerente de almacen
+64,4,983,977150989,diego.perez@tottus.com,Gerente de recursos humanos
+65,8,433,981224543,diana.mamano@wongymetro.com,Gerente de almacen
+66,2,91,925901963,jose.lopez@sanfernando.com,Gerente de producción
+67,6,863,994784982,juan.cárdenas@sanfernando.com,Gerente de producción
+68,11,376,986555860,jose.cárdenas@makro.com,Gerente de producción
+69,3,417,908641269,carlos.rodriguez@sanfernando.com,Gerente de producción
+70,7,244,964303197,julio.rojas@sanfernando.com,Gerente de producción
+71,3,616,985977570,luis.castillo@tottus.com,Gerente de recursos humanos
+72,6,736,960167327,juan.gonzalez@sanfernando.com,Gerente de producción
+73,3,370,947336259,julio.gonzalez@sanfernando.com,Gerente de producción
+74,9,839,921155557,diego.diaz@wongymetro.com,Gerente de logística
+75,1,402,974426756,ana.ruiz@makro.com,Gerente de recursos humanos
+76,3,72,924924870,diana.gonzalez@tottus.com,Gerente de producción
+77,7,486,926632581,alex.vargas@sanfernando.com,Gerente de logística
+78,11,829,968017893,jose.rodriguez@sanfernando.com,Gerente de producción
+79,9,537,993630964,juan.mamano@sanfernando.com,Gerente de logística
+80,9,911,993206730,ana.vargas@tottus.com,Gerente de producción
+81,3,87,954890950,cristhian.martinez@wongymetro.com,Gerente de producción
+82,6,385,911994120,alex.diaz@bodega:mass.com,Gerente de logística
+83,6,752,990038709,cristhian.gomez@bodega:mass.com,Gerente de recursos humanos
+84,7,122,942130134,diana.vargas@makro.com,Gerente de recursos humanos
+85,1,145,998528512,cristhian.rojas@sanfernando.com,Gerente de producción
+86,3,801,957834050,jose.fernandez@tottus.com,Gerente de recursos humanos
+87,2,979,900081594,pedro.castillo@sanfernando.com,Gerente de producción
+88,2,776,968914803,jose.fernandez@wongymetro.com,Gerente de logística
+89,7,741,902601659,maria.diaz@sanfernando.com,Gerente de producción
+90,4,988,944732454,jose.rodriguez@sanfernando.com,Gerente de producción
+91,11,521,942316842,cristhian.gonzalez@sanfernando.com,Gerente de logística
+92,4,921,993555901,luis.perez@sanfernando.com,Gerente de recursos humanos
+93,8,488,939883290,juan.huaman@sanfernando.com,Gerente de logística
+94,1,499,956005996,carlos.gonzalez@bodega:mass.com,Gerente de recursos humanos
+95,6,101,935264029,julio.gomez@sanfernando.com,Gerente de almacen
+96,9,473,975437260,carlos.vargas@sanfernando.com,Gerente de almacen
+97,6,262,983947653,luis.lopez@bodega:mass.com,Gerente de recursos humanos
+98,3,896,993222417,carlos.huaman@tottus.com,Gerente de producción
+99,10,56,970457008,maria.gomez@sanfernando.com,Gerente de almacen
+100,7,457,926944121,cristhian.ruiz@sanfernando.com,Gerente de producción
+101,10,4,965268750,diego.lopez@sanfernando.com,Gerente de producción
+102,3,592,920703010,diego.rojas@bodega:mass.com,Gerente de almacen
+103,10,580,976252137,julio.rodriguez@plazaveayvivanda.com,Gerente de logística
+104,11,487,926570920,ana.huaman@bodega:mass.com,Gerente de producción
+105,10,60,948306598,maria.rojas@sanfernando.com,Gerente de logística
+106,9,458,912605279,jose.lopez@sanfernando.com,Gerente de almacen
+107,11,494,992572162,cristhian.vargas@tottus.com,Gerente de logística
+108,1,441,924051246,luis.gonzalez@sanfernando.com,Gerente de recursos humanos
+109,9,186,935549302,leonardo.martinez@makro.com,Gerente de recursos humanos
+110,11,739,965896540,diana.gomez@plazaveayvivanda.com,Gerente de recursos humanos
+111,6,792,919499799,pedro.diaz@sanfernando.com,Gerente de recursos humanos
+112,11,802,954783679,leonardo.perez@makro.com,Gerente de almacen
+113,3,322,973193940,cristhian.vargas@plazaveayvivanda.com,Gerente de logística
+114,5,260,981314294,diana.martinez@wongymetro.com,Gerente de logística
+115,9,388,941588253,ana.mamano@plazaveayvivanda.com,Gerente de almacen
+116,4,928,907460200,cristhian.castillo@sanfernando.com,Gerente de recursos humanos
+117,1,24,903231253,maria.gonzalez@bodega:mass.com,Gerente de almacen
+118,2,62,970203026,leonardo.lopez@sanfernando.com,Gerente de almacen
+119,1,382,975137638,elena.diaz@sanfernando.com,Gerente de producción
+120,8,203,906175791,leonardo.diaz@sanfernando.com,Gerente de producción
+121,7,718,964650943,diego.cárdenas@tottus.com,Gerente de producción
+122,11,551,905373901,elena.gomez@sanfernando.com,Gerente de logística
+123,1,789,906381167,julio.gomez@makro.com,Gerente de almacen
+124,3,562,950285779,diego.mamano@sanfernando.com,Gerente de recursos humanos
+125,10,656,995355830,maria.gomez@wongymetro.com,Gerente de producción
+126,3,204,960708987,jose.huaman@sanfernando.com,Gerente de producción
+127,6,124,929791742,maria.huaman@tottus.com,Gerente de producción
+128,7,407,931609221,luis.rodriguez@wongymetro.com,Gerente de almacen
+129,7,59,903696585,julio.martinez@plazaveayvivanda.com,Gerente de almacen
+130,9,277,906402471,leonardo.gonzalez@makro.com,Gerente de recursos humanos
+131,6,689,978195692,maria.mamano@plazaveayvivanda.com,Gerente de producción
+132,9,585,930560939,diego.rojas@plazaveayvivanda.com,Gerente de logística
+133,6,880,939591967,cristhian.mamano@makro.com,Gerente de almacen
+134,9,140,952179111,ana.rojas@plazaveayvivanda.com,Gerente de recursos humanos
+135,5,16,987273329,carlos.rodriguez@plazaveayvivanda.com,Gerente de recursos humanos
+136,3,149,947814026,carlos.mamano@sanfernando.com,Gerente de producción
+137,3,890,985055132,fernando.ruiz@sanfernando.com,Gerente de logística
+138,4,446,913620324,luis.diaz@bodega:mass.com,Gerente de producción
+139,3,759,924047143,leonardo.lopez@sanfernando.com,Gerente de producción
+140,11,472,910652388,fernando.gonzalez@wongymetro.com,Gerente de logística
+141,4,428,935840103,ana.vargas@wongymetro.com,Gerente de recursos humanos
+142,2,490,901795056,diana.rojas@sanfernando.com,Gerente de almacen
+143,4,821,906068399,cristhian.gomez@plazaveayvivanda.com,Gerente de recursos humanos
+144,8,161,996750510,ana.perez@sanfernando.com,Gerente de almacen
+145,5,717,935525683,jose.mamano@sanfernando.com,Gerente de recursos humanos
+146,8,41,968363411,jose.ruiz@makro.com,Gerente de producción
+147,6,853,906160627,ana.ruiz@sanfernando.com,Gerente de recursos humanos
+148,11,199,905926904,elena.gomez@sanfernando.com,Gerente de recursos humanos
+149,3,336,935635263,elena.gomez@sanfernando.com,Gerente de almacen
+150,8,251,994107386,julio.lopez@sanfernando.com,Gerente de producción
+151,6,804,953527694,jose.perez@sanfernando.com,Gerente de logística
+152,3,313,977534241,elena.castillo@wongymetro.com,Gerente de producción
+153,8,640,979171584,maria.rodriguez@sanfernando.com,Gerente de producción
+154,10,98,946036375,diego.fernandez@sanfernando.com,Gerente de logística
+155,10,962,909206297,julio.mamano@tottus.com,Gerente de producción
+156,3,349,988107868,diana.huaman@plazaveayvivanda.com,Gerente de logística
+157,7,375,939821531,julio.vargas@plazaveayvivanda.com,Gerente de logística
+158,3,88,943815764,diana.rojas@tottus.com,Gerente de almacen
+159,3,557,901212244,diana.cárdenas@sanfernando.com,Gerente de almacen
+160,10,583,953893057,cristhian.martinez@sanfernando.com,Gerente de producción
+161,4,907,917149461,jose.mamano@makro.com,Gerente de recursos humanos
+162,1,591,986236720,jose.martinez@sanfernando.com,Gerente de producción
+163,8,871,909572950,diana.ruiz@bodega:mass.com,Gerente de producción
+164,10,178,982122805,alex.lopez@wongymetro.com,Gerente de producción
+165,3,775,976032351,alex.fernandez@wongymetro.com,Gerente de recursos humanos
+166,7,632,943852565,elena.martinez@sanfernando.com,Gerente de logística
+167,4,748,972653624,jose.lopez@sanfernando.com,Gerente de recursos humanos
+168,7,285,959783504,ana.lopez@bodega:mass.com,Gerente de recursos humanos
+169,5,281,912966711,cristhian.huaman@makro.com,Gerente de producción
+170,1,292,938952879,julio.perez@wongymetro.com,Gerente de almacen
+171,3,749,917392264,pedro.fernandez@wongymetro.com,Gerente de producción
+172,7,725,997275521,alex.rojas@makro.com,Gerente de almacen
+173,3,327,903168168,juan.gomez@sanfernando.com,Gerente de producción
+174,8,620,957984879,pedro.perez@wongymetro.com,Gerente de almacen
+175,6,125,935926908,maria.rodriguez@sanfernando.com,Gerente de logística
+176,4,663,967177075,elena.lopez@sanfernando.com,Gerente de recursos humanos
+177,1,646,989413205,diana.vargas@sanfernando.com,Gerente de almacen
+178,9,550,984418668,cristhian.martinez@plazaveayvivanda.com,Gerente de producción
+179,1,106,985411340,juan.ruiz@makro.com,Gerente de producción
+180,2,625,959048243,juan.gomez@sanfernando.com,Gerente de almacen
+181,6,803,994781439,alex.huaman@plazaveayvivanda.com,Gerente de producción
+182,11,692,932030577,alex.gonzalez@bodega:mass.com,Gerente de almacen
+183,6,579,956906579,maria.fernandez@sanfernando.com,Gerente de almacen
+184,11,195,955112038,luis.diaz@sanfernando.com,Gerente de recursos humanos
+185,7,130,915795078,luis.perez@sanfernando.com,Gerente de recursos humanos
+186,11,185,966495180,cristhian.ruiz@plazaveayvivanda.com,Gerente de logística
+187,8,963,915348155,diego.mamano@plazaveayvivanda.com,Gerente de almacen
+188,8,480,962966555,carlos.mamano@makro.com,Gerente de almacen
+189,8,769,962913694,julio.lopez@sanfernando.com,Gerente de logística
+190,3,761,901294391,carlos.perez@tottus.com,Gerente de producción
+191,3,315,962019185,julio.gonzalez@plazaveayvivanda.com,Gerente de recursos humanos
+192,1,286,900511627,ana.lopez@sanfernando.com,Gerente de producción
+193,10,110,910324684,fernando.rojas@sanfernando.com,Gerente de almacen
+194,7,454,973965780,ana.martinez@tottus.com,Gerente de almacen
+195,4,919,986258731,carlos.fernandez@tottus.com,Gerente de producción
+196,10,432,976367369,juan.gomez@sanfernando.com,Gerente de producción
+197,9,848,954806769,diego.martinez@makro.com,Gerente de recursos humanos
+198,1,152,902943954,cristhian.gonzalez@sanfernando.com,Gerente de almacen
+199,11,30,903687459,elena.gomez@sanfernando.com,Gerente de producción
+200,2,39,954678136,juan.ruiz@wongymetro.com,Gerente de recursos humanos
+201,2,208,931557454,diego.lopez@bodega:mass.com,Gerente de producción
+202,3,393,961583611,jose.martinez@sanfernando.com,Gerente de recursos humanos
+203,6,831,946583978,maria.rojas@sanfernando.com,Gerente de producción
+204,1,74,915493770,juan.ruiz@sanfernando.com,Gerente de almacen
+205,3,511,901793306,maria.gomez@makro.com,Gerente de producción
+206,6,217,990368758,carlos.vargas@makro.com,Gerente de producción
+207,5,503,973513699,jose.mamano@sanfernando.com,Gerente de almacen
+208,8,908,935253947,fernando.cárdenas@sanfernando.com,Gerente de logística
+209,9,253,914716396,fernando.perez@tottus.com,Gerente de recursos humanos
+210,3,225,937047714,julio.vargas@sanfernando.com,Gerente de almacen
+211,5,54,952067895,luis.perez@sanfernando.com,Gerente de almacen
+212,6,198,978329268,luis.gonzalez@bodega:mass.com,Gerente de producción
+213,3,994,918176735,julio.rojas@tottus.com,Gerente de almacen
+214,7,227,987612011,julio.lopez@tottus.com,Gerente de recursos humanos
+215,3,634,985806368,maria.lopez@sanfernando.com,Gerente de producción
+216,5,117,968588971,jose.diaz@sanfernando.com,Gerente de recursos humanos
+217,11,675,901003892,juan.mamano@sanfernando.com,Gerente de producción
+218,3,548,992065427,jose.lopez@sanfernando.com,Gerente de producción
+219,3,397,978998195,maria.martinez@bodega:mass.com,Gerente de producción
+220,10,174,977930909,luis.vargas@plazaveayvivanda.com,Gerente de logística
+221,1,274,968618529,jose.vargas@bodega:mass.com,Gerente de producción
+222,2,859,997868363,leonardo.rodriguez@sanfernando.com,Gerente de recursos humanos
+223,9,876,984706022,elena.martinez@plazaveayvivanda.com,Gerente de producción
+224,9,410,931517959,leonardo.rojas@sanfernando.com,Gerente de producción
+225,8,316,913262816,leonardo.mamano@sanfernando.com,Gerente de producción
+226,10,763,963858022,jose.ruiz@sanfernando.com,Gerente de producción
+227,10,699,955693415,pedro.rodriguez@bodega:mass.com,Gerente de producción
+228,8,261,915554494,elena.castillo@sanfernando.com,Gerente de recursos humanos
+229,10,850,980737643,fernando.vargas@wongymetro.com,Gerente de producción
+230,1,846,993725396,elena.cárdenas@plazaveayvivanda.com,Gerente de almacen
+231,10,123,959140050,diego.martinez@plazaveayvivanda.com,Gerente de recursos humanos
+232,8,507,926148252,diego.huaman@tottus.com,Gerente de recursos humanos
+233,7,142,932856520,julio.lopez@tottus.com,Gerente de producción
+234,2,405,996020329,elena.vargas@plazaveayvivanda.com,Gerente de producción
+235,7,265,917639551,carlos.fernandez@bodega:mass.com,Gerente de recursos humanos
+236,5,8,916859207,leonardo.mamano@bodega:mass.com,Gerente de producción
+237,4,565,925765639,elena.rodriguez@sanfernando.com,Gerente de producción
+238,11,523,959879590,jose.castillo@bodega:mass.com,Gerente de producción
+239,7,574,922286146,cristhian.castillo@tottus.com,Gerente de producción
+240,4,440,999193569,julio.ruiz@plazaveayvivanda.com,Gerente de logística
+241,7,133,968991912,pedro.fernandez@sanfernando.com,Gerente de producción
+242,7,834,931638736,carlos.huaman@tottus.com,Gerente de recursos humanos
+243,6,269,978002932,diego.cárdenas@sanfernando.com,Gerente de almacen
+244,11,468,961734715,luis.castillo@plazaveayvivanda.com,Gerente de producción
+245,4,500,919013330,maria.fernandez@sanfernando.com,Gerente de producción
+246,7,978,914423081,pedro.martinez@tottus.com,Gerente de recursos humanos
+247,3,657,980377877,fernando.cárdenas@sanfernando.com,Gerente de producción
+248,8,234,989738047,fernando.martinez@bodega:mass.com,Gerente de recursos humanos
+249,6,687,972974146,elena.gomez@tottus.com,Gerente de producción
+250,1,586,990383897,juan.huaman@makro.com,Gerente de producción
+251,10,799,982207706,carlos.huaman@sanfernando.com,Gerente de producción
+252,5,982,948150498,ana.huaman@wongymetro.com,Gerente de producción
+253,1,674,911568089,leonardo.mamano@tottus.com,Gerente de producción
+254,7,111,968626618,alex.castillo@sanfernando.com,Gerente de logística
+255,7,290,993458215,elena.vargas@plazaveayvivanda.com,Gerente de producción
+256,5,267,963860106,fernando.huaman@sanfernando.com,Gerente de producción
+257,11,606,927337012,elena.huaman@sanfernando.com,Gerente de logística
+258,9,734,932966513,diana.rojas@wongymetro.com,Gerente de producción
+259,3,415,921666369,alex.gomez@plazaveayvivanda.com,Gerente de producción
+260,11,17,963151517,jose.ruiz@wongymetro.com,Gerente de recursos humanos
+261,5,989,908782709,juan.fernandez@sanfernando.com,Gerente de almacen
+262,1,165,972715596,julio.perez@sanfernando.com,Gerente de producción
+263,1,222,908713142,leonardo.castillo@sanfernando.com,Gerente de logística
+264,3,530,931802788,julio.castillo@sanfernando.com,Gerente de producción
+265,5,972,992828247,juan.mamano@sanfernando.com,Gerente de producción
+266,4,413,976012109,luis.lopez@sanfernando.com,Gerente de producción
+267,8,914,997102117,diana.martinez@sanfernando.com,Gerente de almacen
+268,8,470,904856368,luis.martinez@plazaveayvivanda.com,Gerente de logística
+269,10,456,962373967,cristhian.huaman@sanfernando.com,Gerente de producción
+270,6,633,936719467,diana.ruiz@sanfernando.com,Gerente de producción
+271,7,541,908587985,cristhian.rodriguez@sanfernando.com,Gerente de producción
+272,9,77,957939552,jose.fernandez@wongymetro.com,Gerente de producción
+273,4,629,920250341,diego.lopez@makro.com,Gerente de logística
+274,9,552,965443873,fernando.castillo@wongymetro.com,Gerente de almacen
+275,9,950,992259634,alex.rodriguez@sanfernando.com,Gerente de logística
+276,8,883,919919393,diana.gonzalez@bodega:mass.com,Gerente de logística
+277,10,818,934349694,julio.lopez@tottus.com,Gerente de recursos humanos
+278,10,334,973766738,diana.gonzalez@sanfernando.com,Gerente de almacen
+279,9,998,912187244,julio.lopez@sanfernando.com,Gerente de logística
+280,9,230,927625123,fernando.castillo@sanfernando.com,Gerente de producción
+281,8,543,979281550,ana.perez@plazaveayvivanda.com,Gerente de producción
+282,1,990,982647271,cristhian.perez@sanfernando.com,Gerente de recursos humanos
+283,10,373,908186069,alex.mamano@sanfernando.com,Gerente de producción
+284,1,368,984123260,elena.diaz@makro.com,Gerente de almacen
+285,4,196,973632697,diana.gomez@sanfernando.com,Gerente de producción
+286,5,643,901660791,leonardo.lopez@makro.com,Gerente de logística
+287,10,702,967513405,jose.vargas@plazaveayvivanda.com,Gerente de almacen
+288,10,191,979115771,jose.cárdenas@sanfernando.com,Gerente de logística
+289,2,102,904536018,jose.martinez@tottus.com,Gerente de producción
+290,8,400,967420322,fernando.gomez@wongymetro.com,Gerente de producción
+291,9,664,947483786,leonardo.gonzalez@makro.com,Gerente de almacen
+292,3,272,903624556,luis.rodriguez@sanfernando.com,Gerente de recursos humanos
+293,9,612,991574514,cristhian.diaz@sanfernando.com,Gerente de recursos humanos
+294,8,767,963375340,luis.perez@bodega:mass.com,Gerente de logística
+295,9,325,985817130,pedro.perez@wongymetro.com,Gerente de producción
+296,7,357,916326825,diana.rojas@plazaveayvivanda.com,Gerente de producción
+297,9,600,985062366,leonardo.rojas@makro.com,Gerente de logística
+298,11,374,923665552,luis.rodriguez@tottus.com,Gerente de producción
+299,8,166,985267323,alex.perez@tottus.com,Gerente de recursos humanos
+300,3,335,905125290,luis.lopez@makro.com,Gerente de recursos humanos
+301,8,532,908084357,cristhian.gonzalez@plazaveayvivanda.com,Gerente de recursos humanos
+302,8,132,917980408,cristhian.vargas@bodega:mass.com,Gerente de almacen
+303,6,29,965072157,carlos.perez@bodega:mass.com,Gerente de logística
+304,1,618,950605107,fernando.martinez@tottus.com,Gerente de recursos humanos
+305,3,32,988999180,diego.castillo@wongymetro.com,Gerente de logística
+306,2,754,948597148,jose.rodriguez@sanfernando.com,Gerente de logística
+307,7,246,922597037,leonardo.vargas@bodega:mass.com,Gerente de recursos humanos
+308,3,28,927310940,julio.rojas@plazaveayvivanda.com,Gerente de producción
+309,7,737,907624046,maria.rodriguez@sanfernando.com,Gerente de logística
+310,11,423,986610368,ana.rodriguez@makro.com,Gerente de recursos humanos
+311,1,843,982322116,maria.gomez@sanfernando.com,Gerente de almacen
+312,1,814,942014703,elena.rodriguez@sanfernando.com,Gerente de producción
+313,10,714,972015850,pedro.vargas@makro.com,Gerente de recursos humanos
+314,7,833,922549948,juan.ruiz@makro.com,Gerente de almacen
+315,4,757,967211169,diego.perez@bodega:mass.com,Gerente de producción
+316,2,452,932265419,jose.mamano@sanfernando.com,Gerente de logística
+317,9,947,994546210,alex.gonzalez@sanfernando.com,Gerente de producción
+318,3,396,947986920,pedro.huaman@wongymetro.com,Gerente de almacen
+319,8,362,954861241,alex.rodriguez@bodega:mass.com,Gerente de recursos humanos
+320,5,242,919542676,diego.gomez@plazaveayvivanda.com,Gerente de producción
+321,2,64,911828799,alex.castillo@sanfernando.com,Gerente de almacen
+322,3,84,959103503,alex.lopez@makro.com,Gerente de logística
+323,1,259,955701735,pedro.diaz@sanfernando.com,Gerente de producción
+324,11,964,989191226,leonardo.gomez@tottus.com,Gerente de almacen
+325,4,560,952603665,carlos.rodriguez@sanfernando.com,Gerente de recursos humanos
+326,4,291,919800457,alex.rojas@sanfernando.com,Gerente de almacen
+327,10,558,963168226,maria.diaz@sanfernando.com,Gerente de producción
+328,7,935,918014220,jose.rodriguez@makro.com,Gerente de almacen
+329,5,567,996122391,pedro.fernandez@makro.com,Gerente de logística
+330,5,173,999011504,ana.castillo@makro.com,Gerente de logística
+331,10,959,912479001,ana.lopez@tottus.com,Gerente de producción
+332,1,10,953646521,alex.lopez@bodega:mass.com,Gerente de logística
+333,5,144,986626244,elena.castillo@sanfernando.com,Gerente de recursos humanos
+334,6,151,934809010,maria.castillo@tottus.com,Gerente de producción
+335,10,920,946953155,ana.diaz@sanfernando.com,Gerente de logística
+336,10,823,923567323,julio.castillo@plazaveayvivanda.com,Gerente de logística
+337,3,753,998564490,fernando.gomez@sanfernando.com,Gerente de producción
+338,9,71,940580356,elena.ruiz@sanfernando.com,Gerente de logística
+339,9,194,924668121,luis.perez@sanfernando.com,Gerente de producción
+340,1,582,932468407,leonardo.castillo@sanfernando.com,Gerente de recursos humanos
+341,4,599,916091447,elena.mamano@sanfernando.com,Gerente de producción
+342,1,75,910965150,alex.lopez@bodega:mass.com,Gerente de recursos humanos
+343,1,636,972587009,jose.vargas@tottus.com,Gerente de producción
+344,5,37,947777127,diana.vargas@sanfernando.com,Gerente de producción
+345,7,369,916928746,luis.perez@sanfernando.com,Gerente de almacen
+346,9,960,952073238,luis.perez@plazaveayvivanda.com,Gerente de recursos humanos
+347,8,743,940097407,julio.perez@makro.com,Gerente de almacen
+348,8,854,954665073,juan.cárdenas@sanfernando.com,Gerente de producción
+349,5,672,935210047,alex.diaz@wongymetro.com,Gerente de recursos humanos
+350,11,206,947792460,alex.rodriguez@wongymetro.com,Gerente de recursos humanos
+351,10,450,904232184,jose.fernandez@sanfernando.com,Gerente de producción
+352,9,980,942859444,carlos.castillo@bodega:mass.com,Gerente de almacen
+353,6,427,956911368,alex.vargas@bodega:mass.com,Gerente de producción
+354,3,878,981475583,cristhian.rojas@tottus.com,Gerente de producción
+355,6,359,939653644,diana.lopez@sanfernando.com,Gerente de producción
+356,1,546,944060829,carlos.perez@tottus.com,Gerente de logística
+357,2,268,995702275,carlos.castillo@wongymetro.com,Gerente de logística
+358,9,341,983172764,elena.diaz@tottus.com,Gerente de producción
+359,4,976,924162635,ana.diaz@makro.com,Gerente de almacen
+360,4,688,945559636,cristhian.diaz@bodega:mass.com,Gerente de recursos humanos
+361,6,318,992383290,ana.lopez@sanfernando.com,Gerente de producción
+362,10,711,940242367,julio.gonzalez@sanfernando.com,Gerente de producción
+363,6,598,944553200,alex.gonzalez@bodega:mass.com,Gerente de producción
+364,7,997,932260886,carlos.perez@sanfernando.com,Gerente de almacen
+365,10,284,939093572,leonardo.rojas@sanfernando.com,Gerente de logística
+366,10,894,947427799,fernando.gonzalez@makro.com,Gerente de logística
+367,1,245,934082691,maria.martinez@tottus.com,Gerente de producción
+368,10,967,925762342,fernando.lopez@sanfernando.com,Gerente de producción
+369,10,685,998403174,leonardo.diaz@sanfernando.com,Gerente de almacen
+370,2,449,964577880,juan.gonzalez@sanfernando.com,Gerente de almacen
+371,4,49,952585488,jose.diaz@makro.com,Gerente de almacen
+372,1,556,979587936,jose.rojas@sanfernando.com,Gerente de producción
+373,4,294,909749832,juan.mamano@tottus.com,Gerente de producción
+374,3,877,983988936,leonardo.castillo@plazaveayvivanda.com,Gerente de almacen
+375,3,819,943287879,jose.castillo@bodega:mass.com,Gerente de almacen
+376,9,411,972659283,maria.fernandez@plazaveayvivanda.com,Gerente de logística
+377,9,697,900809191,jose.perez@sanfernando.com,Gerente de recursos humanos
+378,9,21,973008447,diego.rojas@sanfernando.com,Gerente de almacen
+379,9,73,907290616,ana.rojas@wongymetro.com,Gerente de logística
+380,5,250,974258163,cristhian.ruiz@sanfernando.com,Gerente de producción
+381,3,92,945326280,luis.rojas@tottus.com,Gerente de logística
+382,7,323,963993942,cristhian.rodriguez@plazaveayvivanda.com,Gerente de logística
+383,3,729,962886577,leonardo.martinez@sanfernando.com,Gerente de producción
+384,4,46,995791432,jose.fernandez@sanfernando.com,Gerente de producción
+385,4,957,945997710,leonardo.ruiz@sanfernando.com,Gerente de logística
+386,3,258,992829382,elena.lopez@sanfernando.com,Gerente de recursos humanos
+387,7,555,940371863,jose.perez@sanfernando.com,Gerente de logística
+388,7,667,911017758,diego.cárdenas@tottus.com,Gerente de recursos humanos
+389,2,422,954852599,diego.ruiz@sanfernando.com,Gerente de recursos humanos
+390,11,509,927732883,luis.lopez@tottus.com,Gerente de recursos humanos
+391,3,116,982738859,ana.mamano@sanfernando.com,Gerente de almacen
+392,4,778,999283033,leonardo.fernandez@sanfernando.com,Gerente de recursos humanos
+393,8,320,975789379,diana.fernandez@bodega:mass.com,Gerente de producción
+394,11,496,957516308,carlos.vargas@sanfernando.com,Gerente de logística
+395,1,813,939468190,luis.martinez@plazaveayvivanda.com,Gerente de almacen
+396,8,654,963336810,julio.martinez@sanfernando.com,Gerente de recursos humanos
+397,1,794,931788076,maria.gonzalez@sanfernando.com,Gerente de producción
+398,10,519,905468220,carlos.gonzalez@sanfernando.com,Gerente de producción
+399,4,604,931930367,elena.ruiz@sanfernando.com,Gerente de almacen
+400,7,679,931395422,pedro.mamano@sanfernando.com,Gerente de recursos humanos
+401,3,861,950751396,leonardo.rojas@wongymetro.com,Gerente de almacen
+402,6,401,903630625,diana.vargas@sanfernando.com,Gerente de almacen
+403,5,119,971180886,leonardo.gomez@makro.com,Gerente de producción
+404,3,93,939547012,julio.lopez@tottus.com,Gerente de recursos humanos
+405,8,475,933535416,alex.fernandez@tottus.com,Gerente de recursos humanos
+406,8,439,972869757,diego.martinez@sanfernando.com,Gerente de recursos humanos
+407,6,430,971295527,luis.vargas@plazaveayvivanda.com,Gerente de almacen
+408,5,751,986784109,leonardo.gomez@sanfernando.com,Gerente de recursos humanos
+409,1,773,915078736,pedro.perez@tottus.com,Gerente de producción
+410,1,641,977823689,cristhian.cárdenas@plazaveayvivanda.com,Gerente de logística
+411,11,256,956810992,fernando.gomez@plazaveayvivanda.com,Gerente de producción
+412,3,35,946078813,diana.vargas@plazaveayvivanda.com,Gerente de logística
+413,10,33,906342677,jose.rojas@sanfernando.com,Gerente de logística
+414,6,287,969924344,leonardo.perez@sanfernando.com,Gerente de logística
+415,3,105,989855321,ana.huaman@sanfernando.com,Gerente de producción
+416,6,722,970408594,julio.diaz@makro.com,Gerente de recursos humanos
+417,4,270,900124342,carlos.lopez@plazaveayvivanda.com,Gerente de producción
+418,10,857,967754481,leonardo.martinez@makro.com,Gerente de logística
+419,2,279,992814789,leonardo.huaman@wongymetro.com,Gerente de almacen
+420,9,141,903405511,carlos.mamano@sanfernando.com,Gerente de producción
+421,1,330,936540461,luis.castillo@sanfernando.com,Gerente de almacen
+422,11,392,987270297,leonardo.cárdenas@sanfernando.com,Gerente de logística
+423,5,836,974014381,jose.ruiz@wongymetro.com,Gerente de producción
+424,3,474,968174961,alex.gonzalez@plazaveayvivanda.com,Gerente de recursos humanos
+425,4,236,951867830,ana.rodriguez@plazaveayvivanda.com,Gerente de recursos humanos
+426,4,785,987959704,elena.fernandez@sanfernando.com,Gerente de almacen
+427,11,342,919719597,jose.castillo@tottus.com,Gerente de almacen
+428,7,182,993784802,cristhian.cárdenas@tottus.com,Gerente de recursos humanos
+429,8,932,947273185,diego.rojas@wongymetro.com,Gerente de producción
+430,10,855,995211618,julio.rojas@sanfernando.com,Gerente de logística
+431,7,50,991919804,ana.vargas@tottus.com,Gerente de logística
+432,10,154,924842692,cristhian.diaz@sanfernando.com,Gerente de logística
+433,4,613,982415292,fernando.gomez@sanfernando.com,Gerente de producción
+434,10,553,948259230,fernando.diaz@sanfernando.com,Gerente de almacen
+435,6,638,999572348,fernando.castillo@sanfernando.com,Gerente de recursos humanos
+436,9,70,916065359,fernando.fernandez@sanfernando.com,Gerente de producción
+437,11,909,911927420,alex.castillo@sanfernando.com,Gerente de producción
+438,10,953,934424561,maria.lopez@sanfernando.com,Gerente de recursos humanos
+439,9,856,996671059,julio.lopez@plazaveayvivanda.com,Gerente de producción
+440,2,673,920750389,ana.rojas@sanfernando.com,Gerente de almacen
+441,5,926,933958860,elena.lopez@wongymetro.com,Gerente de producción
+442,7,97,929356109,fernando.rodriguez@makro.com,Gerente de producción
+443,9,127,931278783,julio.huaman@makro.com,Gerente de producción
+444,6,187,977468512,pedro.rojas@sanfernando.com,Gerente de logística
+445,10,786,915532088,carlos.fernandez@sanfernando.com,Gerente de producción
+446,10,681,961202394,carlos.fernandez@sanfernando.com,Gerente de recursos humanos
+447,4,58,965697921,ana.ruiz@bodega:mass.com,Gerente de recursos humanos
+448,7,257,903428843,julio.gonzalez@sanfernando.com,Gerente de logística
+449,4,772,946232090,juan.perez@makro.com,Gerente de producción
+450,7,573,932640157,alex.rodriguez@tottus.com,Gerente de producción
+451,3,864,925877179,carlos.mamano@sanfernando.com,Gerente de logística
+452,2,115,998789545,elena.fernandez@sanfernando.com,Gerente de producción
+453,1,380,981797582,ana.mamano@sanfernando.com,Gerente de logística
+454,2,945,992790605,julio.ruiz@sanfernando.com,Gerente de recursos humanos
+455,2,887,924663494,diego.gonzalez@sanfernando.com,Gerente de producción
+456,9,867,921630827,julio.gonzalez@tottus.com,Gerente de almacen
+457,4,371,979265159,julio.perez@wongymetro.com,Gerente de recursos humanos
+458,2,588,994725055,elena.vargas@sanfernando.com,Gerente de logística
+459,5,882,989102219,luis.martinez@sanfernando.com,Gerente de producción
+460,1,131,996682873,luis.vargas@sanfernando.com,Gerente de logística
+461,2,805,937942658,diana.martinez@sanfernando.com,Gerente de logística
+462,4,179,970260696,diana.perez@sanfernando.com,Gerente de logística
+463,9,328,903966657,julio.ruiz@bodega:mass.com,Gerente de logística
+464,4,852,931878256,luis.diaz@plazaveayvivanda.com,Gerente de almacen
+465,4,858,985676782,juan.lopez@tottus.com,Gerente de recursos humanos
+466,2,949,947499848,diana.castillo@sanfernando.com,Gerente de logística
+467,10,630,986648226,pedro.cárdenas@sanfernando.com,Gerente de producción
+468,10,981,901797412,luis.castillo@sanfernando.com,Gerente de producción
+469,6,706,948936196,carlos.diaz@sanfernando.com,Gerente de producción
+470,11,99,917021748,diana.rojas@sanfernando.com,Gerente de producción
+471,3,563,950591919,alex.perez@wongymetro.com,Gerente de producción
+472,5,762,920475193,diego.rodriguez@sanfernando.com,Gerente de producción
+473,8,207,964636978,fernando.huaman@sanfernando.com,Gerente de almacen
+474,4,826,941905445,juan.rodriguez@sanfernando.com,Gerente de recursos humanos
+475,1,459,952121442,carlos.vargas@sanfernando.com,Gerente de producción
+476,1,651,949320028,cristhian.vargas@makro.com,Gerente de producción
+477,2,497,900222842,alex.ruiz@bodega:mass.com,Gerente de logística
+478,6,445,941631220,juan.ruiz@sanfernando.com,Gerente de producción
+479,10,784,908159532,diana.cárdenas@plazaveayvivanda.com,Gerente de producción
+480,6,929,934238027,juan.perez@makro.com,Gerente de producción
+481,9,568,907601872,ana.martinez@plazaveayvivanda.com,Gerente de logística
+482,10,61,978780950,cristhian.rodriguez@sanfernando.com,Gerente de producción
+483,7,937,904981103,elena.rojas@sanfernando.com,Gerente de producción
+484,7,693,954291137,alex.martinez@tottus.com,Gerente de logística
+485,2,724,906347509,leonardo.lopez@sanfernando.com,Gerente de almacen
+486,4,297,967940835,maria.ruiz@sanfernando.com,Gerente de almacen
+487,10,505,972956577,pedro.gonzalez@wongymetro.com,Gerente de logística
+488,5,66,931032652,ana.perez@plazaveayvivanda.com,Gerente de producción
+489,5,745,908228164,ana.mamano@makro.com,Gerente de logística
+490,11,118,953663136,fernando.mamano@sanfernando.com,Gerente de almacen
+491,5,723,924531851,maria.mamano@tottus.com,Gerente de almacen
+492,1,189,937013394,elena.rojas@wongymetro.com,Gerente de producción
+493,6,103,992762178,luis.lopez@plazaveayvivanda.com,Gerente de logística
+494,9,716,903960101,diego.gonzalez@tottus.com,Gerente de almacen
+495,11,780,912586830,pedro.rojas@tottus.com,Gerente de producción
+496,5,838,928331136,elena.ruiz@sanfernando.com,Gerente de producción
+497,11,542,933933240,pedro.rodriguez@sanfernando.com,Gerente de producción
+498,4,874,982045555,juan.lopez@sanfernando.com,Gerente de producción
+499,10,841,957248169,elena.mamano@sanfernando.com,Gerente de producción
+500,1,922,947793188,carlos.rodriguez@sanfernando.com,Gerente de producción
+501,10,398,942467210,alex.martinez@tottus.com,Gerente de logística
+502,9,412,921539943,cristhian.rodriguez@tottus.com,Gerente de recursos humanos
+503,10,842,982254031,jose.lopez@sanfernando.com,Gerente de producción
+504,4,975,905559063,maria.fernandez@makro.com,Gerente de logística
+505,4,482,989824136,ana.lopez@tottus.com,Gerente de producción
+506,8,419,938153821,jose.lopez@plazaveayvivanda.com,Gerente de almacen
+507,8,263,972721850,leonardo.gomez@sanfernando.com,Gerente de recursos humanos
+508,4,712,997889204,fernando.ruiz@sanfernando.com,Gerente de logística
+509,7,788,908911605,elena.rojas@bodega:mass.com,Gerente de producción
+510,11,913,920078718,luis.cárdenas@bodega:mass.com,Gerente de logística
+511,7,134,912693758,alex.castillo@sanfernando.com,Gerente de producción
+512,5,508,930922102,carlos.castillo@sanfernando.com,Gerente de almacen
+513,11,188,933756288,maria.perez@tottus.com,Gerente de recursos humanos
+514,2,696,992924753,carlos.cárdenas@bodega:mass.com,Gerente de recursos humanos
+515,5,539,973445494,luis.rojas@sanfernando.com,Gerente de recursos humanos
+516,4,545,996602444,alex.vargas@sanfernando.com,Gerente de logística
+517,6,429,925969040,ana.huaman@sanfernando.com,Gerente de recursos humanos
+518,4,464,962996119,pedro.diaz@sanfernando.com,Gerente de logística
+519,5,453,924333856,juan.diaz@sanfernando.com,Gerente de almacen
+520,7,510,930586586,ana.lopez@sanfernando.com,Gerente de almacen
+521,2,231,984751346,cristhian.fernandez@sanfernando.com,Gerente de almacen
+522,4,89,921824471,ana.gonzalez@plazaveayvivanda.com,Gerente de producción
+523,4,233,933123984,luis.lopez@sanfernando.com,Gerente de logística
+524,7,209,968009072,fernando.gonzalez@makro.com,Gerente de logística
+525,4,36,994373654,luis.gomez@plazaveayvivanda.com,Gerente de producción
+526,4,113,925435631,diego.diaz@makro.com,Gerente de logística
+527,5,25,941438841,maria.ruiz@tottus.com,Gerente de recursos humanos
+528,5,409,998435754,juan.huaman@sanfernando.com,Gerente de producción
+529,9,524,994763883,alex.huaman@tottus.com,Gerente de recursos humanos
+530,7,168,989451878,julio.fernandez@sanfernando.com,Gerente de producción
+531,3,271,911577753,diego.rojas@sanfernando.com,Gerente de recursos humanos
+532,3,299,980264468,carlos.rodriguez@sanfernando.com,Gerente de almacen
+533,3,491,975112154,pedro.martinez@plazaveayvivanda.com,Gerente de almacen
+534,10,793,922701533,diana.diaz@makro.com,Gerente de recursos humanos
+535,8,995,932271602,jose.vargas@sanfernando.com,Gerente de producción
+536,4,899,962679165,diego.ruiz@sanfernando.com,Gerente de producción
+537,7,758,909787372,elena.rojas@bodega:mass.com,Gerente de producción
+538,11,143,959315965,fernando.vargas@sanfernando.com,Gerente de recursos humanos
+539,5,682,906831599,juan.fernandez@plazaveayvivanda.com,Gerente de producción
+540,4,57,990670312,diana.vargas@sanfernando.com,Gerente de recursos humanos
+541,4,12,901684528,pedro.ruiz@bodega:mass.com,Gerente de recursos humanos
+542,8,622,972189397,luis.vargas@wongymetro.com,Gerente de producción
+543,7,966,935139706,elena.rodriguez@bodega:mass.com,Gerente de logística
+544,5,601,918854600,leonardo.lopez@sanfernando.com,Gerente de producción
+545,7,467,998053453,alex.perez@wongymetro.com,Gerente de almacen
+546,4,605,963339737,carlos.perez@sanfernando.com,Gerente de logística
+547,4,219,904120794,cristhian.castillo@makro.com,Gerente de logística
+548,9,80,945955453,jose.lopez@tottus.com,Gerente de almacen
+549,5,968,943828551,jose.mamano@sanfernando.com,Gerente de recursos humanos
+550,11,444,992013023,leonardo.diaz@sanfernando.com,Gerente de producción
+551,10,383,977748995,cristhian.martinez@wongymetro.com,Gerente de almacen
+552,9,495,900159007,maria.perez@bodega:mass.com,Gerente de producción
+553,8,241,918148711,carlos.vargas@bodega:mass.com,Gerente de logística
+554,2,485,910811497,ana.gonzalez@sanfernando.com,Gerente de logística
+555,1,79,977298151,diana.castillo@bodega:mass.com,Gerente de recursos humanos
+556,10,306,937857397,cristhian.rodriguez@sanfernando.com,Gerente de producción
+557,10,386,941050668,pedro.castillo@sanfernando.com,Gerente de logística
+558,1,404,952984489,jose.perez@makro.com,Gerente de recursos humanos
+559,3,728,975674456,maria.diaz@plazaveayvivanda.com,Gerente de almacen
+560,11,232,964948894,julio.diaz@wongymetro.com,Gerente de almacen
+561,11,15,954675331,julio.ruiz@tottus.com,Gerente de recursos humanos
+562,1,129,914589873,diana.castillo@sanfernando.com,Gerente de logística
+563,1,900,968469184,diego.mamano@tottus.com,Gerente de almacen
+564,5,120,951199835,luis.vargas@bodega:mass.com,Gerente de logística
+565,4,669,908010262,diego.rojas@sanfernando.com,Gerente de recursos humanos
+566,3,361,903162078,julio.lopez@bodega:mass.com,Gerente de recursos humanos
+567,2,96,943092768,diana.rojas@sanfernando.com,Gerente de producción
+568,10,991,917165761,fernando.fernandez@tottus.com,Gerente de producción
+569,5,138,970586535,jose.gonzalez@sanfernando.com,Gerente de producción
+570,2,5,910502596,luis.vargas@sanfernando.com,Gerente de logística
+571,3,934,958304000,diana.gonzalez@sanfernando.com,Gerente de producción
+572,4,750,972414069,diego.diaz@sanfernando.com,Gerente de producción
+573,10,690,949651710,julio.rojas@sanfernando.com,Gerente de recursos humanos
+574,8,781,925490586,pedro.mamano@sanfernando.com,Gerente de recursos humanos
+575,6,865,999371761,diego.vargas@bodega:mass.com,Gerente de logística
+576,1,977,947539180,jose.lopez@plazaveayvivanda.com,Gerente de producción
+577,5,304,998472172,diego.mamano@sanfernando.com,Gerente de producción
+578,2,527,940014545,luis.diaz@sanfernando.com,Gerente de almacen
+579,8,536,977826403,alex.fernandez@makro.com,Gerente de recursos humanos
+580,7,85,958398671,julio.perez@sanfernando.com,Gerente de producción
+581,6,333,921341669,pedro.lopez@sanfernando.com,Gerente de producción
+582,6,45,969538267,cristhian.huaman@sanfernando.com,Gerente de almacen
+583,9,351,994651722,jose.huaman@bodega:mass.com,Gerente de producción
+584,9,51,918333930,leonardo.martinez@sanfernando.com,Gerente de producción
+585,8,212,911704400,diana.fernandez@sanfernando.com,Gerente de almacen
+586,6,534,926548418,fernando.huaman@bodega:mass.com,Gerente de producción
+587,8,747,947021874,alex.lopez@bodega:mass.com,Gerente de recursos humanos
+588,11,360,948401443,diana.fernandez@plazaveayvivanda.com,Gerente de producción
+589,6,516,927232819,cristhian.mamano@tottus.com,Gerente de producción
+590,8,155,967976644,julio.perez@makro.com,Gerente de logística
+591,10,849,902476807,julio.vargas@sanfernando.com,Gerente de recursos humanos
+592,9,34,934198642,elena.lopez@sanfernando.com,Gerente de recursos humanos
+593,11,809,936376362,pedro.rodriguez@sanfernando.com,Gerente de almacen
+594,4,160,902976385,maria.mamano@sanfernando.com,Gerente de recursos humanos
+595,7,720,919313325,elena.martinez@bodega:mass.com,Gerente de producción
+596,8,661,906890653,juan.rojas@tottus.com,Gerente de recursos humanos
+597,10,483,987001138,diego.diaz@plazaveayvivanda.com,Gerente de almacen
+598,1,806,967151753,ana.vargas@plazaveayvivanda.com,Gerente de almacen
+599,7,200,996563920,luis.rojas@sanfernando.com,Gerente de producción
+600,2,347,958430875,leonardo.mamano@sanfernando.com,Gerente de recursos humanos
+601,4,350,905974499,cristhian.vargas@sanfernando.com,Gerente de recursos humanos
+602,11,627,986405887,ana.castillo@bodega:mass.com,Gerente de logística
+603,2,787,966581444,diana.gonzalez@sanfernando.com,Gerente de producción
+604,11,916,950537368,cristhian.rodriguez@plazaveayvivanda.com,Gerente de producción
+605,8,135,968044215,ana.ruiz@sanfernando.com,Gerente de recursos humanos
+606,7,570,996018670,leonardo.fernandez@makro.com,Gerente de almacen
+607,8,623,955926618,carlos.rojas@sanfernando.com,Gerente de logística
+608,5,807,972309236,juan.castillo@plazaveayvivanda.com,Gerente de producción
+609,1,148,934388247,leonardo.mamano@makro.com,Gerente de almacen
+610,8,595,912797637,cristhian.rojas@tottus.com,Gerente de producción
+611,9,214,908895835,ana.ruiz@bodega:mass.com,Gerente de recursos humanos
+612,3,332,926256555,diego.perez@bodega:mass.com,Gerente de logística
+613,5,971,985004723,leonardo.perez@bodega:mass.com,Gerente de logística
+614,4,82,987616903,luis.huaman@sanfernando.com,Gerente de logística
+615,8,81,904517654,elena.mamano@sanfernando.com,Gerente de almacen
+616,9,993,973785295,cristhian.fernandez@sanfernando.com,Gerente de producción
+617,7,835,973493463,fernando.huaman@sanfernando.com,Gerente de almacen
+618,2,296,978994810,ana.huaman@sanfernando.com,Gerente de logística
+619,7,721,943772697,pedro.martinez@plazaveayvivanda.com,Gerente de producción

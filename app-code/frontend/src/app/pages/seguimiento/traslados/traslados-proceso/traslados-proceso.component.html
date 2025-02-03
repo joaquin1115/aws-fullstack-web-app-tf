@@ -1,0 +1,137 @@
+<h1>Traslados</h1>
+<h2>Traslados en Proceso</h2>
+<div class="flex gap-4">
+  <div [style]="{display: 'flex', flexDirection: 'column', gap: '0.8rem', width: '350px'}">
+    <p-inputGroup>
+      <button (click)="obtenerTrasladoDetalle()" type="button" pButton icon="pi pi-search"></button>
+      <input (change)="obtenerTrasladoDetalle()" pInputText [(ngModel)]="guiaDeRemision" class="p-inputtext p-mb-2" />
+    </p-inputGroup>
+    <p-scrollPanel [style]=" { width: '22vw' , height: '59vh' }">
+      <div [style]="{display: 'flex', flexDirection: 'column', overflow: 'auto', gap: '0.8rem'}">
+        @for (trasladoProceso of filteredTraslados; track trasladoProceso.codGuiaRemision; let idx = $index) {
+        <p-card
+          [style]="{ color: 'white', height: '150px', backgroundColor: '#1180b5', margin: '0px' , padding: '0px' }"
+          class="custom-card cursor-pointer cardProcesoTraslado" class="custom-card cursor-pointer cardProcesoTraslado"
+          class="custom-card cursor-pointer cardProcesoTraslado"
+          (click)="obtenerTrasladoDetalle(trasladoProceso.codGuiaRemision)">
+          <div>Guía: {{ trasladoProceso.codGuiaRemision }}</div>
+          <div>Origen: {{ trasladoProceso.origen }}</div>
+          <div>Destino: {{ trasladoProceso.destino }}</div>
+        </p-card>
+        } @empty {
+        <p-skeleton [style]="{ height: '150px', width: '341px'}" styleClass=" mb-2" borderRadius="16px" />
+        <p-skeleton [style]="{ height: '150px', width: '341px'}" styleClass=" mb-2" borderRadius="16px" />
+        <p-skeleton [style]="{ height: '150px', width: '341px'}" styleClass=" mb-2" borderRadius="16px" />
+        }
+      </div>
+    </p-scrollPanel>
+  </div>
+
+  <div class="flex flex-column gap-3 align-items-center justify-content-between" [style]="{ height: '62vh'}">
+    @if (trasladoProceso) {
+    <div class="custom-card" class="flex flex-column gap-2" [style]="{ display: 'block', width: '30vw'}">
+      <div class="flex justify-content-between h-3rem align-items-center gap-2">
+        <h3>Guía de remisión: </h3>
+        <h3 class="p-inputtext w-20rem">{{ guiaDeRemision }}</h3>
+      </div>
+      <div class="flex justify-content-between h-3rem align-items-center gap-2">
+        <h3>Conductor designado: </h3>
+        <h3 class="p-inputtext w-20rem">{{ trasladoProceso.nombreCompletoTransportista }}</h3>
+      </div>
+      <div class="flex justify-content-between h-3rem align-items-center gap-2">
+        <h3>Placa del vehículo: </h3>
+        <h3 class="p-inputtext w-20rem">{{ trasladoProceso.placa }}</h3>
+      </div>
+      <div class="flex justify-content-between h-3rem align-items-center gap-2">
+        <h3>Origen: </h3>
+        <h3 class="p-inputtext w-20rem">{{ trasladoProceso.origen }}</h3>
+      </div>
+      <div class="flex justify-content-between h-3rem align-items-center gap-2">
+        <h3>Hora de salida: </h3>
+        <h3 class="p-inputtext w-20rem">{{ trasladoProceso.horaSalida }}</h3>
+      </div>
+      <div class="flex justify-content-between h-3rem align-items-center gap-2">
+        <h3>Destino: </h3>
+        <h3 class="p-inputtext w-20rem">{{ trasladoProceso.destino }}</h3>
+      </div>
+      <div class="flex justify-content-between h-3rem align-items-center gap-2">
+        <h3>Hora de llegada: </h3>
+        <h3 class="p-inputtext w-20rem">{{ trasladoProceso.horaSalida }}</h3>
+      </div>
+    </div>
+    } @else {
+    <div class="custom-card h-57vh" [style]="{ width: '30vw', display: 'block'}">
+      <h1 [style]="{ width: '30vw', display: 'block'}">No hay datos disponibles</h1>
+    </div>
+    }
+    <div>
+      <p-button styleClass="w-90" label="Ver guía de remisión" severity="success" />
+    </div>
+
+  </div>
+
+  <div class="flex flex-column gap-2">
+    <div style="width: 100%"><iframe [style]="{ width: '21vw', height: '21vw'}" frameborder="0" scrolling="yes"
+        marginheight="0" marginwidth="0"
+        src="https://maps.google.com/maps?width=350&amp;height=350&amp;hl=en&amp;q=GQ3Q+98R,%20Huaral%2015202+(Your%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+          href="https://www.gps.ie/sport-gps/">bike gps</a></iframe></div>
+    <h4 class="mt-1 mb-1">Status: En proceso de viaje</h4>
+    <p-button styleClass="w-full" label="Reportar incidencia" severity="danger" />
+    <p-button (click)="cambiarVerTrasladoPedido()" styleClass="w-full" label="Registrar entrega" severity="danger" />
+  </div>
+
+  <p-dialog header="Pedidos pendientes" position="right" [modal]="true" [closeOnEscape]="true"
+    [(visible)]="verTrasladoPedido" [style]="{ width: '80vw', height: '80vh' }">
+    <div class="flex flex-column gap-3">
+      <div class="flex h-3rem align-items-center gap-3">
+        <h3>Guía de remisión: </h3>
+        <h3 class="p-inputtext w-20rem">{{ guiaDeRemision }}</h3>
+      </div>
+      <!-- <p-inputGroup>
+        <button (click)="onChangeCodigoPedido()" type="button" pButton icon="pi pi-search"></button>
+        <input [(ngModel)]="codigoPedido" placeholder="Buscar por código..." class="p-inputtext p-mb-2 w-20rem" />
+      </p-inputGroup> -->
+
+      <p-table #dt1 [scrollable]="true" scrollHeight="50vh" [value]="trasladoProcesoPedidos"
+        [tableStyle]="{ 'min-width': '50rem' }" [globalFilterFields]="['idPedido']">
+        <ng-template pTemplate="caption">
+          <div class="flex">
+            <p-inputGroup styleClass="h-3rem">
+              <p-button type="button" pButton icon="pi pi-search"></p-button>
+              <input (input)="dt1.filterGlobal($any($event.target).value, 'contains')" [(ngModel)]="codigoPedido"
+                placeholder="Buscar por código..." class="p-inputtext p-mb-2 w-20rem" />
+            </p-inputGroup>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width:15%">Código del pedido</th>
+            <th style="width:15%">Detalle</th>
+            <th style="width:15%">Fecha de salida</th>
+            <th style="width:15%">Fecha de llegada</th>
+            <th style="width:30%">Destino</th>
+            <th style="width:10%">Acción</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-trasladoProcesoPedido>
+          <tr>
+            <td>{{ trasladoProcesoPedido.idPedido }}</td>
+            <td>{{ trasladoProcesoPedido.tipoPedido }}</td>
+            <td>{{ trasladoProcesoPedido.fechaSalida }}</td>
+            <td>{{ trasladoProcesoPedido.fechaLLegada }}</td>
+            <td>{{ trasladoProcesoPedido.destino }}</td>
+            <td>
+              @if (trasladoProcesoPedido.idEstadoPedido == "E") {
+              <p-button styleClass="w-full" [disabled]="true" label="Entregado" severity="success"></p-button>
+              } @else {
+              <p-button styleClass="w-full" (click)="actualizarEstadoPedido(trasladoProcesoPedido.idPedido)"
+                label="Registrar" severity="danger"></p-button>
+              }
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+  </p-dialog>
+</div>

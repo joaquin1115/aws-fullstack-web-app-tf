@@ -1,0 +1,23 @@
+<h1>Inicio</h1>
+<div class="seguimiento-wrapper">
+  <div class="flex flex-column gap-4 p-4">
+    <span>Traslados</span>
+    <p-button (onClick)="irTrasladosProceso()" styleClass="w-full" label="Traslados en Proceso" />
+    <p-button (onClick)="irTrasladosProgramado()" styleClass="w-full" label="Traslados Programados" severity="success" />
+  </div>
+  <div class="flex flex-column gap-4 p-4">
+    <span>Vehículos</span>
+    <p-button  (onClick)="irVehiculos()" styleClass="w-full" label="Vehículos Disponibles" />
+    <p-button styleClass="w-full" label="Nuevo Vehículo" severity="success" />
+  </div>
+  <div class="flex flex-column gap-4 p-4">
+    <span>Rutas</span>
+    <p-button (onClick)="irRuta()" styleClass="w-full" label="Rutas disponibles" />
+    <p-button styleClass="w-full" label="Crear nueva ruta" severity="success" />
+  </div>
+  <div class="flex flex-column gap-4 p-4">
+    <span>Transportistas</span>
+    <p-button  (onClick)="irTransportista()" styleClass="w-full" label="Transportistas" />
+    <p-button styleClass="w-full" label="Nuevo Transportista" severity="success" />
+  </div>
+</div>

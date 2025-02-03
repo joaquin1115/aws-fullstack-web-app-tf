@@ -1,0 +1,231 @@
+<h1>Vehículos</h1>
+<h2>Vehículos existentes Existentes</h2>
+<div class="flex flex-column gap-4">
+  <div class="flex flex-row gap-4">
+    <div class="card">
+			<p-table [scrollable]="true"
+      scrollHeight="500px"
+      [value]="vehiculos"
+      selectionMode="single"
+      [(selection)]="vehiculoSeleccionado"
+      dataKey="idVehiculo">
+				<ng-template pTemplate="header">
+					<tr>
+						<th style="width:10%">
+							Placa
+						</th>
+						<th style="width:20%">
+							Marca
+						</th>
+						<th style="width:20%">
+							Año de Fabricación
+						</th>
+						<th style="width:20%">
+							Capacidad de carga
+						</th>
+						<th style="width:20%">
+							Fecha último viaje
+						</th>
+            <th style="width:10%">
+							Fecha último mantenimiento
+						</th>
+            <th style="width:10%">
+							Estado Vehículo
+						</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-auto>
+					<tr [pSelectableRow]="auto" (click)="detalleVehiculo()">
+						<td>{{ auto.placa }}</td>
+						<td>{{ auto.modelo }}</td>
+						<td>{{ auto.anioFabricacion }}</td>
+						<td>{{ auto.capacidadCarga }}</td>
+            <td>{{ auto.fechaUltimoViaje }}</td>
+						<td>{{ auto.fechaUltimoMantenimiento }}</td>
+            <td>{{ auto.estado }}</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		</div>
+
+    <div class="flex flex-column gap-4">
+      <div style="width: 100%">
+        <img src="https://drex.pe/multimedia/products/images/623f2c7b4794c-FURGON-ISOTERMICO.jpg" alt="Transportista sus aportes al momento de planear las rutas" width="300" height="auto">
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-row gap-4">
+    <div class="flex flex-column gap-3 align-items-center justify-content-between" [style]="{ height: '62vh'}">
+      @if (vehiculoSeleccionado) {
+      <div class="custom-card" class="flex flex-column gap-2" [style]="{ display: 'block', width: '30vw'}">
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Placa: </h3>
+          <h3 class="p-inputtext w-20rem">{{ vehiculoSeleccionado.placa }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Modelo: </h3>
+          <h3 class="p-inputtext w-20rem">{{ vehiculoDetalle.marca}}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Año de Fabricación: </h3>
+          <h3 class="p-inputtext w-20rem">{{ vehiculoDetalle.anioFabricacion }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Capacidad de carga: </h3>
+          <h3 class="p-inputtext w-20rem">{{ vehiculoDetalle.capacidadCarga }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Tipo: </h3>
+          <h3 class="p-inputtext w-20rem">{{ vehiculoDetalle.tipo }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Fecha último mantenimiento</h3>
+          <h3 class="p-inputtext w-20rem">{{ vehiculoDetalle.fechaUltimoMantenimiento }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Estado: </h3>
+          <h3 class="p-inputtext w-20rem">{{ vehiculoDetalle.estado }}</h3>
+        </div>
+      </div>
+      } @else {
+      <div class="custom-card h-57vh" [style]="{ width: '30vw', display: 'block'}">
+        <h1 [style]="{ width: '30vw', display: 'block'}">Seleccione un registro</h1>
+      </div>
+      }
+      <p-button (click)="cambiarEditarVehiculo()" label="Actualizar Datos"  severity="danger" />
+
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <p-button (onClick)="cambiarNuevoVehiculo()" label="Nuevo Vehiculo" severity="info" class="ml-auto"></p-button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<p-dialog header="Editar Transportista" position="right" [modal]="true" [closeOnEscape]="true"
+  [(visible)]="editarVehiculo" [style]="{ width: '80vw', height: '80vh' }">
+  <div class="flex flex-column gap-3">
+    <div class="flex flex-row gap-2">
+      <h3>Marca :</h3>
+      <h3 class="p-inputtext w-20rem">{{ vehiculoMarca }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Estado: </h3>
+      <h3 class="p-inputtext w-20rem">{{ vehiculoEstado }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Fabricación: </h3>
+      <h3 class="p-inputtext w-20rem">{{ vehiculoFabricacion }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Placa: </h3>
+      <h3 class="p-inputtext w-20rem">{{ vehiculoPlaca }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Tipo: </h3>
+    <h3 class="p-inputtext w-20rem">{{ vehiculoTipo }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Carga: </h3>
+    <h3 class="p-inputtext w-20rem">{{ vehiculoCarga }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Mantenimiento: </h3>
+    <h3 class="p-inputtext w-20rem">{{ vehiculoMantenimiento }}</h3>
+    </div>
+
+  </div>
+</p-dialog>
+
+
+<p-dialog header="Registrar Nuevo Vehículo" position="right" [modal]="true" [closeOnEscape]="true"
+  [(visible)]="nuevoVehiculo" [style]="{ width: '80vw', height: '80vh' }">
+  <style>
+    .vehiculo-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .btn {
+      align-self: flex-start;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+
+  <form (ngSubmit)="onSubmit()" #vehiculoForm="ngForm" class="vehiculo-form">
+    <div class="form-group">
+      <label for="marca">Marca:</label>
+      <input type="text" id="marca" class="form-control" [(ngModel)]="vehiculo.marca" name="marca" required>
+    </div>
+
+    <div class="form-group">
+      <label for="modelo">Modelo:</label>
+      <input type="text" id="modelo" class="form-control" [(ngModel)]="vehiculo.modelo" name="modelo" required>
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" class="form-control" [(ngModel)]="vehiculo.estado" name="estado" required>
+    </div>
+
+    <div class="form-group">
+      <label for="anioFabricacion">Año de Fabricación:</label>
+      <p-calendar view="year" dateFormat="yy" type="number" id="anioFabricacion" class="form-control" [(ngModel)]="vehiculo.anioFabricacion" name="anioFabricacion" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="placa">Placa:</label>
+      <input type="text" id="placa" class="form-control" [(ngModel)]="vehiculo.placa" name="placa" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo:</label>
+      <input type="text" id="tipo" class="form-control" [(ngModel)]="vehiculo.tipo" name="tipo" required>
+    </div>
+
+    <div class="form-group">
+      <label for="capacidadCarga">Capacidad de carga:</label>
+      <input type="number" id="capacidadCarga" class="form-control" [(ngModel)]="vehiculo.capacidadCarga" name="capacidadCarga" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaMantenimiento">Fecha de último mantenimiento:</label>
+      <input type="date" id="fechaMantenimiento" class="form-control" [(ngModel)]="vehiculo.fechaMantenimiento" name="fechaMantenimiento" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!vehiculoForm.form.valid">Registrar Vehículo</button>
+  </form>
+</p-dialog>
+
+

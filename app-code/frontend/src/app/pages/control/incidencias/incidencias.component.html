@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="header">
+    <h2>Lista de Incidencias</h2>
+    <div class="filtros">
+      <label for="dropdownMes">Mes:</label>
+      <p-dropdown [options]="meses" [(ngModel)]="searchMes" placeholder="Seleccionar Mes"
+        (onChange)="filtrarIncidencias()" id="dropdownMes" class="dropdown dropdown-mes"></p-dropdown>
+      <label for="dropdownAnio">Año:</label>
+      <p-dropdown [options]="anios" [(ngModel)]="searchAnio" placeholder="Seleccionar Año"
+        (onChange)="filtrarIncidencias()" id="dropdownAnio" class="dropdown dropdown-anio"></p-dropdown>
+    </div>
+    <div class="nuevo-btn-container">
+      <button pButton type="button" label="Nueva Incidencia" routerLink="/control/registro-incidencias"
+        (click)="nuevaIncidencia()" class="nuevo-btn"></button>
+    </div>
+  </div>
+  <p-table [value]="incidenciasFiltradas" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5, 10, 20]"
+    class="p-datatable-gridlines p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Código Incidencia</th>
+        <th>Código Traslado</th>
+        <th>Tipo de Incidencia</th>
+        <th>Fecha de Ocurrencia</th>
+        <th>Hora de Ocurrencia</th>
+        <th>Estado Incidencia</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-incidencia>
+      <tr>
+        <td>{{ incidencia.codigoDeIncidencia }}</td>
+        <td>{{ incidencia.codigoDeTraslado }}</td>
+        <td>{{ incidencia.descripcionTipoDeIncidencia }}</td>
+        <td>{{ incidencia.fechaDeOcurrencia }}</td>
+        <td>{{ incidencia.horaDeOcurrencia }}</td>
+        <td>
+          <span [ngClass]="{
+            'estado-resuelta': incidencia.estadoDeIncidencia === 'Solucionado',
+            'estado-pendiente': incidencia.estadoDeIncidencia === 'Pendiente'
+          }">
+            {{ incidencia.estadoDeIncidencia }}
+          </span>
+        </td>
+        <td>
+          <p-dropdown [options]="estados" [(ngModel)]="selectedEstado"
+            (onChange)="cambiarEstado(incidencia.codigoDeIncidencia, incidencia)" id="dropdownAnio"
+            class="dropdown dropdown-anio"></p-dropdown>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

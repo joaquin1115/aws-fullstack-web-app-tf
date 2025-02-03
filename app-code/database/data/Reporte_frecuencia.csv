@@ -1,0 +1,7 @@
+cod_reporte_frecuencia,descripcion,cantidad_tiempo,unidad_tiempo
+1,Diario,1,dia
+2,Semanal,7,dia
+3,Quincenal,15,dia
+4,Mensual,1,mes
+5,Trimestral,3,mes
+6,Semestral,6,mes

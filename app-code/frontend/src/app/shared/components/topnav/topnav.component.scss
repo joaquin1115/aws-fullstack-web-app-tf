@@ -1,0 +1,14 @@
+.topnav {
+  background-color: var(--bg-sidenav);
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  color: #fff;
+}
+
+.info {
+  margin: auto 2rem;
+  list-style: none;
+}

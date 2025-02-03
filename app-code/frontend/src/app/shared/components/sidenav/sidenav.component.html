@@ -1,0 +1,26 @@
+<div class="sidenav" [ngClass]="collapsed ? '': 'sidenav-collapsed' ">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    @if ( !collapsed ) {
+    <div class="logo-text">
+      <img src="../../../../assets/logo.png" alt="">
+    </div>
+    <button class="btn-close" (click)="closeSidenav()">
+      <i class="fal fa-times close-icon"></i>
+    </button>
+    }
+  </div>
+  <ul class="sidenav-nav">
+    @for (data of navData; track data.routeLink) {
+    <li class="sidenav-nav-item">
+      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <i [className]="'sidenav-link-icon ' + data.icon" aria-hidden="true"></i>
+        @if ( !collapsed ) {
+        <span class="sidenav-link-text">{{data.label}}</span>
+        }
+      </a>
+    </li>
+    }
+  </ul>
+</div>

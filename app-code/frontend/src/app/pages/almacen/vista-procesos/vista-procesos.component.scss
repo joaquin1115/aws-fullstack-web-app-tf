@@ -1,0 +1,195 @@
+.search-options {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.search-fields {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.scrollable-content {
+  max-height: 70vh;
+  overflow-y: auto;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.mercancia {
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.estado-proceso {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+  width: 50%;
+
+  &.preparacion-salida {
+    background-color: #ffc107; // Amarillo
+  }
+
+  &.traslado {
+    background-color: #17a2b8; // Azul
+  }
+
+  &.preparacion-descarga {
+    background-color: #007bff; // Azul oscuro
+  }
+
+  &.finalizado {
+    background-color: #28a745; // Verde
+  }
+}
+
+.estado-traslado {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+  width: 50%;
+
+  &.en-curso {
+    background-color: #28a745; // Verde
+  }
+
+  &.recibido {
+    background-color: #007bff; // Azul oscuro
+  }
+}
+
+.traslado {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  text-align: right;
+  z-index: 1000;
+}
+
+.next-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.next-button:enabled {
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.search-options {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.search-fields {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.scrollable-content {
+  max-height: 70vh;
+  overflow-y: auto;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.mercancia {
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.estado-proceso {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+  width: 50%;
+
+  &.preparacion-salida {
+    background-color: #ffc107; // Amarillo
+  }
+
+  &.traslado {
+    background-color: #17a2b8; // Azul
+  }
+
+  &.preparacion-descarga {
+    background-color: #007bff; // Azul oscuro
+  }
+
+  &.finalizado {
+    background-color: #28a745; // Verde
+  }
+}
+
+.estado-traslado {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+  width: 50%;
+
+  &.en-curso {
+    background-color: #28a745; // Verde
+  }
+
+  &.recibido {
+    background-color: #007bff; // Azul oscuro
+  }
+}
+
+.traslado {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  text-align: right;
+  z-index: 1000;
+}
+
+.next-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.next-button:enabled {
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+}

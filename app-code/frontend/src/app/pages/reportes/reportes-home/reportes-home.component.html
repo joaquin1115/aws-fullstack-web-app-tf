@@ -1,0 +1,124 @@
+<div class="reportes">
+  <div class="flex gap-2">
+    <p-panel header="Opciones" class="w-29rem h-12rem">
+      <div class="opciones" class="flex flex-column gap-1 w-full">
+        <p-button styleClass="w-full" (click)="showDialogReporteGenerar()" label="Generar reporte" />
+        <p-dialog header="Generar reporte" [(visible)]="visibleReporteGenerar" [modal]="true"
+          [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '40vw', height: '80vh' }"
+          [draggable]="false" [resizable]="false">
+          <form class="flex flex-column justify-content-between gap-4 h-full" [formGroup]="reporteGenerarForm"
+            (ngSubmit)="sendDatosReporteGenerar()">
+            <div class="flex flex-column justify-content-between gap-4">
+              @if (reporteFormatoView) {
+              <p-dropdown [style]="{ width: '100%' }" [options]="reporteFormato" formControlName="reporteFormatoModel"
+                optionLabel="descripcion" placeholder="Formato del reporte" />
+              }
+              @if (reporteTipoView) {
+              <p-dropdown [style]="{ width: '100%' }" [options]="reporteTipo" formControlName="reporteTipoModel"
+                optionLabel="descripcion" placeholder="Selecciona el tipo de reporte" />
+              }
+              <div class="flex flex-row justify-content-between gap-3">
+                <p-floatLabel>
+                  <p-calendar class="h-2rem w-full" dateFormat="dd/mm/yy" formControlName="fechaInicio" />
+                  <label for="fechaInicio">Desde...</label>
+                </p-floatLabel>
+                <p-floatLabel>
+                  <p-calendar class="h-2rem w-full" dateFormat="dd/mm/yy" formControlName="fechaFin" />
+                  <label for="fechaFin">Hasta...</label>
+                </p-floatLabel>
+              </div>
+            </div>
+            <div class="flex flex-row justify-content-center gap-3">
+              <p-button styleClass="flex justify-content-center align-items-center mx-auto"
+                (onClick)="showDialogReporteGenerar(false)" label="Cancelar" [outlined]="true" severity="danger" />
+              <p-button type="submit" label="Generar" icon="pi pi-angle-right"
+                styleClass="flex justify-content-center align-items-center mx-auto" />
+            </div>
+          </form>
+        </p-dialog>
+        <p-button styleClass="w-full" (click)="showDialogReporteProgramacion()" label="Programar reporte" />
+        <p-dialog header="Programar reporte" [(visible)]="visibleReporteProgramacion" [modal]="true"
+          [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '40vw', height: '80vh' }"
+          [draggable]="false" [resizable]="false">
+          <form class="flex flex-column justify-content-between gap-4 h-full" [formGroup]="reporteProgramacionForm"
+            (ngSubmit)="sendDatosReporteProgramacion()">
+            <div class="flex flex-column justify-content-between gap-4">
+              @if (reporteFrecuenciaView) {
+              <p-dropdown [style]="{ width: '100%' }" [options]="reporteFrecuencia"
+                formControlName="reporteFrecuenciaModel" optionLabel="descripcion" placeholder="Frecuencia..." />
+              }
+              @if (reporteFormatoView) {
+              <p-dropdown [style]="{ width: '100%' }" [options]="reporteFormato" formControlName="reporteFormatoModel"
+                optionLabel="descripcion" placeholder="Formato del reporte" />
+              }
+              @if (reporteTipoView) {
+              <p-dropdown [style]="{ width: '100%' }" [options]="reporteTipo" formControlName="reporteTipoModel"
+                optionLabel="descripcion" placeholder="Selecciona el tipo de reporte" />
+              }
+              <div class="flex flex-row justify-content-between gap-3">
+                <p-floatLabel>
+                  <p-calendar class="h-2rem w-full" dateFormat="dd/mm/yy" formControlName="fechaInicio" />
+                  <label for="fechaInicio">Desde...</label>
+                </p-floatLabel>
+                <p-floatLabel>
+                  <p-calendar class="h-2rem w-full" dateFormat="dd/mm/yy" formControlName="fechaFin" />
+                  <label for="fechaFin">Hasta...</label>
+                </p-floatLabel>
+              </div>
+            </div>
+            <div class="flex flex-row justify-content-center gap-3">
+              <p-button styleClass="flex justify-content-center align-items-center mx-auto"
+                (onClick)="showDialogReporteProgramacion(false)" label="Cancelar" [outlined]="true" severity="danger" />
+              <p-button type="submit" label="Programar" icon="pi pi-angle-right"
+                styleClass="flex justify-content-center align-items-center mx-auto" />
+            </div>
+          </form>
+        </p-dialog>
+      </div>
+    </p-panel>
+    <p-scrollPanel styleClass="custombar1" class="surface-card"
+      [style]="{ width: 'calc(100vw - 28rem - 25rem)', height: '12rem' }">
+      <table class="w-full reporte-programacion-lista">
+        <tr>
+          <th>Id</th>
+          <th>Formato</th>
+          <th>Tipo</th>
+          <th>Frecuencia</th>
+          <th>Fecha inicio</th>
+          <th>Fecha fin</th>
+        </tr>
+        @for (programacion of reporteProgramacionMostrar; track $index) {
+        <tr>
+          <td>{{programacion.idProgramacionReporte}}</td>
+          <td>{{programacion.descripcionFormato}}</td>
+          <td>{{programacion.descripcionTipo}}</td>
+          <td>{{programacion.descripcionFrecuencia}}</td>
+          <td>{{programacion.fechaInicio}}</td>
+          <td>{{programacion.fechaFin}}</td>
+        </tr>
+        } @empty {
+        <tr>
+          <td colspan="5">No hay reportes programados</td>
+        </tr>
+        }
+      </table>
+    </p-scrollPanel>
+    <div
+      class="cursor-pointer hover:bg-gray-200	surface-card p-3 border-round w-25rem h-12rem flex flex-column align-items-center justify-content-center"
+      (click)="goReportesInventario()">
+      @if (reporteInventarioView){
+      <i class="pi pi-chart-bar
+      " style="font-size: 8rem"></i>
+      <h2 class="m-0 mt-2">Gráficos</h2>
+      } @else {
+      <i class="pi pi-list" style="font-size: 9rem"></i>
+      <h2 class="m-0">Inventario</h2>
+      }
+    </div>
+  </div>
+  @if (reporteInventarioView){
+  <app-almacen-inventario />
+  } @else {
+  <app-graficos-reportes />
+  }
+</div>

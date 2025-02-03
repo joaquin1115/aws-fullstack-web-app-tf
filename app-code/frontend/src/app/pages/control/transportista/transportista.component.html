@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="header">
+    <h2>Lista de Conductores</h2>
+    <input type="text" pInputText placeholder="Buscar..." [(ngModel)]="searchTerm" (input)="filtrarConductores()" class="search-box"/>
+    <p-button type="button" label="Incidencias" icon="pi pi-exclamation-circle" (onClick)="irAIncidencias()"></p-button>
+    <p-button type="button" label="Vehículos" icon="pi pi-car" class="vehiculos-btn" (onClick)="irAVehiculos()"></p-button>
+  </div>
+
+  <p-table [value]="conductoresFiltrados" class="p-datatable-gridlines p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Código Conductor</th>
+        <th>Código Empleado</th>
+        <th>Tipo de Licencia</th>
+        <th>Fecha Vencimiento de Licencia</th>
+        <th>Fecha de Último Traslado</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-selectedConductor>
+      <tr [pSelectableRow]="selectedConductor">
+        <td>{{ selectedConductor.codigoDelConductor }}</td>
+        <td>{{ selectedConductor.codigoDelEmpleado }}</td>
+        <td>{{ selectedConductor.tipoDeLicencia }}</td>
+        <td>{{ selectedConductor.fechaDeVencimientoDeLicencia }}</td>
+        <td>{{ selectedConductor.fechaUltimoTraslado }}</td>
+        <td>
+          <span [ngClass]="{
+            'estado-disponible': selectedConductor.estadoDelConductor === 'Disponible',
+            'estado-no-disponible': selectedConductor.estadoDelConductor === 'No disponible',
+            'estado-cuarentena': selectedConductor.estadoDelConductor === 'Cuarentena'
+          }">
+            {{ selectedConductor.estadoDelConductor }}
+          </span>
+        </td>
+        <td>
+          <p-dropdown [options]="estados" [(ngModel)]="selectedConductor.estadoDelConductor" (onChange)="cambiarEstado(selectedConductor)"></p-dropdown>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [first]="first"
+    [rows]="rows"
+    [totalRecords]="conductores.length"
+    [rowsPerPageOptions]="[10, 20, 30]">
+  </p-paginator>
+</div>

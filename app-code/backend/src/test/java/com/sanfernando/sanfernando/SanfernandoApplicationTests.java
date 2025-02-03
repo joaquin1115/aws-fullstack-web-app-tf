@@ -1,0 +1,13 @@
+package com.sanfernando.sanfernando;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SanfernandoApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

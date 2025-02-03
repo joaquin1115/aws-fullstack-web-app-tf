@@ -1,0 +1,19 @@
+id_elemento_catalogo_tipo,id_elemento_produccion,id_segmento,descripcion
+1,1,3,Especias y condimentos
+2,1,3,Aditivos alimentarios
+3,1,3,Aceites y grasas
+4,1,3,Harinas
+5,1,3,Huevos
+6,1,3,Conservantes
+7,1,3,Colorantes
+8,1,3,Emulsionantes
+9,1,3,Otras materias primas
+10,2,2,Herramientas
+11,2,2,Repuestos
+12,2,1,Químicos
+13,2,1,Detergentes industriales
+14,2,3,Etiquetas
+15,2,2,Otros materiales
+16,3,4,Pollo congelado
+17,3,4,Pollo fresco
+18,3,4,Saborizado

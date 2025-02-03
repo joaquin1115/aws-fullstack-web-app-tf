@@ -1,0 +1,6 @@
+cod_pedido_estado,estado_pedido
+A,Aceptado
+R,Rechazado
+P,En proceso
+E,Entregado
+F,Finalizado

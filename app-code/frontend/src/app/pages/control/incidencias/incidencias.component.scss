@@ -1,0 +1,58 @@
+/* incidencias.component.scss */
+.estado-resuelta {
+  color: green;
+  font-weight: bold;
+}
+
+.estado-pendiente {
+  color: red;
+  font-weight: bold;
+}
+
+.container {
+  margin: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filtros {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  margin-left: 10px;
+  width: 150px;
+}
+
+.dropdown-mes {
+  flex: 1; /* Para que ocupe el espacio restante */
+  margin-right: 70px; /* Separación entre el dropdown de mes y el de año */
+}
+
+.dropdown-anio {
+  flex: 1; /* Para que ocupe el espacio restante */
+  margin-left: 10px; /* Separación entre el dropdown de año y el botón */
+}
+
+.nuevo-btn-container {
+  display: flex;
+  align-items: center; /* Alinear el botón verticalmente */
+}
+
+.nuevo-btn {
+  margin-left: auto; /* Mover el botón a la derecha */
+}
+
+.p-datatable {
+  width: 100%;
+}
+
+.p-datatable-header {
+  font-weight: bold;
+}

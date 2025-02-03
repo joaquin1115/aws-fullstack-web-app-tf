@@ -1,0 +1,121 @@
+id_elemento_catalogo,nombre,id_elemento_catalogo_tipo,descripcion,cod_unidad,temperatura_minima,temperatura_maxima,vida_util,peso_unitario
+1,Filete de pechuga de pollo congelado,16,"Filete de pechuga de pollo congelado, listo para su uso en la preparación de platos.",7,-20,-18,90,900
+2,Pierna de pollo congelada,16,"Pierna de pollo congelada, perfecta para su uso en la elaboración de diversos platos.",7,-20,-18,90,1200
+3,Ala de pollo congelada,16,"Ala de pollo congelada, ideal para recetas fáciles y deliciosas.",7,-20,-18,90,800
+4,Muslo de pollo congelado,16,"Muslo de pollo congelado, versátil y sabroso para preparaciones culinarias.",7,-20,-18,90,1000
+5,Pechuga entera de pollo congelada,16,"Pechuga entera de pollo congelada, fresca y de alta calidad para diversas recetas.",7,-20,-18,90,1500
+6,Pierna con encuentro fresca,17,"Pierna con encuentro fresca, perfecta para asados y platos principales.",7,-2,0,7,1300
+7,Muslo de pollo fresco,17,"Muslo de pollo fresco, jugoso y listo para su uso en una amplia variedad de platos.",7,-2,0,7,1100
+8,Pechuga especial de pollo fresca,17,"Pechuga especial de pollo fresca, de la más alta calidad para platos gourmet.",7,-2,0,7,1200
+9,Pechuga entera de pollo fresca,17,"Pechuga entera de pollo fresca, versátil y perfecta para diversas preparaciones culinarias.",7,-2,0,7,1400
+10,Carne molida de pollo fresca,17,"Carne molida de pollo fresca, ideal para hamburguesas, albóndigas y más.",7,-2,0,7,900
+11,Especias y condimentos para pollo,1,Mezcla de especias y condimentos especialmente seleccionados para realzar el sabor del pollo.,2,,,180,80
+12,Aceite de oliva para cocinar,3,"Aceite de oliva de alta calidad, perfecto para cocinar y aderezar platos.",4,,,365,1000
+13,Harina de trigo para empanizar,4,Harina de trigo ideal para empanizar y darle un acabado crujiente a tus platillos favoritos.,2,,,180,500
+14,Huevo fresco para rebozar,5,Huevo fresco para rebozar y darle un toque especial a tus recetas.,7,,,30,50
+15,Conservante natural para prolongar la vida útil del producto,6,"Conservante natural para prolongar la vida útil del producto, sin aditivos artificiales.",2,,,365,30
+16,Colorante natural para mejorar la apariencia del producto,7,"Colorante natural para mejorar la apariencia del producto, seguro y confiable.",2,,,365,20
+17,Emulsionante para mejorar la textura del producto,8,"Emulsionante para mejorar la textura del producto, ideal para aplicaciones culinarias.",2,,,365,40
+18,Detergente industrial,13,Detergente industrial para uso en limpieza profunda y desengrase de equipos y superficies.,3,,,,1000
+19,Escritorio de oficina,11,"Escritorio de oficina, ideal para el área de almacén.",7,,,,30000
+20,Silla ergonómica,11,"Silla ergonómica para atención al cliente, cómoda y resistente.",7,,,,8000
+21,Ordenador portátil,11,Ordenador portátil para el área de atención al cliente.,7,,,,2000
+22,Rollos de papel térmico para impresora,14,Rollos de papel térmico para impresora en el área de atención al cliente.,8,,,,500
+23,Herramientas de mano básica,10,Herramientas de mano básica para el área de mantenimiento.,7,,,,1000
+24,Teléfono multifuncional,11,Teléfono multifuncional para el área de atención al cliente.,7,,,,1500
+25,Estanterías metálicas,11,Estanterías metálicas para el área de almacén.,7,,,,20000
+26,Mascarillas para producción,3,Mascarillas para el área de producción.,9,,,,200
+27,Caja registradora,11,Caja registradora para el área de atención al cliente.,7,,,,5000
+28,Repuestos para maquinaria industrial,11,Repuestos para maquinaria industrial en el área de mantenimiento.,7,,,,300
+29,Guantes de látex,11,Guantes de látex para el área de producción.,9,,,,100
+30,Carretilla elevadora,11,Carretilla elevadora para el área de almacén.,7,,,,150000
+31,Indumentaria de protección,11,Indumentaria de protección para el área de producción.,7,,,,500
+32,Cámara de seguridad,11,Cámara de seguridad para el área de almacén.,7,,,,3000
+33,Gorros hipotérmicos,11,Gorros hipotérmicos para el área de producción.,7,,,,150
+34,Impresora de etiquetas,14,Impresora de etiquetas para el área de almacén.,7,,,,8000
+35,Kit de herramientas eléctricas,10,Kit de herramientas eléctricas para el área de mantenimiento.,7,,,,3000
+36,Material de embalaje,14,Material de embalaje para el área de almacén.,7,,,,2000
+37,Filete de pechuga de pollo fresco,17,"Filete de pechuga de pollo fresco, ideal para preparaciones rápidas y saludables.",7,-2,0,7,850
+38,Muslo de pollo deshuesado fresco,17,"Muslo de pollo deshuesado fresco, perfecto para guisos y frituras.",7,-2,0,7,950
+39,Pechuga de pollo sin piel congelada,16,"Pechuga de pollo sin piel congelada, lista para cualquier preparación.",7,-20,-18,90,1400
+40,Ala de pollo fresca,17,"Ala de pollo fresca, ideal para asados y parrillas.",7,-2,0,7,850
+41,Medallones de pechuga de pollo congelados,16,"Medallones de pechuga de pollo congelados, prácticos y versátiles.",7,-20,-18,90,1000
+42,Trozos de pollo fresco,17,"Trozos de pollo fresco, ideales para sopas y guisos.",7,-2,0,7,950
+43,Despojos de pollo para caldo,16,"Despojos de pollo congelados, perfectos para hacer caldo.",7,-20,-18,90,1000
+44,Muslo de pollo entero congelado,16,"Muslo de pollo entero congelado, ideal para hornear.",7,-20,-18,90,1100
+45,Patitas de pollo congeladas,16,"Patitas de pollo congeladas, ideales para caldos y guisos.",7,-20,-18,90,1000
+46,Pechuga de pollo entera sin piel fresca,17,"Pechuga de pollo entera sin piel fresca, versátil para cualquier receta.",7,-2,0,7,1450
+47,Ala de pollo congelada,16,"Ala de pollo congelada, perfecta para asar o freír.",7,-20,-18,90,800
+48,Aceite de girasol,3,Aceite de girasol ideal para freír y cocinar.,4,,,365,1000
+49,Sal de mar,2,Sal de mar pura para sazonar alimentos.,2,,,365,500
+50,Pimienta negra molida,1,Pimienta negra molida para condimentar.,2,,,365,100
+51,Ajo en polvo,1,Ajo en polvo para aderezar.,2,,,365,200
+52,Cebolla en polvo,1,Cebolla en polvo para sazonar.,2,,,365,200
+53,Orégano seco,1,Orégano seco para aderezos y marinados.,2,,,365,50
+54,Perejil seco,1,Perejil seco para aderezos y marinados.,2,,,365,50
+55,Curry en polvo,1,Curry en polvo para condimentar platos.,2,,,365,100
+56,Paprika,1,Paprika para condimentar y dar color.,2,,,365,100
+57,Sazonador para pollo,1,"Sazonador especial para pollo, mejora el sabor de tus preparaciones culinarias.",2,,,365,1200
+58,Vinagre de manzana,3,Vinagre de manzana para aderezos y marinados.,4,,,365,500
+59,Harina integral,4,Harina integral para recetas saludables.,2,,,180,1000
+60,Harina de maíz,4,Harina de maíz para preparar arepas y tortillas.,2,,,180,800
+61,Levadura en polvo,6,Levadura en polvo para hornear.,2,,,365,100
+62,Bicarbonato de sodio,6,Bicarbonato de sodio para hornear y limpieza.,2,,,365,250
+63,Cremor tártaro,6,Cremor tártaro para estabilizar claras de huevo y merengues.,2,,,365,50
+64,Colorante alimentario rojo,7,Colorante alimentario rojo para repostería.,2,,,365,20
+65,Colorante alimentario amarillo,7,Colorante alimentario amarillo para repostería.,2,,,365,20
+66,Colorante alimentario azul,7,Colorante alimentario azul para repostería.,2,,,365,20
+67,Emulsionante para repostería,8,Emulsionante para mejorar la textura de productos de repostería.,2,,,365,40
+68,Gelatina sin sabor,8,Gelatina sin sabor para postres.,2,,,365,100
+69,Azúcar glas,6,Azúcar glas para decoración y repostería.,2,,,365,500
+70,Edulcorante en polvo,6,Edulcorante en polvo para endulzar sin calorías.,2,,,365,200
+71,Papel film,14,Papel film para envolver alimentos.,8,,,180,1000
+72,Papel aluminio,14,Papel aluminio para cocinar y almacenar.,8,,,180,1000
+73,Servilletas de papel,14,Servilletas de papel para uso diario.,8,,,180,1000
+74,Bolsas de almacenamiento,14,Bolsas de almacenamiento para congelar alimentos.,8,,,180,1000
+75,Guantes de cocina,9,Guantes de cocina resistentes al calor.,9,,,365,1000
+76,Detergente para vajillas,13,Detergente para vajillas de uso diario.,3,,,365,1000
+77,Limpiador multiusos,13,Limpiador multiusos para superficies.,3,,,365,1000
+78,Desinfectante,13,Desinfectante para uso en áreas de preparación de alimentos.,3,,,365,1000
+79,Esponjas de cocina,14,Esponjas de cocina para limpieza.,8,,,365,1000
+80,Paños de cocina,14,Paños de cocina absorbentes.,8,,,365,1000
+81,Escobas industriales,13,Escobas industriales para limpieza.,7,,,365,1000
+82,Trapeadores industriales,13,Trapeadores industriales para limpieza.,7,,,365,1000
+83,Carretilla de mano,11,Carretilla de mano para transporte en almacén.,7,,,,15000
+84,Palets de plástico,11,Palets de plástico para almacenamiento.,7,,,,2500
+85,Cinta adhesiva para embalaje,14,Cinta adhesiva resistente para embalaje.,8,,,365,1000
+86,Rotuladores para etiquetar,14,Rotuladores permanentes para etiquetar productos.,8,,,365,1000
+87,Papel kraft para envolver,14,Papel kraft resistente para envolver productos.,8,,,365,1000
+88,Papel de burbuja,14,Papel de burbuja para protección de productos.,8,,,365,1000
+89,Cajas de cartón,14,Cajas de cartón para embalaje y almacenamiento.,8,,,365,1000
+90,Plástico retractil,14,Plástico retractil para envolver palets.,8,,,365,1000
+91,Tijeras industriales,14,Tijeras industriales para cortes precisos.,8,,,365,1000
+92,Cuchillas de seguridad,14,Cuchillas de seguridad para abrir cajas.,8,,,365,1000
+93,Precintos de seguridad,14,Precintos de seguridad para embalaje.,8,,,365,1000
+94,Discos de corte,10,Discos de corte para herramientas eléctricas.,7,,,,1000
+95,Martillo industrial,10,Martillo industrial para mantenimiento.,7,,,,1500
+96,Destornillador eléctrico,10,Destornillador eléctrico para mantenimiento.,7,,,,800
+97,Pinzas de presión,10,Pinzas de presión para trabajos de mantenimiento.,7,,,,500
+98,Multímetro digital,10,Multímetro digital para mediciones eléctricas.,7,,,,300
+99,Llaves ajustables,10,Llaves ajustables para trabajos de mantenimiento.,7,,,,1000
+100,Taladro inalámbrico,10,Taladro inalámbrico para trabajos de mantenimiento.,7,,,,1500
+101,Guantes de trabajo,10,Guantes de trabajo para protección en el área de mantenimiento.,9,,,,100
+102,Mascarillas desechables,10,Mascarillas desechables para protección en el área de mantenimiento.,9,,,,50
+103,Cascos de seguridad,10,Cascos de seguridad para protección en el área de mantenimiento.,9,,,,300
+104,Botas de seguridad,10,Botas de seguridad para protección en el área de mantenimiento.,9,,,,2000
+105,Gafas de seguridad,10,Gafas de seguridad para protección en el área de mantenimiento.,9,,,,150
+106,Chalecos reflectantes,10,Chalecos reflectantes para el área de mantenimiento.,9,,,,200
+107,Tornillos y tuercas,10,Tornillos y tuercas para trabajos de mantenimiento.,7,,,,300
+108,Cintas aislantes,10,Cintas aislantes para trabajos eléctricos.,7,,,,200
+109,Termómetro infrarrojo,10,Termómetro infrarrojo para mediciones de temperatura.,7,,,,500
+110,Balanza digital,10,Balanza digital para pesaje de materiales.,7,,,,1500
+111,Lámparas de trabajo,10,Lámparas de trabajo para el área de mantenimiento.,7,,,,800
+112,Cámaras de vigilancia,10,Cámaras de vigilancia para el área de mantenimiento.,7,,,,3000
+113,Alarmas de seguridad,10,Alarmas de seguridad para el área de mantenimiento.,7,,,,2500
+114,Equipo de soldadura,10,Equipo de soldadura para trabajos de mantenimiento.,7,,,,5000
+115,Extintores de incendio,10,Extintores de incendio para el área de mantenimiento.,7,,,,2000
+116,Ventiladores industriales,10,Ventiladores industriales para el área de mantenimiento.,7,,,,3000
+117,Compresor de aire,10,Compresor de aire para el área de mantenimiento.,7,,,,8000
+118,Generador eléctrico,10,Generador eléctrico para el área de mantenimiento.,7,,,,10000
+119,Sistema de iluminación LED,10,Sistema de iluminación LED para el área de mantenimiento.,7,,,,2000
+120,Kit de primeros auxilios,10,Kit de primeros auxilios para el área de mantenimiento.,9,,,,500

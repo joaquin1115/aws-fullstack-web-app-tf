@@ -1,0 +1,135 @@
+<p-toast position="top-right"></p-toast>
+
+<h1>{{ titulo }}</h1>
+<p-card>
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="codTipoOperacion === 1">
+      <h2>Mercancías</h2>
+      <button pButton type="button" label="Agregar Mercancía" icon="pi pi-plus" (click)="abrirModal()"></button>
+      <div *ngFor="let mercancia of mercancias; let i = index">
+        <h3>Mercancía {{ i + 1 }}</h3>
+        <p-table [value]="mercancia.detalles">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>CodStock</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Tipo</th>
+              <th>Segmento</th>
+              <th>Unidad</th>
+              <th>Cantidad</th>
+              <th>Acción</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-detalle>
+            <tr>
+              <td>{{ detalle.codStock }}</td>
+              <td>{{ detalle.nombre }}</td>
+              <td>{{ detalle.categoria }}</td>
+              <td>{{ detalle.tipo }}</td>
+              <td>{{ detalle.segmento }}</td>
+              <td>{{ detalle.unidad }}</td>
+              <td>{{ detalle.cantidad }}</td>
+              <td>
+                <button pButton type="button" icon="pi pi-trash" (click)="quitarCodStock(i, detalle.codStock)"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <button pButton type="button" label="Agregar Stock" icon="pi pi-plus"
+          (click)="abrirModalParaMercancia(i)"></button>
+      </div>
+    </div>
+
+    <div>
+      <h2>Fecha y hora</h2>
+      <label>Fecha:</label>
+      <input pInputText type="date" class="ml-2 mr-5" formControlName="fecha" />
+      <label>Hora de inicio:</label>
+      <input pInputText type="time" class="ml-2 mr-5" formControlName="horaInicio" />
+      <label>Hora de fin:</label>
+      <input pInputText type="time" class="ml-2 mr-5" formControlName="horaFin" />
+    </div>
+
+    <div>
+      <h2>Empleados</h2>
+      <label>DNI Ejecutor:</label>
+      <input pInputText type="text" class="ml-2 mr-5" formControlName="dniEjecutor" />
+      <label>DNI Supervisor:</label>
+      <input pInputText type="text" class="ml-2 mr-5" formControlName="dniSupervisor" />
+    </div>
+
+    <div *ngIf="this.codTipoOperacion === 5">
+      <h2>Pedidos</h2>
+      <button pButton type="button" label="Agregar Pedido" icon="pi pi-plus"
+        (click)="mostrarModalPedido = true"></button>
+      <div *ngFor="let pedido of pedidos; let i = index" class="contenedor-pedidos">
+        <div>
+          <p>{{ pedido }}</p>
+        </div>
+        <div><button pButton type="button" icon="pi pi-trash" (click)="quitarPedido(i)"></button></div>
+      </div>
+    </div>
+
+    <div *ngIf="codTipoOperacion === 5">
+      <h2>Transporte</h2>
+      <label>Cod Ruta:</label>
+      <input pInputText type="text" class="ml-2 mr-5" formControlName="codRuta" />
+      <label>Placa del Vehículo:</label>
+      <input pInputText type="text" class="ml-2 mr-5" formControlName="placaVehiculo" />
+      <label>DNI del Transportista:</label>
+      <input pInputText type="text" class="ml-2 mr-5" formControlName="dniTransportista" />
+    </div>
+
+    <p-button type="submit" class="block mt-4" label="Ingresar" />
+  </form>
+</p-card>
+
+<p-dialog header="Búsqueda de Stock" [(visible)]="mostrarModal" [modal]="true" [closable]="false">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="codStock">Código de Stock:</label>
+      <input pInputText id="codStock" [(ngModel)]="codStock" />
+    </div>
+    <button pButton type="button" label="Buscar" class="block mt-4 mb-2" icon="pi pi-search"
+      (click)="buscarStock()"></button>
+    <div *ngIf="stockEncontrado">
+      <p>Nombre: {{ stockEncontrado.nombre }}</p>
+      <p>Categoría: {{ stockEncontrado.categoria }}</p>
+      <p>Tipo: {{ stockEncontrado.tipo }}</p>
+      <p>Segmento: {{ stockEncontrado.segmento }}</p>
+      <p>Unidad: {{ stockEncontrado.unidad }}</p>
+      <div class="p-field">
+        <label for="cantidad">Cantidad:</label>
+        <input pInputText id="cantidad" type="number" [(ngModel)]="cantidad" />
+      </div>
+      <button pButton type="button" label="Agregar" class="block mt-4 mb-2" icon="pi pi-check"
+        (click)="agregarCodStock()"></button>
+    </div>
+    <p *ngIf="mensajeError" style="color:red">{{ mensajeError }}</p>
+    <button pButton type="button" label="Cerrar" icon="pi pi-times" (click)="cerrarModal()"></button>
+  </div>
+</p-dialog>
+
+<p-dialog header="Resultado del Registro" [(visible)]="mostrarResultado" [modal]="true">
+  <p>{{ mensajeResultado }}</p>
+  <p><strong>Para continuar, por favor elige una de las siguientes opciones:</strong></p>
+  <button pButton type="button" label="Volver a vista de procesos" class="mr-3" icon="pi pi-arrow-left"
+    (click)="volverVistaProcesos()"></button>
+  <button pButton type="button" label="Continuar con la siguiente operación" [disabled]="this.codTipoOperacion === 7"
+    icon="pi pi-plus" (click)="continuarRegistroAdicional()"></button>
+</p-dialog>
+
+<p-dialog header="Agregar Pedido" [(visible)]="mostrarModalPedido" [modal]="true" [closable]="false">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="codPedido">Código de Pedido:</label>
+      <input pInputText id="codPedido" [(ngModel)]="codPedidoStr" />
+    </div>
+    <button pButton type="button" label="Agregar" class="block mt-4 mb-2" icon="pi pi-check"
+      (click)="agregarPedido()"></button>
+    <p *ngIf="mensajeError" style="color:red">{{ mensajeError }}</p>
+    <button pButton type="button" label="Cerrar" icon="pi pi-times"
+      (click)="mostrarModalPedido = false; this.mensajeError=''"></button>
+  </div>
+</p-dialog>

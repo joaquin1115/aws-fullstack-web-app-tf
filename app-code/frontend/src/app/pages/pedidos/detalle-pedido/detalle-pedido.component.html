@@ -1,0 +1,90 @@
+<h2>Pedido # {{idPedido}}</h2>
+<div class="p-grid p-fluid">
+  <div class="p-col-12">
+    <div class="p-card">
+      <div class="p-card-body flex flex-column gap-4">
+        <div class="p-grid">
+          <div class="p-col-6">
+            <div class="p-grid">
+              <div class="p-col-6">
+                <!-- <p-badge value="{{ order?.elapsedTime }} días" severity="info"></p-badge> -->
+              </div>
+              <div class="p-col-6">
+                <p-badge [value]="order?.status"
+                  [severity]="order?.status === 'Pendiente' ? 'warning' : 'success'"></p-badge>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-grid">
+          <div class="p-col-12">
+            <p-panel header="Detalles del pedido" [toggleable]="true">
+              <div class="p-grid">
+                <div class="p-col-4">
+                  <p>Código del pedido:</p>
+                  <span class="text-blue-500">{{ order?.id }}</span>
+                </div>
+                <div class="p-col-4">
+                  <p>Fecha de solicitud:</p>
+                  <span class="text-blue-500">{{ order?.requestDate | date:'yyyy-MM-dd' }}</span>
+                </div>
+                <div class="p-col-4">
+                  <p>Fecha de entrega:</p>
+                  <span class="text-blue-500">{{ order?.deliveryDate | date:'yyyy-MM-dd' }}</span>
+                </div>
+              </div>
+              <div class="p-grid">
+                <div class="p-col-4">
+                  <p>Nombre Cliente:</p>
+                  <span class="text-blue-500">{{ order?.department }}</span>
+                </div>
+                <div class="p-col-4">
+                  <p>Representante:</p>
+                  <span class="text-blue-500">{{ order?.representative }}</span>
+                </div>
+                <div class="p-col-4">
+                  <p>Empleado Registro:</p>
+                  <span class="text-blue-500">{{ order?.employee }}</span>
+                </div>
+              </div>
+              <div class="p-grid">
+                <div class="p-col-6">
+                  <p>Tipo de pedido:</p>
+                  <span class="text-blue-500">{{ order?.orderType }}</span>
+                </div>
+                <div class="p-col-6">
+                  <p>Codigo ticket:</p>
+                  <span class="text-blue-500">{{ order?.ticketCode }}</span>
+                </div>
+              </div>
+            </p-panel>
+          </div>
+        </div>
+        <div class="p-grid">
+          <div class="p-col-12">
+            <p-panel header="Productos">
+              <p-table [value]="order?.items ?? []">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Código de producto</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Unidad</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-item>
+                  <tr>
+                    <td>{{ item.productCode }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.unit }}</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </p-panel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

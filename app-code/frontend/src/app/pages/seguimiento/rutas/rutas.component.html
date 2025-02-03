@@ -1,0 +1,77 @@
+<h1>Rutas</h1>
+<h2>Rutas Existentes</h2>
+<div class="flex flex-column gap-4">
+	<div class="flex flex-row gap-4">
+		<div class="card">
+			<p-table [scrollable]="true" scrollHeight="500px" [value]="rutas" selectionMode="single"
+				[(selection)]="rutaSeleccionada" dataKey="idRuta">
+				<ng-template pTemplate="header">
+					<tr>
+						<th style="width:25%">
+							Cod Ruta <p-sortIcon field="idRuta" />
+						</th>
+						<th style="width:25%">
+							Tipo de Ruta <p-sortIcon field="tipoRuta" />
+						</th>
+						<th style="width:25%">
+							Distancia Total <p-sortIcon field="distanciaTotal" />
+						</th>
+						<th style="width:25%">
+							Origen <p-sortIcon field="origen" />
+						</th>
+						<th style="width:25%">
+							Destino <p-sortIcon field="destino" />
+						</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-ruta>
+					<tr [pSelectableRow]="ruta" (click)="paraderoRuta()">
+						<td>{{ ruta.idRuta }}</td>
+						<td>{{ ruta.tipoRuta }}</td>
+						<td>{{ ruta.distanciaTotal }}</td>
+						<td>{{ ruta.origen }}</td>
+						<td>{{ ruta.destino }}</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		</div>
+
+		<div class="flex flex-column gap-4">
+			<div style="width: 100%"><iframe [style]="{ width: '400px', height: '400px'}" frameborder="0" scrolling="yes"
+					marginheight="0" marginwidth="0"
+					src="https://maps.google.com/maps?width=350&amp;height=350&amp;hl=en&amp;q=GQ3Q+98R,%20Huaral%2015202+(Your%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+						href="https://www.gps.ie/sport-gps/">bike gps</a></iframe>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex flex-column gap-4">
+		<div class="card">
+			<h3>ID de Ruta Seleccionada: {{ rutaSeleccionada.idRuta }}</h3>
+		</div>
+	</div>
+
+	<div class="flex flex-row gap-4">
+		<div class="card " [style]="{ width: '65%' }">
+			<p-table [value]="paraderos">
+				<ng-template pTemplate="header">
+					<tr>
+						<th [style]="{ width: '30%' }">Orden</th>
+						<th [style]="{ width: '40%' }">Local</th>
+						<th [style]="{ width: '30%' }">Tipo de Paradero</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-product>
+					<tr>
+						<td>{{ product.orden }}</td>
+						<td>{{ product.local }}</td>
+						<td>{{ product.tipoParadero }}</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		</div>
+		<div class="flex flex-row ">
+			<p-button label="Crear ruta" severity="success" />
+		</div>
+	</div>
+</div>

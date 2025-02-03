@@ -1,0 +1,19 @@
+<section class="cart-section">
+  <h1 class="title-cart">Productos del pedido</h1>
+  <ul class="products-cart">
+    @for (product of products; track product.idElementoCatalogo; let idx = $index) {
+    <li class="product-cart">
+      <div class="detail-product-cart">
+        <span class="title-product-cart">{{product.nombre}}</span>
+      </div>
+      <div class="detail-product-options">
+        <p-inputNumber class="h-1rem input-cantidad" inputId="integeronly" [(ngModel)]="cantidades[idx]"
+          (ngModelChange)="onChangeCantidad($event, idx)" />
+        <button class="delete-product-cart" (click)="onClickDelete(idx)">Borrar</button>
+      </div>
+    </li>
+    } @empty {
+    <h2 class="cart-section">No hay productos en el registro</h2>
+    }
+  </ul>
+</section>

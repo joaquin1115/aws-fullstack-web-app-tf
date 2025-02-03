@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@aws-amplify/ui-angular/theme.css';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+.ui-toast {
+  top: 70px !important;
+  right: 30px !important;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+* {
+  box-sizing: border-box;
+  --bg-login: #3075b9;
+  --bg-sidenav: #044a91;
+  --bg-body: #f4f7fa;
+  --bg-card: #fff;
+  --color-sidenav-item: #f3f3f3;
+  --bg-sidenav-item-active: #fff;
+  --color-sidenav-item-active: #06335f;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-family), 'Roboto', sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

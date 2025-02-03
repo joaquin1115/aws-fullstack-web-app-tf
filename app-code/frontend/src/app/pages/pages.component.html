@@ -1,0 +1,7 @@
+<div class="pages-wrapper">
+  <app-topnav />
+  <app-sidenav (onToggleSidenav)="onToggleSidenav($event)" />
+  <div class="body" [ngClass]="getBodyClass()">
+    <router-outlet />
+  </div>
+</div>

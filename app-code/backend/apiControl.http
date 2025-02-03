@@ -1,0 +1,19 @@
+###
+GET http://localhost:8080/api/control/lista
+
+###
+PUT http://localhost:8080/api/control/actualizar-estado/1
+Content-Type: application/json
+
+{
+  "nuevoEstado": "disponible"
+}
+
+###
+GET http://localhost:8080/api/control/actualizarEstadoIncidencia?idIncidencia=2&idEstadoIncidencia=S
+
+###
+GET http://localhost:8080/api/control/actualizarEstadoIncidencia?idIncidencia=1&idEstadoIncidencia=S
+
+###
+GET https://www.redalyc.org/pdf/4655/465545872004.pdf HTTP/1.1

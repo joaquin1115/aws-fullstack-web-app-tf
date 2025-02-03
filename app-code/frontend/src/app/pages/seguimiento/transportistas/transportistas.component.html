@@ -1,0 +1,157 @@
+<h1>Transportista</h1>
+<h2>Transportista Existentes</h2>
+<div class="flex flex-column gap-4">
+  <div class="flex flex-row gap-4">
+    <div class="card">
+			<p-table [scrollable]="true"
+      scrollHeight="500px"
+      [value]="transportistas"
+      selectionMode="single"
+      [(selection)]="transportistaSeleccionado"
+      dataKey="idTransportista">
+				<ng-template pTemplate="header">
+					<tr>
+						<th style="width:10%">
+							Codigo de Transportista
+						</th>
+						<th style="width:20%">
+							Nombre
+						</th>
+						<th style="width:20%">
+							N° de Licencia
+						</th>
+						<th style="width:20%">
+							Tipo de Licencia
+						</th>
+						<th style="width:20%">
+							Fecha de Vencimiento de Licencia
+						</th>
+            <th style="width:10%">
+							Estado de Conductor
+						</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-conductor>
+					<tr [pSelectableRow]="conductor" (click)="detalleTransportista()">
+						<td>{{ conductor.idTransportista }}</td>
+						<td>{{ conductor.nombreCompleto }}</td>
+						<td>{{ conductor.licencia }}</td>
+						<td>{{ conductor.tipoLicencia }}</td>
+            <td>{{ conductor.fechaVencimientoLicencia }}</td>
+						<td>{{ conductor.estado }}</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		</div>
+
+    <div class="flex flex-column gap-4">
+      <div style="width: 100%">
+        <img src="https://skydatalatam.com/wp-content/uploads/2023/01/4v1.-Jun-Transportista-sus-aportes-al-momento-de-planear-las-rutas-1024x683-1-1024x650.jpg" alt="Transportista sus aportes al momento de planear las rutas" width="300" height="auto">
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-row gap-4">
+    <div class="flex flex-column gap-3 align-items-center justify-content-between" [style]="{ height: '62vh'}">
+      @if (transportistaSeleccionado) {
+      <div class="custom-card" class="flex flex-column gap-2" [style]="{ display: 'block', width: '30vw'}">
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Código de Transportista: </h3>
+          <h3 class="p-inputtext w-20rem">{{ transportistaSeleccionado.idTransportista }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Nombre: </h3>
+          <h3 class="p-inputtext w-20rem">{{ transportistaDetalle.nombreCompleto }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>DNI: </h3>
+          <h3 class="p-inputtext w-20rem">{{ transportistaDetalle.dni }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Licencia: </h3>
+          <h3 class="p-inputtext w-20rem">{{ transportistaDetalle.licencia }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Tipo Licencia: </h3>
+          <h3 class="p-inputtext w-20rem">{{ transportistaDetalle.tipoLicencia }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Fecha de Vencimiento de Licencia: </h3>
+          <h3 class="p-inputtext w-20rem">{{ transportistaDetalle.fechaVencimientoLicencia }}</h3>
+        </div>
+        <div class="flex justify-content-between h-3rem align-items-center gap-2">
+          <h3>Estado: </h3>
+          <h3 class="p-inputtext w-20rem">{{ transportistaDetalle.estado }}</h3>
+        </div>
+      </div>
+      } @else {
+      <div class="custom-card h-57vh" [style]="{ width: '30vw', display: 'block'}">
+        <h1 [style]="{ width: '30vw', display: 'block'}">Seleccione un registro</h1>
+      </div>
+      }
+      <p-button (click)="cambiarEditarTransportista()" label="Actualizar Datos"  severity="danger" />
+
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <p-button (onClick)="cambiarNuevoTransportista()" label="Nuevo Transportista" severity="info" class="ml-auto"></p-button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<p-dialog header="Editar Transportista" position="right" [modal]="true" [closeOnEscape]="true"
+  [(visible)]="editarTransportista" [style]="{ width: '50%', height: '50%' }">
+  <div class="flex flex-column gap-3">
+    <div class="flex flex-row gap-2">
+      <h3>Id Transportista :</h3>
+      <h3 class="p-inputtext w-20rem">{{ idTransportista }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Número de licencia: </h3>
+      <h3 class="p-inputtext w-20rem">{{ numLicencia }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Tipo de Licenica: </h3>
+      <h3 class="p-inputtext w-20rem">{{ tipoLicencia }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Fecha de Vencimiento Licencia: </h3>
+      <h3 class="p-inputtext w-20rem">{{ vencimientoLicencia }}</h3>
+    </div>
+    <div class="flex flex-row gap-2">
+      <h3>Estado del Transportista: </h3>
+    <h3 class="p-inputtext w-20rem">{{ estadoTransportista }}</h3>
+    </div>
+
+  </div>
+</p-dialog>
+
+
+<p-dialog header="Nuevo Transportista" position="right" [modal]="true" [closeOnEscape]="true"
+  [(visible)]="nuevoTransportista" [style]="{ width: '80vw', height: '80vh' }">
+
+  <form (ngSubmit)="onSubmit()" #transportistaForm="ngForm" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+      <label for="marca">DNI:</label>
+      <input type="text" id="marca" style="width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;" [(ngModel)]="transportista.dni" name="marca" required>
+
+      <label for="modelo">Estado:</label>
+      <input type="text" id="modelo" style="width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;" [(ngModel)]="transportista.estado" name="modelo" required>
+
+      <label for="estado">Número de Licencia:</label>
+      <input type="text" id="estado" style="width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;" [(ngModel)]="transportista.numeroLicencia" name="estado" required>
+
+      <label for="placa">Tipo de Licencia:</label>
+      <input type="text" id="placa" style="width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;" [(ngModel)]="transportista.tipoLicencia" name="placa" required>
+
+      <label for="fechaMantenimiento">Fecha de vencimiento de Licencia:</label>
+      <input type="date" id="fechaMantenimiento" style="width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;" [(ngModel)]="transportista.vencimientoLicencia" name="fechaMantenimiento" required>
+    </div>
+
+    <button type="submit" style="align-self: flex-start; padding: 10px 20px; font-size: 16px; font-weight: bold; color: #fff; background-color: #007bff; border: none; border-radius: 4px; cursor: pointer;" class="btn btn-primary" [disabled]="!transportistaForm.form.valid">Registrar Transportista</button>
+  </form>
+</p-dialog>
+

@@ -1,0 +1,8 @@
+cod_tipo_reclamo,descripcion
+A,Productos en mal estado o de calidad inferior
+B,Cantidad incorrecta de productos recibidos
+C,Productos incorrectos o diferentes a los solicitados
+D,Embalaje inadecuado que afecta la frescura o la calidad de los productos
+E,Retraso en la entrega del pedido
+F,Problemas con la facturación o el proceso de pago
+G,"Problemas relacionados con la limpieza, higiene o seguridad de los productos"

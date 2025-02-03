@@ -1,0 +1,35 @@
+<div style="background-color: #003492; height: 100vh;">
+  <amplify-authenticator
+    initialState="signIn"
+    [hideSignUp]="true"
+    style = "--amplify-components-button-primary-background-color: rgba(193,42,33,255);
+            --amplify-components-tabs-item-active-border-color: rgba(193,42,33,255);
+            --amplify-components-tabs-item-color: rgba(193,42,33,255);
+            --amplify-components-tabs-item-active-color: rgba(225,37,27,255);
+            --amplify-components-button-link-color: rgba(225,37,27,255);
+            --amplify-components-button-primary-hover-background-color: rgba(225,37,27,255);
+            --amplify-components-button-link-hover-background-color: rgb(247, 220, 220);
+            --amplify-components-button-link-hover-color: rgba(193,42,33,255);
+"
+  >
+    <ng-template amplifySlot="header">
+      <div style="padding: var(--amplify-space-large); text-align: center">
+        <img
+          class="amplify-image"
+          alt="Amplify logo"
+          src="assets/logo.png"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template
+      amplifySlot="authenticated"
+      let-user="user"
+      let-signOut="signOut"
+    >
+      <h2>Welcome, {{ user.username }}!</h2>
+      <button (click)="signOut()">Sign Out</button>
+    </ng-template>
+  </amplify-authenticator>
+
+</div>

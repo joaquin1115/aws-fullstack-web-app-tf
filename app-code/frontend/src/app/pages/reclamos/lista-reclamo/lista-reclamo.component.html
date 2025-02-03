@@ -1,0 +1,45 @@
+<div>
+  <h2>Lista de Reclamos</h2>
+
+  <div class="p-grid p-justify-between">
+    <div class="p-col-12 p-md-6">
+      <label for="tipoClienteDropdown">Filtrar por Tipo de Cliente:</label>
+      <p-dropdown id="tipoClienteDropdown" [options]="tipoClienteOptions" [(ngModel)]="tipoClienteFiltro"
+        placeholder="Selecciona un tipo de cliente">
+      </p-dropdown>
+    </div>
+    <div class="p-col-12 p-md-6" style="text-align: right;">
+      <button pButton type="button" (click)="crearNuevoReclamo()" label="Crear Nuevo Reclamo"></button>
+    </div>
+  </div>
+
+  <p-table [value]="filteredReclamos" [paginator]="true" [rows]="10" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Cod Reclamo</th>
+        <th>Estado Reclamo</th>
+        <th>Fecha Reclamo</th>
+        <th>Cliente RUC</th>
+        <th>Tipo Cliente</th>
+        <th>Tipo Reclamo</th>
+        <th>Area Responsable</th>
+        <th>Cambiar Estado</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reclamo>
+      <tr>
+        <td><a class="codReclamo" (click)="verVistoReclamo(reclamo.codReclamo)">{{ reclamo.codReclamo }}</a></td>
+        <td>{{ reclamo.estadoReclamo }}</td>
+        <td>{{ reclamo.fechaReclamo }}</td>
+        <td>{{ reclamo.clienteRuc }}</td>
+        <td>{{ reclamo.tipoCliente }}</td>
+        <td>{{ reclamo.tipoReclamo }}</td>
+        <td>{{ reclamo.areaRes }}</td>
+        <td>
+          <p-dropdown [options]="estadoOptions" [(ngModel)]="reclamo.estadoReclamo" (onChange)="cambiarEstado(reclamo)">
+          </p-dropdown>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

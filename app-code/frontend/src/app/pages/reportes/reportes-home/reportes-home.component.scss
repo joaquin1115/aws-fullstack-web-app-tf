@@ -1,0 +1,73 @@
+.reportes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.21rem;
+
+  >div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    >div {
+      width: 100%;
+    }
+  }
+}
+
+::ng-deep .p-datepicker table td {
+  padding: 0.2rem !important;
+}
+
+::ng-deep .p-datepicker table td>span {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+::ng-deep .p-datepicker table {
+  font-size: 10pt;
+  margin: -0.143rem 0;
+}
+
+::ng-deep .p-datepicker .p-datepicker-header {
+  padding: 0.2rem;
+}
+
+.reporte-programacion-lista {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin: 0 auto;
+  font-size: 10pt;
+
+  >tr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    border-bottom: 1px solid #eee;
+    padding: 0.2rem;
+
+    >td {
+      width: 100%;
+      padding: 0.2rem;
+      text-align: right;
+
+      &:first-child {
+        width: 3rem;
+      }
+    }
+
+    >th {
+      width: 100%;
+      padding: 0.2rem;
+      text-align: right;
+
+      &:first-child {
+        width: 3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+cod_tipo_operacion,descripcion
+1,Picking
+2,Precintado
+3,Paletizado
+4,Carga
+5,Salida
+6,Recepción
+7,Descarga

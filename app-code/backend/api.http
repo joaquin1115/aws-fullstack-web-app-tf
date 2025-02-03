@@ -1,0 +1,167 @@
+###
+GET http://localhost:8080/api/user/all HTTP/1.1
+
+###
+POST http://localhost:8080/api/user/persona HTTP/1.1
+Content-Type: application/json
+
+{
+  "dni": "12345678",
+  "primerApellido": "Perez",
+  "segundoApellido": "Perez",
+  "prenombre": "Juan"
+}
+
+
+### Transportista 78943713 Gerente 77688137
+POST http://localhost:8080/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "dni": "96923150"
+}
+
+### MODULO DE PEDIDOS ###
+
+###
+GET http://localhost:8080/api/pedido/all HTTP/1.1
+
+###
+GET http://localhost:8080/api/pedido/details/1 HTTP/1.1
+
+###
+GET http://localhost:8080/api/pedido/items/1 HTTP/1.1
+
+
+###
+POST http://localhost:8080/api/pedido/datos HTTP/1.1
+Content-Type: application/json
+
+{
+  "personaRequest": {
+    "idEstadoCivil": 1,
+    "idNacionalidad": 1,
+    "idGenero": 1,
+    "dni": "12345678",
+    "primerApellido": "Perez",
+    "segundoApellido": "Perez",
+    "prenombre": "Juan"
+  },
+  "clienteRequest": {
+    "idCliente": 1,
+    "nombre": "Juan Perez",
+    "ruc": "12345678",
+    "direccion": "Direccion de prueba"
+  },
+  "representanteRequest": {
+    "telefono": "12345678",
+    "correoEmpresarial": "correo@correo.com",
+    "cargo": "Cargo de prueba"
+  }
+}
+
+###
+GET http://localhost:8080/api/pedido/productos HTTP/1.1
+
+###
+POST http://localhost:8080/api/pedido/ticket HTTP/1.1
+Content-Type: application/json
+
+{
+  "fechaEntrega": "2024-01-01"
+}
+
+###
+POST http://localhost:8080/api/pedido/new HTTP/1.1
+Content-Type: application/json
+
+{
+  "idRepresentante": 1,
+  "idEmpleadoRegistro": 1,
+  "idTipoPedido": "V",
+  "idEstadoPedido": "A",
+  "fechaRegistro": "2024-01-01",
+  "fechaEntrega": "2024-01-20",
+  "pedidoTicketProductoRequest": [
+    {
+      "idElementoCatalogo": 1,
+      "cantidad": 1
+    },
+    {
+      "idElementoCatalogo": 2,
+      "cantidad": 2
+    }
+  ]
+}
+
+### MODULO DE REPORTES ###
+
+
+###
+GET http://localhost:8080/api/reportes/reclamo/urgencia HTTP/1.1
+
+###
+GET http://localhost:8080/api/reportes/reclamo/tiempo HTTP/1.1
+
+###
+GET http://localhost:8080/api/reportes/reclamo/mes HTTP/1.1
+
+###
+GET http://localhost:8080/api/reportes/pedido/mes HTTP/1.1
+
+###
+GET http://localhost:8080/api/reportes/pedido/top HTTP/1.1
+
+###
+GET http://localhost:8080/api/reportes/lookup/tipo HTTP/1.1
+
+###
+GET http://localhost:8080/api/reportes/lookup/all HTTP/1.1
+
+
+###
+POST http://localhost:8080/api/reportes/programacion HTTP/1.1
+Content-Type: application/json
+
+{
+  "idRepresentante": 1,
+  "idReporteFormato": 1,
+  "idReporteEstado": 1,
+  "idReporteTipo": 1,
+  "idReporteFrecuencia": 1,
+  "fechaInicio": "2024-01-01",
+  "fechaFin": "2024-06-03"
+} 
+
+###
+GET http://localhost:8080/api/reportes/programacion/all HTTP/1.1
+
+###
+POST http://localhost:8080/api/reportes/new HTTP/1.1
+Content-Type: application/json
+
+{
+  "idRepresentante": 1,
+  "idReporteFormato": 1,
+  "idReporteTipo": 1,
+  "fechaInicio": "2024-01-01",
+  "fechaFin": "2024-06-03"
+} 
+
+###
+GET http://localhost:8080/api/reportes/operacion HTTP/1.1
+
+###
+GET http://localhost:8080/api/reportes/almacen/stock HTTP/1.1
+
+###
+GET http://localhost:8080/api/almacen/validarEmpleado?dni=7894371 HTTP/1.1
+
+
+### Error
+###
+GET http://localhost:8080/api/almacen/buscarPorCodGuiaRemision?codGuiaRemision=00002202404010800011 HTTP/1.1
+
+###
+GET http://localhost:8080/api/almacen/buscarPorNroPrecinto?nroPrecinto=asdasdada HTTP/1.1
+

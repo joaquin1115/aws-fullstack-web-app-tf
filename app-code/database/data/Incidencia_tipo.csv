@@ -1,0 +1,6 @@
+cod_tipo_incidencia,descripcion
+A,  Incidencia de tipo A: retrasos en la entrega
+B,  Incidencia de tipo B: errores en el etiquetado o embalaje     
+C,  Incidencia de tipo C: fallas en la documentación
+D,  Incidencia de tipo D: problemas mecánicos con el vehículo
+E,  Incidencia de tipo E: error en la asignación de ruta

@@ -1,0 +1,18 @@
+/* PROTOTIPO I604 */
+###
+GET http://localhost:8080/api/reclamos/lista HTTP/1.1
+
+###
+GET http://localhost:8080/api/reclamos/representantes?empresaId=2 HTTP/1.1
+
+###
+GET http://localhost:8080/api/reclamos/tickets?idRepresentante=2 HTTP/1.1
+
+###
+GET http://localhost:8080/api/reclamos/productos?idTicket=2 HTTP/1.1
+
+###
+GET http://localhost:8080/api/reclamos/productoDetalle?idTicket=2&idProducto=10 HTTP/1.1
+
+###
+GET http://localhost:8080/api/reclamos/visor?idReclamo=2 HTTP/1.1
