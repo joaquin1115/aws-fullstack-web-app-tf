@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 import {AmplifyAuthenticatorModule, AuthenticatorService} from '@aws-amplify/ui-angular';
+import { Amplify } from "aws-amplify";
 import { awsConfig } from '../../app.config';
 import { I18n } from 'aws-amplify/utils';
 import { fetchUserAttributes } from 'aws-amplify/auth';

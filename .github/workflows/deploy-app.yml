@@ -1,36 +1,155 @@
-name: Deploy app to AWS
+name: Deploy Full Stack Application to AWS
 
+# Trigger configuration
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Manual trigger
+  # Uncomment below to enable automated deployments
   # push:
   #   branches: [main]
   #   paths: ["infrastructure/app-infrastructure/**"]
-
   # pull_request:
   #   branches: [main]
   #   paths: ["infrastructure/app-infrastructure/**"]
 
+# Environment variables
 env:
   AWS_REGION: "us-east-1"
   TERRAFORM_VERSION: "1.5.0"
   NODE_VERSION: "21"
   JAVA_VERSION: "17"
+  WORKING_DIR_INFRA: "./infrastructure/app-infrastructure"
+  WORKING_DIR_DB: "./app-code/database"
+  WORKING_DIR_BACKEND: "./app-code/backend"
+  WORKING_DIR_FRONTEND: "./app-code/frontend"
 
+# Required permissions
 permissions:
-      id-token: write
-      contents: read
+  id-token: write
+  contents: read
 
 jobs:
-  deploy:
+  # Infrastructure deployment job
+  infrastructure:
     runs-on: ubuntu-latest
+    outputs:
+      ecr_repository_name: ${{ steps.tf-outputs.outputs.ecr_repository_name }}
+      ecs_cluster_name: ${{ steps.tf-outputs.outputs.ecs_cluster_name }}
+      ecs_service_name: ${{ steps.tf-outputs.outputs.ecs_service_name }}
+      user_pool_id: ${{ steps.tf-outputs.outputs.user_pool_id }}
+      user_pool_client_id: ${{ steps.tf-outputs.outputs.user_pool_client_id }}
+      frontend_bucket_name: ${{ steps.tf-outputs.outputs.frontend_bucket_name }}
+      cloudfront_distribution_id: ${{ steps.tf-outputs.outputs.cloudfront_distribution_id }}
+      ecs_security_group_id: ${{ steps.tf-outputs.outputs.ecs_security_group_id }}
+      private_subnet_id: ${{ steps.tf-outputs.outputs.private_subnet_id }}
+      ecs_task_execution_role_arn: ${{ steps.tf-outputs.outputs.ecs_task_execution_role_arn }}
+      db_identifier: ${{ steps.tf-outputs.outputs.db_identifier }}
     steps:
-      - name: Git clone the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_TO_ASSUME_NAME }}"
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+
+      - name: Deploy Infrastructure
+        working-directory: ${{ env.WORKING_DIR_INFRA }}
+        run: |
+          terraform init \
+            -backend-config="bucket=${{ secrets.TERRAFORM_STATE_BUCKET }}" \
+            -backend-config="key=app/terraform.tfstate" \
+            -backend-config="region=${{ env.AWS_REGION }}" \
+            -backend-config="encrypt=true" \
+            -backend-config="dynamodb_table=${{ secrets.TERRAFORM_LOCK_TABLE }}"
+          
+          terraform plan \
+            -var="aws_region=${{ env.AWS_REGION }}" \
+            -var="db_name=${{ secrets.DB_NAME }}" \
+            -var="db_username=${{ secrets.DB_USERNAME }}" \
+            -var="db_password=${{ secrets.DB_PASSWORD }}" \
+            -out=tfplan
+          
+          terraform apply -auto-approve tfplan
+
+      - name: Export Terraform Outputs
+        id: tf-outputs
+        working-directory: ${{ env.WORKING_DIR_INFRA }}
+        run: |
+          echo "ecr_repository_name=$(terraform output -raw ecr_repository_name)" >> $GITHUB_OUTPUT
+          echo "ecs_cluster_name=$(terraform output -raw ecs_cluster_name)" >> $GITHUB_OUTPUT
+          echo "ecs_service_name=$(terraform output -raw ecs_service_name)" >> $GITHUB_OUTPUT
+          echo "user_pool_id=$(terraform output -raw user_pool_id)" >> $GITHUB_OUTPUT
+          echo "user_pool_client_id=$(terraform output -raw user_pool_client_id)" >> $GITHUB_OUTPUT
+          echo "frontend_bucket_name=$(terraform output -raw frontend_bucket_name)" >> $GITHUB_OUTPUT
+          echo "cloudfront_distribution_id=$(terraform output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT
+          echo "ecs_security_group_id=$(terraform output -raw ecs_security_group_id)" >> $GITHUB_OUTPUT
+          echo "private_subnet_id=$(terraform output -raw private_subnet_id)" >> $GITHUB_OUTPUT
+          echo "ecs_task_execution_role_arn=$(terraform output -raw ecs_task_execution_role_arn)" >> $GITHUB_OUTPUT
+          echo "db_identifier=$(terraform output -raw db_identifier)" >> $GITHUB_OUTPUT
+
+  # Backend build job - can run in parallel with frontend build
+  build-backend:
+    runs-on: ubuntu-latest
+    needs: infrastructure
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_TO_ASSUME_NAME }}"
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build Backend
+        working-directory: ${{ env.WORKING_DIR_BACKEND }}
+        run: |
+          mvn wrapper:wrapper
+          mvn clean package -DskipTests
+
+      - name: Build and Push Docker Image
+        working-directory: ${{ env.WORKING_DIR_BACKEND }}
+        run: |
+          ECR_REPOSITORY_URL = "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
+          aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REPOSITORY_URL
+          docker build -t $ECR_REPOSITORY_URL:latest .
+          docker push $ECR_REPOSITORY_URL:latest
+
+      - name: Update ECS Service
+        run: |
+          aws ecs update-service \
+            --cluster ${{ needs.infrastructure.outputs.ecs_cluster_name }} \
+            --service ${{ needs.infrastructure.outputs.ecs_service_name }} \
+            --force-new-deployment
+
+  # Frontend build job - can run in parallel with backend build
+  build-frontend:
+    runs-on: ubuntu-latest
+    needs: infrastructure
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_TO_ASSUME_NAME }}"
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
 
@@ -39,69 +158,78 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      # Setup Java for backend build
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: 'temurin'
-
-      # Setup Terraform
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: ${{ env.TERRAFORM_VERSION }}
-          terraform_wrapper: false
-      
-      # Initialize and apply Terraform
-      - name: Deploy Terraform project
-        working-directory: ./infrastructure/app-infrastructure
+      - name: Build Frontend
+        working-directory: ${{ env.WORKING_DIR_FRONTEND }}
         run: |
-          terraform init \
-            -backend-config="bucket=${{ secrets.TERRAFORM_STATE_BUCKET }}" \
-            -backend-config="key=app/terraform.tfstate" \
-            -backend-config="region=${{ env.AWS_REGION }}" \
-            -backend-config="encrypt=true" \
-            -backend-config="dynamodb_table=${{ secrets.TERRAFORM_LOCK_TABLE }}"
-          terraform plan -var="aws_region=${{ env.AWS_REGION }}" \
-                        -var="db_name=${{ secrets.DB_NAME }}" \
-                        -var="db_username=${{ secrets.DB_USERNAME }}" \
-                        -var="db_password=${{ secrets.DB_PASSWORD }}" \
-                        -out=tfplan
-          terraform apply -auto-approve tfplan
+          mkdir -p src/environments
+          cat << EOF > src/environments/environment.prod.ts
+          export const environment = {
+            production: true,
+            cognito: {
+              userPoolId: '${{ needs.infrastructure.outputs.user_pool_id }}',
+              userPoolClientId: '${{ needs.infrastructure.outputs.user_pool_client_id }}'
+            }
+          };
+          EOF
+          
+          npm install
+          chmod +x ../../scripts/fix-amplify-package.sh
+          ../../scripts/fix-amplify-package.sh
+          npm run build
 
-      - name: Build and push migration image
-        working-directory: ./app-code/database
+      - name: Deploy to S3 and Invalidate Cache
+        working-directory: ${{ env.WORKING_DIR_FRONTEND }}
         run: |
-          # Get ECR repository URL from Terraform output
-          ECR_REPO=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecr_repository_url)
-          MIGRATION_TAG="${ECR_REPO}:migration"
+          PROJECT_NAME=$(jq -r '.projects | keys | .[0]' angular.json)
+          OUTPUT_PATH=$(jq -r ".projects[\"$PROJECT_NAME\"].architect.build.options.outputPath" angular.json)
+          
+          aws s3 sync $OUTPUT_PATH/ s3://${{ needs.infrastructure.outputs.frontend_bucket_name }}/
+          
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ needs.infrastructure.outputs.cloudfront_distribution_id }} \
+            --paths "/*"
 
-          # Create Dockerfile for migration
+  # Database migration job
+  database-migration:
+    runs-on: ubuntu-latest
+    needs: infrastructure
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_TO_ASSUME_NAME }}"
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Build and Push Migration Image
+        working-directory: ${{ env.WORKING_DIR_DB }}
+        run: |
+          ECR_REPOSITORY_URL = "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
+          MIGRATION_TAG="$ECR_REPOSITORY_URL:migration"
+          
           cat > Dockerfile.migration << 'EOF'
           FROM postgres:15
           COPY ./init.sql /app/database/
           COPY ./data/ /app/database/data/
           EOF
           
-          # Build and push migration image
-          aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REPO
+          aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REPOSITORY_URL
           docker build -f Dockerfile.migration -t $MIGRATION_TAG .
           docker push $MIGRATION_TAG
 
-      # Deploy database
-      - name: Deploy database
-        working-directory: ./app-code/database
+      - name: Run Migration Task
+        working-directory: ${{ env.WORKING_DIR_DB }}
         run: |
-          # Get resource values from Terraform outputs
-          DB_ENDPOINT=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw db_endpoint)
-          ECS_CLUSTER=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecs_cluster_name)
-          SECURITY_GROUP_ID=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecs_security_group_id)
-          SUBNET_ID=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw private_subnet_id)
-          ECR_REPO=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecr_repository_url)
-          ECS_TASK_EXECUTION_ROLE_ARN=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecs_task_execution_role_arn)
+          ECR_REPOSITORY_URL = "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
           
-          # Create a temporary task definition
+          DB_ENDPOINT=$(aws rds describe-db-instances \
+            --db-instance-identifier ${{ needs.infrastructure.outputs.db_identifier }} \
+            --query 'DBInstances[0].Endpoint.Address' \
+            --output text)
+          
           TASK_DEF_FAMILY="db-migration-$(date +%s)"
           aws ecs register-task-definition \
             --family $TASK_DEF_FAMILY \
@@ -109,11 +237,11 @@ jobs:
             --requires-compatibilities FARGATE \
             --cpu 256 \
             --memory 512 \
-            --execution-role-arn $ECS_TASK_EXECUTION_ROLE_ARN \
+            --execution-role-arn ${{ needs.infrastructure.outputs.ecs_task_execution_role_arn }} \
             --container-definitions '[
               {
                 "name": "db-migration",
-                "image": "postgres:15",
+                "image": "$ECR_REPOSITORY_URL:migration",
                 "essential": true,
                 "environment": [
                   {
@@ -124,33 +252,29 @@ jobs:
               }
             ]'
           
-          # Run the migration task
           TASK_ARN=$(aws ecs run-task \
-            --cluster $ECS_CLUSTER \
+            --cluster ${{ needs.infrastructure.outputs.ecs_cluster_name }} \
             --task-definition $TASK_DEF_FAMILY \
             --launch-type FARGATE \
-            --network-configuration "awsvpcConfiguration={subnets=[$SUBNET_ID],securityGroups=[$SECURITY_GROUP_ID],assignPublicIp=DISABLED}" \
+            --network-configuration "awsvpcConfiguration={subnets=[${{ needs.infrastructure.outputs.private_subnet_id }}],securityGroups=[${{ needs.infrastructure.outputs.ecs_security_group_id }}],assignPublicIp=DISABLED}" \
             --overrides '{
               "containerOverrides": [{
                 "name": "db-migration",
-                "command": ["psql", "-h", "'$DB_ENDPOINT'", "-U", "'${{ secrets.DB_USERNAME }}'", "-d", "'${{ secrets.DB_NAME }}'", "-f", "/app/database/init.sql"]
+                "command": ["psql", "-h", "'$DB_ENDPOINT'", "-p", "5432", "-U", "'${{ secrets.DB_USERNAME }}'", "-d", "'${{ secrets.DB_NAME }}'", "-f", "/app/database/init.sql"]
               }]
             }' \
             --query 'tasks[0].taskArn' \
             --output text)
           
-          # Wait for task completion
           echo "Waiting for migration task to complete..."
-          aws ecs wait tasks-stopped --cluster $ECS_CLUSTER --tasks $TASK_ARN
+          aws ecs wait tasks-stopped --cluster ${{ needs.infrastructure.outputs.ecs_cluster_name }} --tasks $TASK_ARN
           
-          # Check task status
           TASK_STATUS=$(aws ecs describe-tasks \
-            --cluster $ECS_CLUSTER \
+            --cluster ${{ needs.infrastructure.outputs.ecs_cluster_name }} \
             --tasks $TASK_ARN \
             --query 'tasks[0].containers[0].exitCode' \
             --output text)
           
-          # Clean up the task definition
           aws ecs deregister-task-definition \
             --task-definition $TASK_DEF_FAMILY:1
           
@@ -159,55 +283,10 @@ jobs:
             exit 1
           fi
 
-      # Build and deploy backend
-      - name: Build and deploy backend
-        working-directory: ./app-code/backend
-        run: |
-          # Build the application
-          ./mvnw clean package -DskipTests
-          
-          # Get ECR repository URL from Terraform output
-          ECR_REPO=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecr_repository_url)
-          
-          # Build and push Docker image
-          aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REPO
-          docker build -t $ECR_REPO:latest .
-          docker push $ECR_REPO:latest
-          
-          # Update ECS service to pick up new image
-          aws ecs update-service --cluster $(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecs_cluster_name) \
-                                --service $(terraform -chdir=../../infrastructure/app-infrastructure output -raw ecs_service_name) \
-                                --force-new-deployment
-
-      # Build and deploy frontend
-      - name: Build and deploy frontend
-        working-directory: ./app-code/frontend
-        run: |
-          # Get Cognito user pool ID and client ID from Terraform output
-          COGNITO_USER_POOL_ID=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw user_pool_id)
-          COGNITO_USER_POOL_CLIENT_ID=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw user_pool_client_id)
-
-          # Create environment file
-          cat << EOF > src/environments/environment.prod.ts
-          export const environment = {
-            production: true,
-            cognito: {
-              userPoolId: '$COGNITO_USER_POOL_ID',
-              userPoolClientId: '$COGNITO_USER_POOL_CLIENT_ID'
-            }
-          };
-          EOF
-
-          # Install dependencies and build
-          npm install
-          npm run build
-          
-          # Get S3 bucket name from Terraform output
-          S3_BUCKET=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw frontend_bucket_name)
-          
-          # Deploy to S3
-          aws s3 sync build/ s3://$S3_BUCKET/
-          
-          # Invalidate CloudFront cache
-          DISTRIBUTION_ID=$(terraform -chdir=../../infrastructure/app-infrastructure output -raw cloudfront_distribution_id)
-          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+  # Final job
+  verify-deployment:
+    runs-on: ubuntu-latest
+    needs: [build-backend, build-frontend, database-migration]
+    steps:
+      - name: Check Deployment Status
+        run: echo "All components have been deployed successfully"

@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-
+import { ResourcesConfig } from 'aws-amplify';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
   ]
 };
 
-export const awsConfig = {
+export const awsConfig: ResourcesConfig = {
   Auth: {
     Cognito: {
       userPoolId: process.env['COGNITO_USER_POOL_ID'] ?? '',
@@ -30,6 +30,7 @@ export const awsConfig = {
         email: {
           required: true,
         },
+        /**
         "custom:employee_id": {
           required: false,
         },
@@ -45,6 +46,7 @@ export const awsConfig = {
         "custom:is_representative": {
           required: false,
         },
+        */
       },
       passwordFormat: {
         minLength: 8,

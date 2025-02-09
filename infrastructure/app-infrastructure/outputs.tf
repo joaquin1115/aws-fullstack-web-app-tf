@@ -21,8 +21,8 @@ output "app_domain" {
   value = aws_cloudfront_distribution.app_distribution.domain_name
 }
 
-output "db_endpoint" {
-  value = aws_db_instance.appdb.endpoint
+output "db_identifier" {
+  value = aws_db_instance.appdb.identifier
 }
 
 output "ecs_cluster_name" {
@@ -45,8 +45,8 @@ output "cloudfront_distribution_id" {
   value = aws_cloudfront_distribution.app_distribution.id
 }
 
-output "ecr_repository_url" {
-  value = aws_ecr_repository.my_ecr_repo.repository_url
+output "ecr_repository_name" {
+  value = aws_ecr_repository.my_ecr_repo.name
 }
 
 output "user_pool_id" {
@@ -57,6 +57,6 @@ output "user_pool_client_id" {
   value = aws_cognito_user_pool_client.client.id
 }
 
-output "ecs_task_execution_role_arn" {
-  value = aws_iam_role.ecs_task_execution_role.arn
+output "ecs_task_execution_role_name" {
+  value = aws_iam_role.ecs_task_execution_role.name
 }
