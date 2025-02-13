@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BusquedaAlmacenResponse } from '../models/response/almacen-response';
+import { API_URL } from "../../shared/constants/urls.constant";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlmacenService {
-  private apiUrl = 'http://localhost:8080/api/almacen';
+  private apiUrl = API_URL.ALMACEN;
 
   constructor(private http: HttpClient) { }
 

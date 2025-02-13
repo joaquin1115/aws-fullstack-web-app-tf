@@ -10,42 +10,6 @@ resource "aws_vpc" "main" {
   }
 }
 
-# Internet Gateway
-resource "aws_internet_gateway" "main" {
-  vpc_id = aws_vpc.main.id
-
-  tags = {
-    Name = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC"
-  }
-}
-
-# Public Subnets
-resource "aws_subnet" "public1" {
-  vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.0.0.0/19"
-  availability_zone       = data.aws_availability_zones.available.names[0]
-  map_public_ip_on_launch = true
-
-  tags = {
-    Name                  = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet1"
-    "aws-cdk:subnet-name" = "Public"
-    "aws-cdk:subnet-type" = "Public"
-  }
-}
-
-resource "aws_subnet" "public2" {
-  vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.0.32.0/19"
-  availability_zone       = data.aws_availability_zones.available.names[1]
-  map_public_ip_on_launch = true
-
-  tags = {
-    Name                  = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet2"
-    "aws-cdk:subnet-name" = "Public"
-    "aws-cdk:subnet-type" = "Public"
-  }
-}
-
 # Private Subnets for ECS
 resource "aws_subnet" "private1" {
   vpc_id                  = aws_vpc.main.id
@@ -100,24 +64,7 @@ resource "aws_subnet" "rds_private2" {
   }
 }
 
-
 # Route Tables
-resource "aws_route_table" "public1" {
-  vpc_id = aws_vpc.main.id
-
-  tags = {
-    Name = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet1"
-  }
-}
-
-resource "aws_route_table" "public2" {
-  vpc_id = aws_vpc.main.id
-
-  tags = {
-    Name = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet2"
-  }
-}
-
 resource "aws_route_table" "private1" {
   vpc_id = aws_vpc.main.id
 
@@ -135,16 +82,6 @@ resource "aws_route_table" "private2" {
 }
 
 # Route Table Associations
-resource "aws_route_table_association" "public1" {
-  subnet_id      = aws_subnet.public1.id
-  route_table_id = aws_route_table.public1.id
-}
-
-resource "aws_route_table_association" "public2" {
-  subnet_id      = aws_subnet.public2.id
-  route_table_id = aws_route_table.public2.id
-}
-
 resource "aws_route_table_association" "private1" {
   subnet_id      = aws_subnet.private1.id
   route_table_id = aws_route_table.private1.id
@@ -155,62 +92,57 @@ resource "aws_route_table_association" "private2" {
   route_table_id = aws_route_table.private2.id
 }
 
-# NAT Gateway and EIP
-resource "aws_eip" "nat1" {
-  domain = "vpc"
+#VPC endpoints
+resource "aws_vpc_endpoint" "ecr_dkr" {
+  vpc_id              = aws_vpc.main.id
+  service_name        = "com.amazonaws.${var.aws_region}.ecr.dkr"
+  vpc_endpoint_type   = "Interface"
+  private_dns_enabled = true
+
+  security_group_ids = [aws_security_group.vpc_endpoints.id]
+  subnet_ids         = [aws_subnet.private1.id, aws_subnet.private2.id]
 
   tags = {
-    Name = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet1"
+    "Name" = "${var.environment}-ecr-dkr"
   }
 }
 
-resource "aws_eip" "nat2" {
-  domain = "vpc"
+resource "aws_vpc_endpoint" "ecr_api" {
+  vpc_id              = aws_vpc.main.id
+  service_name        = "com.amazonaws.${var.aws_region}.ecr.api"
+  vpc_endpoint_type   = "Interface"
+  private_dns_enabled = true
+
+  security_group_ids = [aws_security_group.vpc_endpoints.id]
+  subnet_ids         = [aws_subnet.private1.id, aws_subnet.private2.id]
 
   tags = {
-    Name = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet2"
+    "Name" = "${var.environment}-ecr-api"
   }
 }
 
-resource "aws_nat_gateway" "nat1" {
-  allocation_id = aws_eip.nat1.id
-  subnet_id     = aws_subnet.public1.id
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id            = aws_vpc.main.id
+  service_name      = "com.amazonaws.${var.aws_region}.s3"
+  vpc_endpoint_type = "Gateway"
+
+  route_table_ids = [aws_route_table.private1.id, aws_route_table.private2.id]
 
   tags = {
-    Name = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet1"
+    "Name" = "${var.environment}-s3"
   }
 }
 
-resource "aws_nat_gateway" "nat2" {
-  allocation_id = aws_eip.nat2.id
-  subnet_id     = aws_subnet.public2.id
+resource "aws_vpc_endpoint" "cloudwatch_logs" {
+  vpc_id              = aws_vpc.main.id
+  service_name        = "com.amazonaws.${var.aws_region}.logs"
+  vpc_endpoint_type   = "Interface"
+  private_dns_enabled = true
+
+  security_group_ids = [aws_security_group.vpc_endpoints.id]
+  subnet_ids         = [aws_subnet.private1.id, aws_subnet.private2.id]
 
   tags = {
-    Name = "PrivateIntegrationsStack/PrivateIntegrationsTutorialVPC/PublicSubnet2"
+    "Name" = "${var.environment}-cloudwatch-logs"
   }
-}
-
-# Routes
-resource "aws_route" "public1_igw" {
-  route_table_id         = aws_route_table.public1.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.main.id
-}
-
-resource "aws_route" "public2_igw" {
-  route_table_id         = aws_route_table.public2.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.main.id
-}
-
-resource "aws_route" "private1_nat" {
-  route_table_id         = aws_route_table.private1.id
-  destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id         = aws_nat_gateway.nat1.id
-}
-
-resource "aws_route" "private2_nat" {
-  route_table_id         = aws_route_table.private2.id
-  destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id         = aws_nat_gateway.nat2.id
 }

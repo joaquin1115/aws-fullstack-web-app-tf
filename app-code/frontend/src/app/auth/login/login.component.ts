@@ -3,11 +3,11 @@ import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 import {AmplifyAuthenticatorModule, AuthenticatorService} from '@aws-amplify/ui-angular';
 import { Amplify } from "aws-amplify";
-import { awsConfig } from '../../app.config';
 import { I18n } from 'aws-amplify/utils';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 import { translations } from '@aws-amplify/ui-angular';
 import { Hub } from 'aws-amplify/utils';
+import { environment } from '../../../environments/environment';
 I18n.putVocabularies(translations);
 I18n.setLanguage('es');
 
@@ -35,7 +35,30 @@ export class LoginComponent implements OnInit{
     private authService: AuthService,
     private router: Router,
   ) {
-    Amplify.configure(awsConfig);
+    Amplify.configure({
+      Auth: {
+        Cognito: {
+          userPoolId: environment.cognito.userPoolId,
+          userPoolClientId: environment.cognito.userPoolClientId,
+          loginWith: {
+            email: true,
+          },
+          signUpVerificationMethod: "code",
+          userAttributes: {
+            email: {
+              required: true,
+            }
+          },
+          passwordFormat: {
+            minLength: 8,
+            requireLowercase: true,
+            requireUppercase: true,
+            requireNumbers: true,
+            requireSpecialCharacters: true,
+          },
+        },
+      },
+    });
   }
 
   ngOnInit() {

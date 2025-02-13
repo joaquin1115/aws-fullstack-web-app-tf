@@ -69,6 +69,7 @@ resource "aws_cognito_user_pool" "main" {
     required                = false
   }
 
+  username_attributes      = ["email"]
   auto_verified_attributes = ["email"]
 }
 
@@ -79,6 +80,7 @@ resource "aws_cognito_user_pool_client" "client" {
 
   explicit_auth_flows = [
     "ALLOW_USER_PASSWORD_AUTH",
-    "ALLOW_REFRESH_TOKEN_AUTH"
+    "ALLOW_REFRESH_TOKEN_AUTH",
+    "ALLOW_USER_SRP_AUTH"
   ]
 }

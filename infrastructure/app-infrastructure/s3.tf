@@ -1,6 +1,7 @@
 # S3 Buckets
 resource "aws_s3_bucket" "spa" {
   bucket = "spa-${aws_apigatewayv2_api.main.id}"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_versioning" "spa" {
@@ -38,6 +39,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "spa" {
 # Logging Bucket
 resource "aws_s3_bucket" "logging" {
   bucket = "spa-${aws_apigatewayv2_api.main.id}-logs"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "logging" {

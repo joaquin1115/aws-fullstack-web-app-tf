@@ -11,7 +11,7 @@ import { Observable, of } from "rxjs";
 })
 export class ReclamosService {
 
-  private apiUrl = 'http://localhost:8080/api/reclamos';
+  private apiUrl = API_URL.RECLAMOS;
   constructor(private http: HttpClient) { }
 
   getReclamos(): Observable<ReclamoListaResponse[]> {
