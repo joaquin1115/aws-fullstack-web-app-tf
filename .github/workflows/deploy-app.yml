@@ -41,7 +41,7 @@ jobs:
       cloudfront_distribution_id: ${{ steps.tf-outputs.outputs.cloudfront_distribution_id }}
       ecs_security_group_id: ${{ steps.tf-outputs.outputs.ecs_security_group_id }}
       private_subnet_id: ${{ steps.tf-outputs.outputs.private_subnet_id }}
-      ecs_task_execution_role_arn: ${{ steps.tf-outputs.outputs.ecs_task_execution_role_arn }}
+      ecs_task_execution_role_name: ${{ steps.tf-outputs.outputs.ecs_task_execution_role_name }}
       db_identifier: ${{ steps.tf-outputs.outputs.db_identifier }}
     steps:
       - name: Checkout repository
@@ -92,7 +92,7 @@ jobs:
           echo "cloudfront_distribution_id=$(terraform output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT
           echo "ecs_security_group_id=$(terraform output -raw ecs_security_group_id)" >> $GITHUB_OUTPUT
           echo "private_subnet_id=$(terraform output -raw private_subnet_id)" >> $GITHUB_OUTPUT
-          echo "ecs_task_execution_role_arn=$(terraform output -raw ecs_task_execution_role_arn)" >> $GITHUB_OUTPUT
+          echo "ecs_task_execution_role_name=$(terraform output -raw ecs_task_execution_role_name)" >> $GITHUB_OUTPUT
           echo "db_identifier=$(terraform output -raw db_identifier)" >> $GITHUB_OUTPUT
 
   # Backend build job - can run in parallel with frontend build
@@ -126,7 +126,7 @@ jobs:
       - name: Build and Push Docker Image
         working-directory: ${{ env.WORKING_DIR_BACKEND }}
         run: |
-          ECR_REPOSITORY_URL = "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
+          ECR_REPOSITORY_URL="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
           aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REPOSITORY_URL
           docker build -t $ECR_REPOSITORY_URL:latest .
           docker push $ECR_REPOSITORY_URL:latest
@@ -161,7 +161,6 @@ jobs:
       - name: Build Frontend
         working-directory: ${{ env.WORKING_DIR_FRONTEND }}
         run: |
-          mkdir -p src/environments
           cat << EOF > src/environments/environment.prod.ts
           export const environment = {
             production: true,
@@ -181,7 +180,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIR_FRONTEND }}
         run: |
           PROJECT_NAME=$(jq -r '.projects | keys | .[0]' angular.json)
-          OUTPUT_PATH=$(jq -r ".projects[\"$PROJECT_NAME\"].architect.build.options.outputPath" angular.json)
+          OUTPUT_PATH="$(jq -r ".projects[\"$PROJECT_NAME\"].architect.build.options.outputPath" angular.json)/browser"
           
           aws s3 sync $OUTPUT_PATH/ s3://${{ needs.infrastructure.outputs.frontend_bucket_name }}/
           
@@ -207,7 +206,7 @@ jobs:
       - name: Build and Push Migration Image
         working-directory: ${{ env.WORKING_DIR_DB }}
         run: |
-          ECR_REPOSITORY_URL = "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
+          ECR_REPOSITORY_URL="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
           MIGRATION_TAG="$ECR_REPOSITORY_URL:migration"
           
           cat > Dockerfile.migration << 'EOF'
@@ -223,7 +222,8 @@ jobs:
       - name: Run Migration Task
         working-directory: ${{ env.WORKING_DIR_DB }}
         run: |
-          ECR_REPOSITORY_URL = "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
+          ECR_REPOSITORY_URL="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
+          ECS_TASK_EXECUTION_ROLE_ARN="arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ needs.infrastructure.outputs.ecs_task_execution_role_name }}"
           
           DB_ENDPOINT=$(aws rds describe-db-instances \
             --db-instance-identifier ${{ needs.infrastructure.outputs.db_identifier }} \
@@ -237,11 +237,11 @@ jobs:
             --requires-compatibilities FARGATE \
             --cpu 256 \
             --memory 512 \
-            --execution-role-arn ${{ needs.infrastructure.outputs.ecs_task_execution_role_arn }} \
+            --execution-role-arn $ECS_TASK_EXECUTION_ROLE_ARN \
             --container-definitions '[
               {
                 "name": "db-migration",
-                "image": "$ECR_REPOSITORY_URL:migration",
+                "image": "'${ECR_REPOSITORY_URL}:migration'",
                 "essential": true,
                 "environment": [
                   {
