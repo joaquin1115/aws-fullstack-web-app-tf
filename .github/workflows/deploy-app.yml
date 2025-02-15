@@ -330,7 +330,7 @@ jobs:
   # Final job
   verify-deployment:
     runs-on: ubuntu-latest
-    needs: [build-backend, build-frontend, database-migration]
+    needs: [build-backend, build-frontend, database-migration, infrastructure]
     steps:
       - name: Check Deployment Status
         run: |
