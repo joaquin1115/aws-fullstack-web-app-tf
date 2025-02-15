@@ -6,5 +6,5 @@ export class API_URL {
   static REPORTES = "/api/reportes";
   static RECLAMOS = "/api/reclamos";
   static AUTH = "/api/auth";
-  static INCIDENCIAS = "/api/incidencias";
+  static INCIDENCIAS = "/api/control";
 }
