@@ -40,24 +40,20 @@ resource "aws_ecs_task_definition" "service" {
           value = "prod"
         },
         {
-          name  = "DB_USERNAME"
-          value = "${aws_db_instance.appdb.username}"
+          name: "SPRING_PROFILES_ACTIVE",
+          value: "prod"
         },
         {
-          name  = "DB_HOST"
-          value = "${aws_db_instance.appdb.address}"
+          name: "SPRING_DATASOURCE_URL",
+          value: "jdbc:postgresql://${aws_db_instance.appdb.address}:${aws_db_instance.appdb.port}/${aws_db_instance.appdb.db_name}"
         },
         {
-          name  = "DB_PORT"
-          value = "${tostring(aws_db_instance.appdb.port)}"
+          name: "SPRING_DATASOURCE_USERNAME",
+          value: "${aws_db_instance.appdb.username}"
         },
         {
-          name  = "DB_DATABASE"
-          value = "${aws_db_instance.appdb.db_name}"
-        },
-        {
-          name  = "DB_PASSWORD"
-          value = "${var.db_password}"
+          name: "SPRING_DATASOURCE_PASSWORD",
+          value: "${var.db_password}"
         }
       ]
       logConfiguration = {
