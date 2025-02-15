@@ -818,9 +818,11 @@ CREATE TABLE IF NOT EXISTS reporte (
 /* CARGA DE DATOS */
 
 DO $$
-DECLARE
-    base_path TEXT := '/app/database/data/';
+DECLARE 
+    base_path TEXT;
 BEGIN
+    base_path := '/var/lib/postgresql/data/';
+
     EXECUTE 'COPY estado_civil FROM ' || quote_literal(base_path || 'Estado_civil.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY nacionalidad FROM ' || quote_literal(base_path || 'Nacionalidad.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY genero FROM ' || quote_literal(base_path || 'Genero.csv') || ' DELIMITER '','' CSV HEADER';

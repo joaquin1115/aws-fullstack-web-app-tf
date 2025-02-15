@@ -42,7 +42,9 @@ jobs:
       ecs_security_group_id: ${{ steps.tf-outputs.outputs.ecs_security_group_id }}
       private_subnet_id: ${{ steps.tf-outputs.outputs.private_subnet_id }}
       ecs_task_execution_role_name: ${{ steps.tf-outputs.outputs.ecs_task_execution_role_name }}
-      db_identifier: ${{ steps.tf-outputs.outputs.db_identifier }}
+      db_address: ${{ steps.tf-outputs.outputs.db_address }}
+      app_domain: ${{ steps.tf-outputs.outputs.app_domain }}
+      db_migration_log_group_name: ${{ steps.tf-outputs.outputs.db_migration_log_group_name }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -93,7 +95,9 @@ jobs:
           echo "ecs_security_group_id=$(terraform output -raw ecs_security_group_id)" >> $GITHUB_OUTPUT
           echo "private_subnet_id=$(terraform output -raw private_subnet_id)" >> $GITHUB_OUTPUT
           echo "ecs_task_execution_role_name=$(terraform output -raw ecs_task_execution_role_name)" >> $GITHUB_OUTPUT
-          echo "db_identifier=$(terraform output -raw db_identifier)" >> $GITHUB_OUTPUT
+          echo "db_address=$(terraform output -raw db_address)" >> $GITHUB_OUTPUT
+          echo "app_domain=$(terraform output -raw app_domain)" >> $GITHUB_OUTPUT
+          echo "db_migration_log_group_name=$(terraform output -raw db_migration_log_group_name)" >> $GITHUB_OUTPUT
 
   # Backend build job - can run in parallel with frontend build
   build-backend:
@@ -192,6 +196,22 @@ jobs:
   database-migration:
     runs-on: ubuntu-latest
     needs: infrastructure
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: temp_migration_db
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+          --name postgres
+          --hostname postgres
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -203,6 +223,26 @@ jobs:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Generate INSERT-based migration script
+        working-directory: ${{ env.WORKING_DIR_DB }}
+        run: |
+          # Wait for PostgreSQL to be ready
+          until pg_isready -h localhost -p 5432 -U postgres; do
+            echo "Waiting for PostgreSQL..."
+            sleep 2
+          done
+          echo "PostgreSQL is ready!"
+
+          # Copy CSV files to container
+          docker cp ./init.sql postgres:/var/lib/postgresql/data/
+          docker cp ./data/. postgres:/var/lib/postgresql/data/
+
+          # Run migration script inside PostgreSQL container
+          docker exec -u postgres postgres psql -d temp_migration_db -f /var/lib/postgresql/data/init.sql
+
+          # Generate database dump
+          docker exec -u postgres postgres pg_dump --column-inserts -d temp_migration_db > migration.sql
+    
       - name: Build and Push Migration Image
         working-directory: ${{ env.WORKING_DIR_DB }}
         run: |
@@ -211,8 +251,7 @@ jobs:
           
           cat > Dockerfile.migration << 'EOF'
           FROM postgres:15
-          COPY ./init.sql /app/database/
-          COPY ./data/ /app/database/data/
+          COPY ./migration.sql /app/database/
           EOF
           
           aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REPOSITORY_URL
@@ -224,12 +263,9 @@ jobs:
         run: |
           ECR_REPOSITORY_URL="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ needs.infrastructure.outputs.ecr_repository_name }}"
           ECS_TASK_EXECUTION_ROLE_ARN="arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ needs.infrastructure.outputs.ecs_task_execution_role_name }}"
-          
-          DB_ENDPOINT=$(aws rds describe-db-instances \
-            --db-instance-identifier ${{ needs.infrastructure.outputs.db_identifier }} \
-            --query 'DBInstances[0].Endpoint.Address' \
-            --output text)
-          
+          DB_MIGRATION_LOG_GROUP_NAME="${{ needs.infrastructure.outputs.db_migration_log_group_name }}"
+          DB_ENDPOINT="${{ needs.infrastructure.outputs.db_address }}"
+
           TASK_DEF_FAMILY="db-migration-$(date +%s)"
           aws ecs register-task-definition \
             --family $TASK_DEF_FAMILY \
@@ -248,7 +284,15 @@ jobs:
                     "name": "PGPASSWORD",
                     "value": "'${{ secrets.DB_PASSWORD }}'"
                   }
-                ]
+                ],
+                "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                  "awslogs-group": "'${DB_MIGRATION_LOG_GROUP_NAME}'",
+                  "awslogs-region": "${{ env.AWS_REGION }}",
+                  "awslogs-stream-prefix": "ecs"
+                  }
+                }
               }
             ]'
           
@@ -260,7 +304,7 @@ jobs:
             --overrides '{
               "containerOverrides": [{
                 "name": "db-migration",
-                "command": ["psql", "-h", "'$DB_ENDPOINT'", "-p", "5432", "-U", "'${{ secrets.DB_USERNAME }}'", "-d", "'${{ secrets.DB_NAME }}'", "-f", "/app/database/init.sql"]
+                "command": ["psql", "-h", "'$DB_ENDPOINT'", "-p", "5432", "-U", "'${{ secrets.DB_USERNAME }}'", "-d", "'${{ secrets.DB_NAME }}'", "-f", "/app/database/migration.sql"]
               }]
             }' \
             --query 'tasks[0].taskArn' \
@@ -289,4 +333,6 @@ jobs:
     needs: [build-backend, build-frontend, database-migration]
     steps:
       - name: Check Deployment Status
-        run: echo "All components have been deployed successfully"
+        run: |
+          echo "Frontend URL: https://${{ needs.infrastructure.outputs.app_domain }}"
+          echo "All components have been deployed successfully"
