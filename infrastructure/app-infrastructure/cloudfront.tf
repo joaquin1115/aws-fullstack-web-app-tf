@@ -7,8 +7,14 @@ resource "aws_cloudfront_origin_access_control" "default" {
   signing_protocol                  = "sigv4"
 }
 
+resource "time_sleep" "wait_for_s3_acl" {
+  depends_on = [aws_s3_bucket_acl.logging]
+  create_duration = "30s"
+}
+
 # CloudFront Distribution for SPA and API
 resource "aws_cloudfront_distribution" "app_distribution" {
+  depends_on          = [time_sleep.wait_for_s3_acl]
   enabled             = true
   default_root_object = "index.html"
   price_class         = "PriceClass_All"
