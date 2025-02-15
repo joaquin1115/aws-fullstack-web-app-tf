@@ -21,8 +21,8 @@ output "app_domain" {
   value = aws_cloudfront_distribution.app_distribution.domain_name
 }
 
-output "db_identifier" {
-  value = aws_db_instance.appdb.identifier
+output "db_address" {
+  value = aws_db_instance.appdb.address
 }
 
 output "ecs_cluster_name" {
@@ -59,4 +59,8 @@ output "user_pool_client_id" {
 
 output "ecs_task_execution_role_name" {
   value = aws_iam_role.ecs_task_execution_role.name
+}
+
+output "db_migration_log_group_name" {
+  value = aws_cloudwatch_log_group.ecs_db_migration_logs.name
 }
