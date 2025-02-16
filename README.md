@@ -35,7 +35,7 @@ This guide will walk you through setting up and deploying the full stack applica
 
 ### Prerequisites
 1. **AWS Account**: Ensure you have an AWS account with necessary permissions.
-2. **AWS CloudShell**: Preferably run AWS CLI commands in [AWS CloudShell](https://aws.amazon.com/cloudshell/).
+2. **AWS CloudShell**: Preferably run the code snippets of this guide in [AWS CloudShell](https://aws.amazon.com/cloudshell/).
 3. **GitHub Repository Access**: You must have admin access to the GitHub repository.
 4. **Terraform Installation**: AWS CloudShell doesn't come with Terraform pre-installed. Install it by running:
    ```sh
@@ -55,6 +55,13 @@ You must fork the repository to run the deployment workflows:
 
 > **Important**: Forking is required (not just cloning) because the deployment workflows need access to repository secrets that you'll configure in later steps. These secrets can only be set and accessed in a repository you own.
 
+Now, clone the forked repository:
+
+```sh
+   git clone https://github.com/[organization]/[repository-name].git
+   cd [repository-name]
+   ```
+
 ### Step 2: Create the OIDC Role
 
 To allow GitHub Actions to interact with AWS, you must create an **OIDC role**. Run the following script inside the `scripts/` folder:
@@ -66,7 +73,7 @@ chmod +x aws-github-oidc-setup.sh
 ```
 
 * Follow the interactive prompts to enter the **IAM Role name** and **GitHub repository name**.
-* Run `cd -` to return to the root directory of the repository.
+* After exiting the interactive menu, run `cd -` to return to the root directory of the repository.
 
 ### Step 3: Deploy the Terraform Remote Backend
 
