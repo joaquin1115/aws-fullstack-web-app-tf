@@ -16,7 +16,7 @@ function prompt_for_settings() {
     echo "GITHUB_REPO=$GITHUB_REPO" >> "$CONFIG_FILE"
 }
 
-# Load saved settings if they exist
+# Load saved settings if they exist, otherwise prompt for them
 if [ -f "$CONFIG_FILE" ]; then
     source "$CONFIG_FILE"
 else
@@ -97,16 +97,17 @@ function cleanup_github_oidc() {
     AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 
     echo "Detaching policy from role..."
-    aws iam detach-role-policy \
-        --role-name "$ROLE_NAME" \
-        --policy-arn "arn:aws:iam::${AWS_ACCOUNT_ID}:policy/${ROLE_NAME}-PermissionsPolicy" || true
+    aws iam list-attached-role-policies --role-name "$ROLE_NAME" --query 'AttachedPolicies[*].PolicyArn' --output text | while read -r policy_arn; do
+        aws iam detach-role-policy --role-name "$ROLE_NAME" --policy-arn "$policy_arn" || true
+    done
 
     echo "Deleting role..."
     aws iam delete-role --role-name "$ROLE_NAME" || true
 
     echo "Deleting policy..."
-    aws iam delete-policy \
-        --policy-arn "arn:aws:iam::${AWS_ACCOUNT_ID}:policy/${ROLE_NAME}-PermissionsPolicy" || true
+    aws iam list-policies --scope Local --query "Policies[?PolicyName=='${ROLE_NAME}-PermissionsPolicy'].Arn" --output text | while read -r policy_arn; do
+        aws iam delete-policy --policy-arn "$policy_arn" || true
+    done
 
     echo "Deleting OIDC provider..."
     aws iam delete-open-id-connect-provider \
