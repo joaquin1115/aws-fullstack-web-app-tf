@@ -58,9 +58,9 @@ You must fork the repository to run the deployment workflows:
 Now, clone the forked repository:
 
 ```sh
-   git clone https://github.com/[organization]/[repository-name].git
-   cd [repository-name]
-   ```
+git clone https://github.com/[organization]/[repository-name].git
+cd [repository-name]
+```
 
 ### Step 2: Create the OIDC Role
 
