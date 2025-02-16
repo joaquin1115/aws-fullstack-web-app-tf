@@ -149,5 +149,4 @@ cd infrastructure/state-backend
 terraform destroy
 ```
 
-* Run `cd -` to return to the root directory of the repository.
 * To completely reset the repository setup, repeat all steps from **Step 1**.
