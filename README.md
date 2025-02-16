@@ -72,7 +72,7 @@ chmod +x aws-github-oidc-setup.sh
 ./aws-github-oidc-setup.sh
 ```
 
-* Follow the interactive prompts to enter the **IAM Role name** and **GitHub repository name**.
+* Follow the interactive prompts to enter the **Role name** (remember this for the Step 4) and **GitHub repository name**.
 * After exiting the interactive menu, run `cd -` to return to the root directory of the repository.
 
 ### Step 3: Deploy the Terraform Remote Backend
@@ -113,7 +113,7 @@ Secret Name | Value (Example)
 You can generate a compliant password using:
 
 ```sh
-openssl rand -base64 12 | tr -d '=+/'
+openssl rand -base64 12 | tr -d '/+=' | cut -c1-7 | sed 's/[A-Za-z]/\U&/1; s/[A-Za-z]/\L&/2; s/[0-9]/&!/1; s/[0-9]/1&/2;' | awk '{print $0 substr("!@#$%^&*()", int(rand()*10)+1, 1)}'
 ```
 
 ### Step 5: Deploy the Full Stack Application
